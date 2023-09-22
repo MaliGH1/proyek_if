@@ -1,4 +1,4 @@
-@extends('css.style')
+<link rel="stylesheet" href="css/style.css" class="">
 @extends('layouts.main')
 
 @section('container')
@@ -6,7 +6,6 @@
     <main class="content">
         <h1>Rental Mobil Andalan Keluarga</h1>
         <p>Mobilku Mobilmu, Mobil kita semua</p>
-        <a href="Akun/formulir/formulir_Sewa" class="cta">Sewa Sekarang</a>
     </main>
 </section>
 @endsection
