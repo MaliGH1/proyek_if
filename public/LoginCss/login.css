@@ -2,7 +2,7 @@
 body {
     background-color: black; /* Latar belakang hitam */
     color: white; /* Warna teks putih */
-    font-family: Arial, sans-serif; /* Jenis font */
+    font-family: ; /* Jenis font */
 }
 
 .login-container {
@@ -41,8 +41,16 @@ body {
     cursor: pointer; /* Kursor tipe tangan saat diarahkan */
 }
 
-
 .login-form button:hover {
     background-color: #0056b3; /* Warna latar belakang tombol saat diarahkan */
 }
 
+.additional-links a {
+    color: white; /* Warna tautan */
+    margin: 0 32px; /* Jarak antar tautan */
+    text-decoration: none; /* Hilangkan dekorasi tautan */
+}
+
+.additional-links a:hover {
+    text-decoration: underline; /* Garis bawah saat diarahkan */
+}

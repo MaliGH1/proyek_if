@@ -13,7 +13,10 @@
         <input type="password" placeholder="Password">
         <button>Login</button>
     </div>
+    <div class="additional-links">
+            <a href="#">Sign Up</a>
+            <a href="#">Forgot Password</a>
+        </div>
 </div>
-
 </body>
 </html>
