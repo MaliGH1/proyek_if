@@ -1,0 +1,47 @@
+/* CSS untuk menu login */
+body {
+    background-color: black; /* Latar belakang hitam */
+    color: white; /* Warna teks putih */
+    font-family: Arial, sans-serif; /* Jenis font */
+}
+
+.login-container {
+    width: 300px; /* Lebar kontainer login */
+    margin: 0 auto; /* Posisi tengah */
+    padding: 20px; /* Ruang dalam kontainer */
+    background-color: rgba(0, 0, 0, 0.7); /* Latar belakang hitam transparan */
+    border-radius: 10px; /* Sudut elemen */
+    margin-top: 100px; /* Jarak atas dari tampilan */
+}
+
+.login-container h2 {
+    text-align: center; /* Pusatkan teks */
+}
+
+.login-form input {
+    width: 100%; /* Lebar penuh */
+    padding: 10px; /* Ruang dalam input */
+    margin-bottom: 10px; /* Jarak bawah */
+    border: 1px solid white; /* Border putih dengan ketebalan 1px */
+    background-color: rgba(0, 0, 0, 0.5); /* Latar belakang input transparan */
+    color: white; /* Warna teks putih */
+    border-radius: 10px; /* Sudut melengkung */
+}
+
+.login-form input:focus {
+    outline: none; /* Hilangkan garis fokus saat input aktif */
+}
+
+.login-form button {
+    width: 100%; /* Lebar penuh */
+    padding: 10px; /* Ruang dalam tombol */
+    border: 3px solid white; /* Border putih dengan ketebalan 1px */
+    background-color: #000000; /* Warna latar belakang tombol */
+    color: white; /* Warna teks putih */
+    cursor: pointer; /* Kursor tipe tangan saat diarahkan */
+}
+
+
+.login-form button:hover {
+    background-color: #0056b3; /* Warna latar belakang tombol saat diarahkan */
+}
