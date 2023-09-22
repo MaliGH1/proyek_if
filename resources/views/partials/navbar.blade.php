@@ -4,7 +4,7 @@
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse justify-content-center navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-3 mb-3 mb-lg-0">
+            <ul class="navbar-nav me-2 mb-3 mb-lg-0">
                 <li class="nav-item">
                     <a class="nav-link {{ ($title === "Home") ? 'active' : '' }}" href="/home">Home</a>
                 </li>
