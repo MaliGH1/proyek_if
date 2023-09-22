@@ -33,7 +33,7 @@ body {
 }
 
 .login-form button {
-    width: 100%; /* Lebar penuh */
+    width: 107%; /* Lebar penuh */
     padding: 10px; /* Ruang dalam tombol */
     border: 3px solid white; /* Border putih dengan ketebalan 1px */
     background-color: #000000; /* Warna latar belakang tombol */
@@ -45,3 +45,4 @@ body {
 .login-form button:hover {
     background-color: #0056b3; /* Warna latar belakang tombol saat diarahkan */
 }
+
