@@ -9,11 +9,11 @@ body{
 .hero {
     min-height: 100vh;
     display: flex;
-    align-items: center;
-    background-image: url(/image/bg.jpg);
+    align-items: top;
+    background-image: url(/image/bg2.jpg);
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: center;
+    background-position: flex;
     position: relative;
 }
 
@@ -29,14 +29,15 @@ body{
 }
 
 .hero .content {
-    padding: 1.4rem 7%;
+    position: top;
+    padding: 1rem 2%;
     max-width: 60rem;
 }
 
 .hero .content h1 {
     font-size: 2em;
     color: #000000;
-    text-shadow: 1px 1px 3px rgba(1,1,1,1);
+    text-shadow: 1px 1px 3px rgb(255, 255, 255);
     line-height: 1.2;
 }
 
