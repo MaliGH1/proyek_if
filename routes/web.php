@@ -45,6 +45,8 @@ Route::get('/contact', function () {
     ]);
 });
 
-Route::get('/regrister', function () {
-    return view('regrister');
+Route::get('/register', function () {
+    return view('register');
 });
+
+
