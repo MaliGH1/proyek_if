@@ -1,15 +1,14 @@
-/* CSS untuk menu login */
 body {
-    background-color: black; /* Latar belakang hitam */
-    color: white; /* Warna teks putih */
-    font-family: ; /* Jenis font */
+    background-color: black; /* bekgron */
+    color: white; /* Warna */
+    font-family: ; 
 }
 
 .login-container {
-    width: 300px; /* Lebar kontainer login */
-    margin: 0 auto; /* Posisi tengah */
+    width: 300px; /* Lebar kontainer  */
+    margin: 0 auto; /* Posisi */
     padding: 20px; /* Ruang dalam kontainer */
-    background-color: rgba(0, 0, 0, 0.7); /* Latar belakang hitam transparan */
+    background-color: rgba(0, 0, 0, 0.7); /* Latar belakang */
     border-radius: 10px; /* Sudut elemen */
     margin-top: 100px; /* Jarak atas dari tampilan */
 }

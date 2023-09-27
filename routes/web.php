@@ -44,3 +44,7 @@ Route::get('/contact', function () {
         "title" => "Contact"
     ]);
 });
+
+Route::get('/regrister', function () {
+    return view('regrister');
+});
