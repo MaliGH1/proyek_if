@@ -3,7 +3,7 @@
 
 <head>
     <title>Registrasi Akun</title>
-    <link rel="stylesheet" type="text/css" href="regristasi.css">
+    <link rel="stylesheet" type="text/css" href="css/regristasi.css">
 </head>
 
 <body>
@@ -24,9 +24,9 @@
             <input type="password" id="password" placeholder="Masukkan password" required>
 
             <label for="confirm-password">Konfirmasi Password:</labels>
-            <input type="password" id="confirm-password" placeholder="Konfirmasi password" required>
+                <input type="password" id="confirm-password" placeholder="Konfirmasi password" required>
 
-            <a href="/login"><button class="signup-button">BUAT AKUN</button></a>
+                <a href="/login"><button class="signup-button">BUAT AKUN</button></a>
         </div>
     </div>
 

@@ -1,21 +1,24 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <title>Menu Login</title>
-    <link rel="stylesheet" type="text/css" href="LoginCss/login.css">
+    <link rel="stylesheet" type="text/css" href="css/login.css">
 </head>
+
 <body>
-<div class="login-container">
-    <h2>Rental Mobil</h2>
-    <h2>DJVR</h2>
-    <div class="login-form">
-        <input type="text" placeholder="Username">
-        <input type="password" placeholder="Password">
-        <button>Login</button>
-    </div>
-    <div class="additional-links">
+    <div class="login-container">
+        <h2>Rental Mobil</h2>
+        <h2>DJVR</h2>
+        <div class="login-form">
+            <input type="text" placeholder="Username">
+            <input type="password" placeholder="Password">
+            <button>Login</button>
+        </div>
+        <div class="additional-links">
             <a href="/register">Sign Up</a>
         </div>
-</div>
+    </div>
 </body>
+
 </html>
