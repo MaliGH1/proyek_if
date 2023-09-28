@@ -1,1 +1,4 @@
-
+.hero{
+    color: white;
+    backdrop-filter: blur(10px);
+}
