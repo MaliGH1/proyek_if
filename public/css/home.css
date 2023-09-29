@@ -1,7 +1,11 @@
-.hero{
-    color: white;
-    backdrop-filter: blur(10px);
-}
-.hero main{
-    font-size: x-large;
+@media (max-width: 640px) {
+    /* Tambahkan kustomisasi untuk tampilan mobile di sini */
+    .hero {
+    /* Misalnya, mengubah padding atau margin */
+    padding: 1rem;
+    }
+    h1 {
+    /* Misalnya, mengubah ukuran teks */
+    font-size: 1.5rem;
+    }
 }
