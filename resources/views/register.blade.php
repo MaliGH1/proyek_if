@@ -7,7 +7,7 @@
 </head>
 
 <body>
-
+<form action="/register" method="post">
     <div class="registration-container">
         <h2>Registrasi Akun</h2>
         <div class="registration-form">
@@ -29,6 +29,7 @@
                 <a href="/login"><button class="signup-button">BUAT AKUN</button></a>
         </div>
     </div>
+</fomr>
 
 </body>
 
