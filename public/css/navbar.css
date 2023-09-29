@@ -1,17 +1,10 @@
-.navbar-brand {
-        font-size: 24px;
-        /* Sesuaikan ukuran teks sesuai kebutuhan Anda */
-        font-weight: bold;
-        /* Atur berat font sesuai kebutuhan Anda */
-        color: black;
-        /* Atur warna teks sesuai kebutuhan Anda */
-        text-transform: uppercase;
-        /* Atur perubahan huruf sesuai kebutuhan Anda */
-        margin: 0;
-        /* Hapus margin agar brand navbar tepat berada di tengah-tengah */
+/* CSS untuk membuat semua item navbar berada di tengah */
+.navbar-center {
+    display: flex;
+    justify-content: center;
 }
 
-.navbar-brand:hover {
-        color: #fff;
-        /* Warna saat mengarahkan kursor ke brand navbar */
+/* CSS untuk mengatur margin pada navbar brand (DVJR) */
+.navbar-brand {
+    margin-right: ; /* Anda dapat mengatur margin sesuai kebutuhan */
 }
