@@ -1,0 +1,17 @@
+.navbar-brand {
+        font-size: 24px;
+        /* Sesuaikan ukuran teks sesuai kebutuhan Anda */
+        font-weight: bold;
+        /* Atur berat font sesuai kebutuhan Anda */
+        color: black;
+        /* Atur warna teks sesuai kebutuhan Anda */
+        text-transform: uppercase;
+        /* Atur perubahan huruf sesuai kebutuhan Anda */
+        margin: 0;
+        /* Hapus margin agar brand navbar tepat berada di tengah-tengah */
+}
+
+.navbar-brand:hover {
+        color: #fff;
+        /* Warna saat mengarahkan kursor ke brand navbar */
+}
