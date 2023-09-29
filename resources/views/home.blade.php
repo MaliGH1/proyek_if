@@ -3,7 +3,7 @@
 
 @section('container')
 <section class="hero" id="home">
-    <main class="content">
+    <main class="main">
         <h1>Rental Mobil Andalan Keluarga</h1>
         <article>
             Mobilku Mobilmu, Mobil kita semua
