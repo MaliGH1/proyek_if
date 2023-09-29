@@ -15,6 +15,8 @@ use Symfony\Component\HttpKernel\DependencyInjection\RegisterControllerArgumentL
 */
 
 
+use App\Http\Controllers\RegisterController;
+
 Route::get('/', function () {
     return view('welcome');
 });
@@ -64,9 +66,6 @@ Route::get('/contact', function () {
 
 // Route untuk mengirimkan formulir kontak
 Route::post('/contact', 'ContactController@store')->name('contact.submit');
-
-
-use App\Http\Controllers\RegisterController;
 
 Route::get('/register', [RegisterController::class, 'index']);
 Route::post('/register', [RegisterController::class, 'store']);
