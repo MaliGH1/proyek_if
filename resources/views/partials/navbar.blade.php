@@ -28,8 +28,8 @@
                     <div class="text-center"> <!-- Menggunakan 'text-center' untuk tengah-tengah teks "DVJR" -->
                         <a class="text-black text-2xl font-semibold no-underline" href="/home">DVJR</a>
                     </div>
-                    <a class="text-black no-underline" href="/about">About</a>
-                    <a class="text-black no-underline" href="/contact">Contact</a>
+                    <a class="text-black block no-underline" href="#about-section">About</a>
+                    <a class="text-black block no-underline" href="#contact-section">Contact</a>
                 </div>
             </div>
 
@@ -38,8 +38,8 @@
                 <div class="px-2 pt-2 pb-3 space-y-1">
                     <a class="text-black block no-underline" href="/home">Home</a>
                     <a class="text-black block no-underline" href="/sewa">Sewa</a>
-                    <a class="text-black block no-underline" href="/about">About</a>
-                    <a class="text-black block no-underline" href="/contact">Contact</a>
+                    <a class="text-black block no-underline" href="#about-section">About</a>
+                    <a class="text-black block no-underline" href="#contact-section">Contact</a>
                 </div>
             </div>
         </div>
@@ -53,7 +53,6 @@
             mobileMenu.classList.toggle('hidden');
         });
     </script>
-
 </body>
 
 </html>

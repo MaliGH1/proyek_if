@@ -23,11 +23,11 @@ Route::get('/login', function () {
     return view('login');
 });
 
-Route::get('/home', function () {
-    return view('home', [
-        "title" => "Home"
-    ]);
-});
+// Route::get('/home', function () {
+//     return view('home', [
+//         "title" => "Home"
+//     ]);
+// });
 
 Route::get('/sewa', function () {
     return view('sewa', [
@@ -35,18 +35,38 @@ Route::get('/sewa', function () {
     ]);
 });
 
-Route::get('/about', function () {
-    return view('about', [
-        "title" => "About"
-    ]);
+// Route::get('/about', function () {
+//     return view('about', [
+//         "title" => "About"
+//     ]);
+// });
+
+// Route::get('/contact', function () {
+//     return view('contact', [
+//         "title" => "Contact"
+//     ]);
+// });
+
+// Route untuk halaman beranda (home page)
+Route::get('/home', function () {
+    return view('home');
 });
 
-Route::get('/contact', function () {
-    return view('contact', [
-        "title" => "Contact"
-    ]);
+// Route untuk halaman "Tentang Kami" (about us page)
+Route::get('/about-us', function () {
+    return view('about');
 });
+
+// Route untuk halaman "Hubungi Kami" (contact page)
+Route::get('/contact', function () {
+    return view('contact');
+});
+
+// Route untuk mengirimkan formulir kontak
+Route::post('/contact', 'ContactController@store')->name('contact.submit');
+
 
 use App\Http\Controllers\RegisterController;
+
 Route::get('/register', [RegisterController::class, 'index']);
 Route::post('/register', [RegisterController::class, 'store']);
