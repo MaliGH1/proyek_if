@@ -3,16 +3,16 @@
 
 <head>
     <title>Registrasi Akun</title>
-    <link rel="stylesheet" type="text/css" href="register.css">
+    <link rel="stylesheet" type="text/css" href="css/register.css">
 </head>
 
 <body>
-<form action="/register" method="post">
-@csrf
+    <form action="/register" method="post">
+        @csrf
 
-    <div class="registration-container">
-        <h2>Registrasi Akun</h2>
-        <div class="registration-form">
+        <div class="registration-container">
+            <h2>Registrasi Akun</h2>
+            <div class="registration-form">
 
             <label for="fullname">Nama Lengkap:</label>
             <input type="text" id="fullname" name="fullname" class="@error('fullname') is-invalid @enderror" placeholder="Masukkan nama lengkap">
@@ -57,11 +57,10 @@
                     {{$message}}
                 </div>
             @enderror
-            
-                <a href="/login"><button class="signup-button">BUAT AKUN</button></a>
+            </div>
+
         </div>
-    </div>
-</form>
+    </form>
 
 </body>
 
