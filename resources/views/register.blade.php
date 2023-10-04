@@ -14,22 +14,22 @@
         <h2>Registrasi Akun</h2>
         <div class="registration-form">
             <label for="fullname">Nama Lengkap:</label>
-            <input type="text" id="fullname" placeholder="Masukkan nama lengkap" required>
+            <input type="text" id="fullname" name="fullname" placeholder="Masukkan nama lengkap">
             
             <label for="username">Username:</label>
-            <input type="text" id="username" placeholder="Masukkan username" required>
+            <input type="text" id="username" name="username" placeholder="Masukkan username">
 
             <label for="email">Email:</label>
-            <input type="email" id="email" placeholder="Masukkan email" required>
+            <input type="email" id="email" name="email" placeholder="Masukkan email">
 
             <label for="phone">No. HP:</label>
-            <input type="tel" id="phone" placeholder="Masukkan nomor HP" required>
+            <input type="tel" id="phone" name="phone" placeholder="Masukkan nomor HP">
 
             <label for="password">Password:</label>
-            <input type="password" id="password" placeholder="Masukkan password" required>
+            <input type="password" id="password" name="password" placeholder="Masukkan password">
 
             <label for="confirm-password">Konfirmasi Password:</labels>
-                <input type="password" id="confirm-password" placeholder="Konfirmasi password" required>
+                <input type="password" id="confirm-password" name="confirm-password" placeholder="Konfirmasi password">
 
                 <a href="/login"><button class="signup-button">BUAT AKUN</button></a>
         </div>
