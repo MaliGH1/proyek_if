@@ -16,6 +16,7 @@ use Symfony\Component\HttpKernel\DependencyInjection\RegisterControllerArgumentL
 
 
 use App\Http\Controllers\RegisterController;
+use Illuminate\Support\Facades\Auth;
 
 Route::get('/', function () {
     return view('welcome');
@@ -69,3 +70,12 @@ Route::post('/contact', 'ContactController@store')->name('contact.submit');
 
 Route::get('/register', [RegisterController::class, 'index']);
 Route::post('/register', [RegisterController::class, 'store']);
+
+
+// Route untuk akses menu Admin
+Auth::routes();
+
+Route::group(['middleware' => ['auth','isAdmin'],'prefix' => 'admin', 'as' => 'admin'], function(){
+    Route::resource('cars', \App\Http\Controllers\Admin\CarController::class);
+
+});
