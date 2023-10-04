@@ -18,23 +18,15 @@ use App\Models\User;
     
     public function store(Request $request)
     {
-        $validatedData = $request->validate([
-            'fullname' => 'required',
-            'username' => 'required|unique:users',
-            'email' => 'required|email|unique:users',
-            'phone' => 'required',
-            'password' => 'required|min:5|confirmed', // 'confirmed' memastikan bahwa 'password' dan 'password_confirmation' cocok
+        $request->validate([
+        'fullname' => 'required|max:255',
+        'username' => ['required','min:3', 'max:255',
+        'unique:customer'],
+        'email' => 'required|email|unique:customer',
+        'phone' => 'required',
+        'password' => 'required|min:5|max:255'
         ]);
-    
-        // Hash password sebelum menyimpannya
-        $validatedData['password'] = bcrypt($validatedData['password']);
-    
-        // Tambahkan validasi untuk 'confirm-password' jika diperlukan
-        // ...
-    
-        User::create($validatedData);
-    
-        // Redirect atau response lainnya setelah pengguna berhasil disimpan
+        dd('registrasi berhasil');
     }
     
 }
