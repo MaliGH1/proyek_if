@@ -73,7 +73,7 @@ Route::post('/register', [RegisterController::class, 'store']);
 
 
 // Route untuk akses menu Admin
-Auth::routes();
+// Auth::routes();
 
 Route::group(['middleware' => ['auth','isAdmin'],'prefix' => 'admin', 'as' => 'admin'], function(){
     Route::resource('cars', \App\Http\Controllers\Admin\CarController::class);
