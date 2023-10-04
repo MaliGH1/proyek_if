@@ -3,34 +3,20 @@
 
 <head>
     <title>Registrasi Akun</title>
-    <link rel="stylesheet" type="text/css" href="css/regristasi.css">
+    <link rel="stylesheet" type="text/css" href="register.css">
 </head>
 
 <body>
 <form action="/register" method="post">
-    @csrf
 
     <div class="registration-container">
         <h2>Registrasi Akun</h2>
         <div class="registration-form">
-            <label for="fullname">Nama Lengkap:</label>
-            <input type="text" id="fullname" placeholder="Masukkan nama lengkap" required>
-            
-            <label for="username">Username:</label>
-            <input type="text" id="username" placeholder="Masukkan username" required>
-
-            <label for="email">Email:</label>
-            <input type="email" id="email" placeholder="Masukkan email" required>
-
-            <label for="phone">No. HP:</label>
-            <input type="tel" id="phone" placeholder="Masukkan nomor HP" required>
-
-            <label for="password">Password:</label>
-            <input type="password" id="password" placeholder="Masukkan password" required>
-
-            <label for="confirm-password">Konfirmasi Password:</labels>
-                <input type="password" id="confirm-password" placeholder="Konfirmasi password" required>
-
+            <input type="text" id="username" placeholder="USERNAME" required>
+            <input type="text" id="fullname" placeholder="NAMA LENGKAP" required>
+            <input type="tel" id="phone" placeholder="NO. HP" required>
+            <input type="password" id="password" placeholder="PASSWORD" required>
+            <input type="password" id="confirm-password" placeholder="CONFRIM PASSWORD" required>
                 <a href="/login"><button class="signup-button">BUAT AKUN</button></a>
         </div>
     </div>
