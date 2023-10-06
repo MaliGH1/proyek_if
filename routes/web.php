@@ -38,6 +38,11 @@ Route::get('/sewa', function () {
     ]);
 });
 
+// Rute untuk tombol kembali
+Route::get('/back-to-home', function () {
+    return redirect('/home');
+})->name('back.home');
+
 // Route::get('/about', function () {
 //     return view('about', [
 //         "title" => "About"
@@ -75,7 +80,6 @@ Route::post('/register', [RegisterController::class, 'store']);
 // Route untuk akses menu Admin
 // Auth::routes();
 
-Route::group(['middleware' => ['auth','isAdmin'],'prefix' => 'admin', 'as' => 'admin'], function(){
+Route::group(['middleware' => ['auth', 'isAdmin'], 'prefix' => 'admin', 'as' => 'admin'], function () {
     Route::resource('cars', \App\Http\Controllers\Admin\CarController::class);
-
 });

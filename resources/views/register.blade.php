@@ -60,10 +60,7 @@
 
                 <a href="/login"><button class="signup-button">BUAT AKUN</button></a>
             </div>
-
         </div>
     </form>
-
 </body>
-
 </html>
