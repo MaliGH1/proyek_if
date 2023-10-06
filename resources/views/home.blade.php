@@ -1,4 +1,3 @@
-<link rel="stylesheet" href="css/home.css" class="">
 @extends('layouts.main')
 
 @section('container')
