@@ -53,6 +53,17 @@
                 <input type="file" id="bukti-tf" name="bukti_tf" class="w-75 px-4 py-2 border rounded-r-lg">
             </div>
 
+            <!-- Untuk menampilkan Total Biaya, Belum selesai -->
+            <form method="POST" action="/proses-form">
+                @csrf
+                <!-- Input lainnya -->
+                <div class="mb-4">
+                    <label for="total-biaya" class="block text-sm font-medium text-gray-700">Total Biaya:</label>
+                    <input type="text" id="total-biaya" name="total_biaya" class="w-full px-4 py-2 border rounded-lg" value="{{ $transaksi->total_biaya ?? '' }}">
+                </div>
+                <!-- Tombol Submit -->
+            </form>
+
 
             <div class="mt-4">
                 <button type="submit" class="px-4 py-2 bg-blue-500 text-white rounded-lg">Sewa Mobil</button>
