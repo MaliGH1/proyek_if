@@ -4,14 +4,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/navbarsewa.css" class="">
     <title>Document</title>
 </head>
 
 <body>
     <!-- Navbar -->
-    <nav class="bg-black p-4 flex justify-between items-center">
+    <nav class="navbar">
         <!-- Logo -->
-        <div class="text-white text-xl font-bold">
+        <div class="navbar-content">
             <span class="text-yellow-500">D</span>
             <span class="text-yellow-500">V</span>
             <span class="text-yellow-500">J</span>

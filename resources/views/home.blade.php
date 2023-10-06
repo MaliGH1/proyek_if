@@ -13,10 +13,9 @@
         </div>
     </div>
 
-    <div class="h-screen bg-gray-200 flex flex-col justify-center items-center">
-        <!-- Konten "Tentang Kami" Anda -->
+    <div class="h-screen bg-gray-200 flex flex-col">
         <!-- About Us Page Section -->
-        <div id="about-section" class="py-16">
+        <div id="about-section" class="py-16 align-top">
             <div class="container mx-auto">
                 <h1 class="text-4xl font-semibold text-center">Tentang Kami</h1>
                 <p class="mt-4 text-lg">Kami adalah sebuah perusahaan yang berdedikasi untuk memberikan solusi terbaik kepada pelanggan kami. Dengan pengalaman bertahun-tahun, kami siap melayani Anda dengan sepenuh hati.</p>
