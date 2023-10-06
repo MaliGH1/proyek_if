@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
 use App\Driver;
 use Illuminate\Http\Request;
@@ -10,7 +10,7 @@ class DriverController extends Controller
 {
     public function index()
     {
-        $cars = Car::all();
+        $driver = Driver::all();
         return view('admin.cars.index', compact('cars'));
     }
 
@@ -25,17 +25,17 @@ class DriverController extends Controller
             // Validation rules here
         ]);
 
-        Car::create($request->all());
+        Driver::create($request->all());
 
         return redirect()->route('admin.cars.index')->with('success', 'Car created successfully');
     }
 
-    public function edit(Car $car)
+    public function edit(Driver $car)
     {
         return view('cars.edit', compact('car'));
     }
 
-    public function update(Request $request, Car $car)
+    public function update(Request $request, Driver $car)
     {
         $request->validate([
             // Validation rules here
@@ -46,7 +46,7 @@ class DriverController extends Controller
         return redirect()->route('admin.cars.index')->with('success', 'Car updated successfully');
     }
 
-    public function destroy(Car $car)
+    public function destroy(Driver $car)
     {
         $car->delete();
 
