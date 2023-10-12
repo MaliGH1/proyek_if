@@ -60,15 +60,15 @@ Route::get('/home', function () {
     return view('customer/home');
 });
 
-// Route untuk halaman "Tentang Kami" (about us page)
-Route::get('/about-us', function () {
-    return view('about');
-});
+// // Route untuk halaman "Tentang Kami" (about us page)
+// Route::get('/about-us', function () {
+//     return view('about');
+// });
 
-// Route untuk halaman "Hubungi Kami" (contact page)
-Route::get('/contact', function () {
-    return view('contact');
-});
+// // Route untuk halaman "Hubungi Kami" (contact page)
+// Route::get('/contact', function () {
+//     return view('contact');
+// });
 
 // Route untuk mengirimkan formulir kontak
 Route::post('/contact', 'ContactController@store')->name('contact.submit');
