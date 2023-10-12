@@ -33,7 +33,7 @@ Route::get('/login', function () {
 // });
 
 Route::get('/sewa', function () {
-    return view('sewa', [
+    return view('customer/sewa', [
         "title" => "Sewa"
     ]);
 });
@@ -57,7 +57,7 @@ Route::get('/back-to-home', function () {
 
 // Route untuk halaman beranda (home page)
 Route::get('/home', function () {
-    return view('home');
+    return view('customer/home');
 });
 
 // Route untuk halaman "Tentang Kami" (about us page)
