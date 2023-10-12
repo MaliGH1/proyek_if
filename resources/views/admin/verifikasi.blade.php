@@ -1,4 +1,4 @@
-@extends('layouts.main')
+@extends('layouts.mainverifikasi')
 
 @section('content')
 <div class="container mx-auto mt-4">
