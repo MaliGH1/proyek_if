@@ -38,12 +38,13 @@
         </div>
         <div class="text-left text-sm mt-2 w-4/5 mx-auto text-gray-200 font-bold" id="submenu-sewa">
             <h1 class="cursor-pointer p-2 hover:bg-blue-600 rounded-md mt-1">
-                Verifikasi
+                Verivikasi
             </h1>
-            <h1 class="cursor-pointer p-2 hover-bg-blue-600 rounded-md mt-1">
+            <h1 class="cursor-pointer p-2 hover:bg-blue-600 rounded-md mt-1">
                 Pengembalian
             </h1>
         </div>
+
         <div class="my-2 bg-gray-600 h-[1px]"></div>
         <div class="p-2.5 mt-3 flex items-center rounded-md px-4 duration-300 cursor-pointer" onclick="dropdown('edit')">
             <i class="bi bi-chat-left-text-fill"></i>
