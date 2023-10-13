@@ -1,55 +1,68 @@
 body {
-    background-color: black; /* bekgron */
-    color: white; /* Warna */
-    font-family: ;
+    background-color: black;
+    color: white;
+    font-family: Arial, sans-serif; /* Add a suitable font-family */
 }
 
 .login-container {
-    width: 300px; /* Lebar kontainer  */
-    margin: 0 auto; /* Posisi */
-    padding: 20px; /* Ruang dalam kontainer */
-    background-color: rgba(0, 0, 0, 0.7); /* Latar belakang */
-    border-radius: 10px; /* Sudut elemen */
-    margin-top: 100px; /* Jarak atas dari tampilan */
+    width: 300px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 10px;
+    margin-top: 100px;
 }
 
 .login-container h2 {
-    text-align: center; /* Pusatkan teks */
+    text-align: center;
+}
+
+.login-form .input-container {
+    position: relative;
+    margin-bottom: 10px;
+}
+
+.login-form .input-container i {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: white;
 }
 
 .login-form input {
-    width: 100%; /* Lebar penuh */
-    padding: 10px; /* Ruang dalam input */
-    margin-bottom: 10px; /* Jarak bawah */
-    border: 1px solid white; /* Border putih dengan ketebalan 1px */
-    background-color: rgba(0, 0, 0, 0.5); /* Latar belakang input transparan */
-    color: white; /* Warna teks putih */
-    border-radius: 10px; /* Sudut melengkung */
+    width: calc(100% - 70px); /* Adjusted width to accommodate the icon and padding */
+    padding: 10px 30px 10px 40px; /* Adjusted padding to make space for the icon */
+    margin-bottom: 0px;
+    border: 1px solid white;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border-radius: 10px;
 }
 
 .login-form input:focus {
-    outline: none; /* Hilangkan garis fokus saat input aktif */
+    outline: none;
 }
 
 .login-form button {
-    width: 107%; /* Lebar penuh */
-    padding: 10px; /* Ruang dalam tombol */
-    border: 3px solid white; /* Border putih dengan ketebalan 1px */
-    background-color: #000000; /* Warna latar belakang tombol */
-    color: white; /* Warna teks putih */
-    cursor: pointer; /* Kursor tipe tangan saat diarahkan */
+    width: 100%;
+    padding: 10px;
+    border: 3px solid white;
+    background-color: #000000;
+    color: white;
+    cursor: pointer;
 }
 
 .login-form button:hover {
-    background-color: #0056b3; /* Warna latar belakang tombol saat diarahkan */
+    background-color: #0056b3;
 }
 
 .additional-links a {
-    color: white; /* Warna tautan */
-    margin: 0 32px; /* Jarak antar tautan */
-    text-decoration: none; /* Hilangkan dekorasi tautan */
+    color: white;
+    margin: 0 32px;
+    text-decoration: none;
 }
 
 .additional-links a:hover {
-    text-decoration: underline; /* Garis bawah saat diarahkan */
+    text-decoration: underline;
 }
