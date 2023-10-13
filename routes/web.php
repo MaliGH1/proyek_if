@@ -59,6 +59,9 @@ Route::get('/back-to-home', function () {
 Route::get('/home', function () {
     return view('customer/home');
 });
+Route::get('/homeadmin', function () {
+    return view('admin/home');
+});
 
 // // Route untuk halaman "Tentang Kami" (about us page)
 // Route::get('/about-us', function () {
