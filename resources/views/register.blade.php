@@ -41,9 +41,18 @@
                 @enderror
 
                 <br>
-                <label for="phone">No. HP:</label>
-                <input type="tel" id="phone" name="phone" class="@error('phone') is-invalid @enderror" placeholder="Masukkan nomor HP" required value="{{old('phone')}}">
-                @error('phone')
+                <label for="alamat">alamat:</label>
+                <input type="text" id="alamat" name="alamat" class="@error('alamat') is-invalid @enderror" placeholder="Masukkan alamat" required value="{{old('alamat')}}">
+                @error('alamat')
+                <div class="invalid-feedback">
+                    {{$message}}
+                </div>
+                @enderror
+
+                <br>
+                <label for="no_telp">No. HP:</label>
+                <input type="tel" id="no_telp" name="no_telp" class="@error('no_telp') is-invalid @enderror" placeholder="Masukkan nomor HP" required value="{{old('no_telp')}}">
+                @error('no_telp')
                 <div class="invalid-feedback">
                     {{$message}}
                 </div>

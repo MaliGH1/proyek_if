@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\customer;
+use App\Models\Customer;
 use Illuminate\Http\Request;
 
 class RegisterController extends Controller
@@ -17,15 +17,16 @@ class RegisterController extends Controller
 
     public function store(Request $request)
     {
-        $request->validate([
-            'fullname' => 'required|max:255',
+        $validatedData = $request->validate([
+            'nama' => 'required|max:255',
             'username' => ['required', 'min:3', 'max:255','unique:customer'],
+            'alamat' => 'required',
             'email' => 'required|email:dns|unique:customer',
-            'phone' => 'required',
-            'password' => 'required|min:5|max:255'
+            'no_telp' => 'required',
+            'password' => 'required|min:5|max:255',
         ]);
 
-        dd('registrasi berhasil');
-        // customer::create($validateData);
+        // dd('registrasi berhasil');
+        Customer::create($validatedData);
     }
 }
