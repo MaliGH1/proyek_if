@@ -63,6 +63,15 @@ Route::get('/homeadmin', function () {
     return view('admin/home');
 });
 
+Route::get('/homeadmin', function () {
+    return view('admin/home');
+});
+
+Route::get('/verifikasi', function () {
+    return view('admin/verifikasi');
+});
+//Route::get('verifikasi', \App\Http\Controllers\Admin\VerifikasiController::class);
+
 // // Route untuk halaman "Tentang Kami" (about us page)
 // Route::get('/about-us', function () {
 //     return view('about');
@@ -85,5 +94,5 @@ Route::post('/register', [RegisterController::class, 'store']);
 
 Route::group(['middleware' => ['auth', 'isAdmin'], 'prefix' => 'admin', 'as' => 'admin'], function () {
     Route::resource('cars', \App\Http\Controllers\Admin\CarController::class);
-    Route::resource('verifikasi', \App\Http\Controllers\Admin\CarController::class);
+   
 });

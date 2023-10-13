@@ -21,7 +21,7 @@
             </tr>
         </thead>
         <tbody>
-            @foreach($peminjaman as $data)
+            @foreach($sewa as $data)
                 <tr>
                     <td class="px-4 py-2">{{ $data->nama_customer }}</td>
                     <td class="px-4 py-2">{{ $data->mobil }}</td>
