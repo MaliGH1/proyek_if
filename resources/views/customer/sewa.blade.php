@@ -1,4 +1,4 @@
-@extends('layouts.main')
+@extends('layouts.mainsewa')
 
 @section('container')
 <div class="container mx-auto mt-8">

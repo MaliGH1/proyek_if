@@ -33,10 +33,15 @@ Route::get('/login', function () {
 // });
 
 Route::get('/sewa', function () {
-    return view('sewa', [
+    return view('customer/sewa', [
         "title" => "Sewa"
     ]);
 });
+
+// Rute untuk tombol kembali
+Route::get('/back-to-home', function () {
+    return redirect('/home');
+})->name('back.home');
 
 // Route::get('/about', function () {
 //     return view('about', [
@@ -52,18 +57,21 @@ Route::get('/sewa', function () {
 
 // Route untuk halaman beranda (home page)
 Route::get('/home', function () {
-    return view('home');
+    return view('customer/home');
+});
+Route::get('/homeadmin', function () {
+    return view('admin/home');
 });
 
-// Route untuk halaman "Tentang Kami" (about us page)
-Route::get('/about-us', function () {
-    return view('about');
-});
+// // Route untuk halaman "Tentang Kami" (about us page)
+// Route::get('/about-us', function () {
+//     return view('about');
+// });
 
-// Route untuk halaman "Hubungi Kami" (contact page)
-Route::get('/contact', function () {
-    return view('contact');
-});
+// // Route untuk halaman "Hubungi Kami" (contact page)
+// Route::get('/contact', function () {
+//     return view('contact');
+// });
 
 // Route untuk mengirimkan formulir kontak
 Route::post('/contact', 'ContactController@store')->name('contact.submit');
@@ -75,7 +83,7 @@ Route::post('/register', [RegisterController::class, 'store']);
 // Route untuk akses menu Admin
 // Auth::routes();
 
-Route::group(['middleware' => ['auth','isAdmin'],'prefix' => 'admin', 'as' => 'admin'], function(){
+Route::group(['middleware' => ['auth', 'isAdmin'], 'prefix' => 'admin', 'as' => 'admin'], function () {
     Route::resource('cars', \App\Http\Controllers\Admin\CarController::class);
-
+    Route::resource('verifikasi', \App\Http\Controllers\Admin\CarController::class);
 });
