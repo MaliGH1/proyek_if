@@ -1,0 +1,133 @@
+.layout{
+    background-color: rgb(255, 255, 255);
+    padding: 1rem;
+    border-radius: 0.5rem;
+}
+.judul{
+    font-size: 1.5rem;
+    line-height: 2rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.nama{
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+}
+.nama-label{
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    font-weight: 500;
+    color: rgb(0, 0, 0);
+    margin-right: 0.5rem;
+    max-width: 150px;
+    padding-right: 2.5rem;
+    overflow: hidden;
+    white-space: nowrap;
+}
+.nama-input{
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    border-width: 1px;
+    border-radius: 0.5rem;
+    width: 55rem;
+}
+
+.mobil{
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+}
+.mobil-label{
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    font-weight: 500;
+    color: rgb(0, 0, 0);
+    margin-right: 0.5rem;
+    max-width: 150px;
+    padding-right: 1rem;
+    overflow: hidden;
+    white-space: nowrap;
+}
+.mobil-input{
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    border-width: 1px;
+    border-radius: 0.5rem;
+    width: 55rem;
+}
+
+.supir{
+    margin-bottom: 1rem;
+    color: rgb(0, 0, 0);
+}
+.supir-label{
+    display: block;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    font-weight: 500;
+    color: rgb(0, 0, 0);
+}
+
+.tanggalsewa{
+    margin-bottom: 1rem;
+}
+.tanggalsewa-label{
+    display: block;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    font-weight: 500;
+    color: rgb(0, 0, 0);
+    max-width: 150px;
+    overflow: hidden;
+    white-space: nowrap;
+}
+.tanggalsewa-input{
+    width: 55rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    border-width: 1px;
+    border-radius: 0.5rem;
+}
+
+.tanggalkembali{
+    margin-bottom: 1rem;
+}
+.tanggalkembali-label{
+    display: block;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    font-weight: 500;
+    color: rgb(0, 0, 0);
+    max-width: 150px;
+    overflow: hidden;
+    white-space: nowrap;
+}
+.tanggalkembali-input{
+    width: 55rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    border-width: 1px;
+    border-radius: 0.5rem;
+}
+
+
+.buktitf{
+    margin-bottom: 1rem;
+    align-items: center;
+}
+.totalbiaya{
+    margin-bottom: 1rem;
+}
+.btnsewa{
+    margin-top: 1rem;
+}
