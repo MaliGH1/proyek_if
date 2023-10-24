@@ -2,9 +2,9 @@
 
 @section('container')
 <section class="hero" id="home">
-    <div class="">
+    <div class="container flex left">
         <p class="">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda velit error enim dicta, vel fugit magnam tempora modi, consequuntur id libero soluta cumque minus? Dolorum ipsum commodi alias est at!
+            Selamat Datang AdminKu Awokaawokawokawokawokawok
         </p>
     </div>
 </section>

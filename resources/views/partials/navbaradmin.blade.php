@@ -56,12 +56,17 @@
             </div>
         </div>
         <div class="text-left text-sm mt-2 w-4/5 mx-auto text-gray-200 font-bold" id="submenu-edit">
-            <h1 class="cursor-pointer p-2 hover-bg-blue-600 rounded-md mt-1">
-                Supir
-            </h1>
-            <h1 class="cursor-pointer p-2 hover-bg-blue-600 rounded-md mt-1">
-                Mobil
-            </h1>
+            <a href="/supir" class="text-white block no-underline">
+                <h1 class="cursor-pointer p-2 hover-bg-blue-600 rounded-md mt-1">
+                    Supir
+                </h1>
+            </a>
+            <a href="/mobil" class="text-white block no-underline">
+                <h1 class="cursor-pointer p-2 hover-bg-blue-600 rounded-md mt-1">
+                    Mobil
+                </h1>
+            </a>
+
         </div>
         <div class="my-2 bg-gray-600 h-[1px]"></div>
         <div class="p-2.5 mt-3 flex items-center rounded-md px-4 duration-300 cursor-pointer" onclick="dropdown('keuangan')">
