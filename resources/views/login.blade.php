@@ -25,8 +25,11 @@
             <i class="fa-solid fa-lock"></i>
             <input type="password" placeholder="Password">
         </div>
-
-        <a href="/about"><button class="signup-button">Login</button></a>
+ <!-- Form submission with Laravel Blade syntax -->
+            <form method="GET" action="{{ route('login') }}">
+                @csrf
+                <button type="submit" class="signup-button">Login</button>
+            </form>
     </div>
     <div class="additional-links">
         <a href="/register">Sign Up</a>

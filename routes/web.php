@@ -1,5 +1,7 @@
 <?php
 
+namespace App\Http\Controllers\Auth;
+
 use Illuminate\Support\Facades\Route;
 use Symfony\Component\HttpKernel\DependencyInjection\RegisterControllerArgumentLocatorsPass;
 
@@ -16,15 +18,18 @@ use Symfony\Component\HttpKernel\DependencyInjection\RegisterControllerArgumentL
 
 
 use App\Http\Controllers\RegisterController;
+use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\Auth\LoginController as LoginControllerLoginController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Auth;
 
 Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/login', function () {
-    return view('login');
-});
+// Route::get('/login', function () {
+//     return view('login');
+// });
 
 // Route::get('/home', function () {
 //     return view('home', [
@@ -43,6 +48,8 @@ Route::get('/back-to-home', function () {
     return redirect('/home');
 })->name('back.home');
 
+Route::get('/login', 'Auth\LoginController@login')->name('login');
+// Route::get('/login', [LoginController::class, 'login']);
 // Route::get('/about', function () {
 //     return view('about', [
 //         "title" => "About"
@@ -63,13 +70,6 @@ Route::get('/homeadmin', function () {
     return view('admin/home');
 });
 
-Route::get('/homeadmin', function () {
-    return view('admin/home');
-});
-
-Route::get('/verifikasi', function () {
-    return view('admin/verifikasi');
-});
 //Route::get('verifikasi', \App\Http\Controllers\Admin\VerifikasiController::class);
 
 // // Route untuk halaman "Tentang Kami" (about us page)
@@ -92,7 +92,21 @@ Route::post('/register', [RegisterController::class, 'store']);
 // Route untuk akses menu Admin
 // Auth::routes();
 
-Route::group(['middleware' => ['auth', 'isAdmin'], 'prefix' => 'admin', 'as' => 'admin'], function () {
-    Route::resource('cars', \App\Http\Controllers\Admin\CarController::class);
+// Route::group(['middleware' => ['auth', 'isAdmin'], 'prefix' => 'admin', 'as' => 'admin'], function () {
+//     Route::resource('cars', \App\Http\Controllers\Admin\CarController::class);
    
+// // });
+// Route::resource('/admin', UserController::class)->except('homeadmin')->middleware('auth');
+
+Route::group(['middleware' => ['auth', 'checkRole:admin']], function () {
+    // Rute untuk admin
+});
+
+Route::group(['middleware' => ['auth', 'checkRole:customer']], function () {
+    Route::get('Home', 'StaffController@dashboard')->name('staff.dashboard');
+});
+
+Route::group(['middleware' => ['auth', 'checkRole:staff']], function () {
+    Route::get('homeadmin', 'StaffController@dashboard')->name('staff.dashboard');
+    
 });

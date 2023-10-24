@@ -112,4 +112,49 @@ return [
 
     'password_timeout' => 10800,
 
-];
+        'guards' => [
+            'web' => [
+                'driver' => 'session',
+                'provider' => 'users',
+            ],
+    
+            'admin' => [
+                'driver' => 'session',
+                'provider' => 'admins', // Gunakan provider 'admins' untuk admin
+            ],
+    
+            'customer' => [
+                'driver' => 'session',
+                'provider' => 'customers', // Gunakan provider 'customers' untuk customer
+            ],
+    
+            'staff' => [
+                'driver' => 'session',
+                'provider' => 'staffs', // Gunakan provider 'staffs' untuk staff
+            ],
+        ],
+    
+        'providers' => [
+            'users' => [
+                'driver' => 'eloquent',
+                'model' => App\Models\User::class,
+            ],
+    
+            'admins' => [
+                'driver' => 'eloquent',
+                'model' => App\Models\Admin::class,
+            ],
+    
+            'customers' => [
+                'driver' => 'eloquent',
+                'model' => App\Models\Customer::class,
+            ],
+    
+            'staffs' => [
+                'driver' => 'eloquent',
+                'model' => App\Models\Staff::class,
+            ],
+        ],
+    
+        // ...
+    ];
