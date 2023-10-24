@@ -25,8 +25,14 @@ class RegisterController extends Controller
             'no_telp' => 'required',
             'password' => 'required|min:5|max:255',
         ]);
-
+        
+        // Jika password tidak terlihat didatabase
+        // $validatedData['password'] = bcrypt(@$validatedData['password']);
+        // $validatedData['password]'] = Hash::make($validatedData['password']);
+        
         // dd('registrasi berhasil');
         Customer::create($validatedData);
+
+        return redirect('/login');
     }
 }
