@@ -85,22 +85,16 @@
                     totalHargaElement.textContent = totalHarga;
                 }
 
-                // Tambahkan event listener ke elemen-elemen yang relevan
                 selectMobil.addEventListener("change", hitungTotalHarga);
                 radioSupirYa.addEventListener("change", hitungTotalHarga);
                 radioSupirTidak.addEventListener("change", hitungTotalHarga);
-
-                // Panggil fungsi hitungTotalHarga saat halaman dimuat
+                
                 hitungTotalHarga();
             });
             </script>
 
             <!-- Tombol Submit -->
-            <!-- <a href="/home"><button class="px-4 py-2 bg-blue-500 text-white rounded-lg">Sewa Mobil</button></a> -->
-            <a href="/about"><button class="px-4 py-2 bg-blue-500 text-white rounded-lg">Sewa Mobil</button></a>
-            <!-- <div class="btnsewa" a href = \>
-                <button type="submit" class="px-4 py-2 bg-blue-500 text-white rounded-lg">Sewa Mobil</button>
-            </div> -->
+            <a href="/about"><button class="px-4 py-2 bg-blue-500 text-white rounded-lg">Sewa Mobil</button></a>           
 
         </form>
     </div>
