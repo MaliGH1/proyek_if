@@ -37,6 +37,11 @@ Route::get('/sewa', function () {
         "title" => "Sewa"
     ]);
 });
+Route::post('/sewa', function () {
+    return view('customer/home', [
+        "title" => "Home"
+    ]);
+});
 // Route::post('/sewa', 'SewaMobilController@hitung');
 
 // Rute untuk tombol kembali
