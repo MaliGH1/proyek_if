@@ -17,6 +17,7 @@
                 <label for="pilih" class="mobil-label">Pilih Mobil</label>
                 <div class="w-full">
                     <select id="pilih" name="pilih" class="mobil-input">
+                        <option value="mobil0" data-harga="0">Pilih Mobil</option>
                         <option value="mobil1" data-harga="500000">Mazda Rx-7</option>
                         <option value="mobil2" data-harga="650000">Toyota Alphard</option>
                         <option value="mobil3" data-harga="300000">Toyota Yaris</option>
@@ -65,10 +66,10 @@
                 const radioSupirTidak = document.querySelector('input[name="supir"][value="tidak"]');
                 const totalHargaElement = document.getElementById("total-harga");
 
-                // Inisialisasi total harga
+                // harga awal
                 let totalHarga = 0;
 
-                // Fungsi untuk menghitung total harga
+                // menghitung total harga
                 function hitungTotalHarga() {
                     const mobilValue = selectMobil.value;
                     const mobilOption = selectMobil.options[selectMobil.selectedIndex];
@@ -93,12 +94,6 @@
                 hitungTotalHarga();
             });
             </script>
-
-
-
-
-
-
 
             <!-- Tombol Submit -->
             <div class="btnsewa">
