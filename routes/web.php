@@ -76,17 +76,51 @@ Route::get('/homeadmin', function () {
 Route::get('/verifikasi', function () {
     return view('admin/verifikasi');
 });
+
+
+// supir
+Route::get('/supir', function () {
+    return view('supir/homesupir');
+});
+Route::get('/tambahsupir', function () {
+    return view('supir/tambahsupir');
+});
+Route::get('/hapussupir', function () {
+    return view('supir/hapussupir');
+});
+Route::get('/updatesupir', function () {
+    return view('supir/updatesupir');
+});
+Route::get('/back-to-supir', function () {
+    return redirect('/homesupir');
+})->name('back.homesupir');
+
+// Mobil
+Route::get('/mobil', function () {
+    return view('mobil/homemobil');
+});
+Route::get('/tambahmobil', function () {
+    return view('supir/tambahmobil');
+});
+Route::get('/hapusmobil', function () {
+    return view('supir/hapusmobil');
+});
+Route::get('/updatesupir', function () {
+    return view('supir/updatemobil');
+});
+Route::get('/back-to-mobil', function () {
+    return redirect('/homemobil');
+})->name('back.homemobil');
+
+// Rute untuk tombol kembali ke home admin
+Route::get('/back-to-homeadmin', function () {
+    return redirect('/homeadmin');
+})->name('back.homeadmin');
+
+
 //Route::get('verifikasi', \App\Http\Controllers\Admin\VerifikasiController::class);
 
-// // Route untuk halaman "Tentang Kami" (about us page)
-// Route::get('/about-us', function () {
-//     return view('about');
-// });
 
-// // Route untuk halaman "Hubungi Kami" (contact page)
-// Route::get('/contact', function () {
-//     return view('contact');
-// });
 
 // Route untuk mengirimkan formulir kontak
 Route::post('/contact', 'ContactController@store')->name('contact.submit');
@@ -100,5 +134,4 @@ Route::post('/register', [RegisterController::class, 'store']);
 
 Route::group(['middleware' => ['auth', 'isAdmin'], 'prefix' => 'admin', 'as' => 'admin'], function () {
     Route::resource('cars', \App\Http\Controllers\Admin\CarController::class);
-   
 });
