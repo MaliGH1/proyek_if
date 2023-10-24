@@ -92,7 +92,7 @@ Route::get('/updatesupir', function () {
     return view('supir/updatesupir');
 });
 Route::get('/back-to-supir', function () {
-    return redirect('/homesupir');
+    return redirect('supir/homesupir');
 })->name('back.homesupir');
 
 // Mobil
@@ -100,16 +100,16 @@ Route::get('/mobil', function () {
     return view('mobil/homemobil');
 });
 Route::get('/tambahmobil', function () {
-    return view('supir/tambahmobil');
+    return view('mobil/tambahmobil');
 });
 Route::get('/hapusmobil', function () {
-    return view('supir/hapusmobil');
+    return view('mobil/hapusmobil');
 });
 Route::get('/updatesupir', function () {
-    return view('supir/updatemobil');
+    return view('mobil/updatemobil');
 });
 Route::get('/back-to-mobil', function () {
-    return redirect('/homemobil');
+    return redirect('mobil/homemobil');
 })->name('back.homemobil');
 
 // Rute untuk tombol kembali ke home admin
