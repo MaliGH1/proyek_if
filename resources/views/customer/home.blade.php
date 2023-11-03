@@ -62,6 +62,11 @@
                 });
             }
         }
+        // Tambahkan event listener untuk tautan "Contact"
+        document.querySelector('a[href="#home"]').addEventListener('click', function(event) {
+            event.preventDefault();
+            scrollToSection('home');
+        });
 
         // Tambahkan event listener untuk tautan "About"
         document.querySelector('a[href="#about-section"]').addEventListener('click', function(event) {

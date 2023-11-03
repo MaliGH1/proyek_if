@@ -9,8 +9,8 @@
 </head>
 
 <body>
-    <nav class="bg-white">
-        <div class="container ">
+    <nav class="bg-white top-0 z-100 fixed w-full bg-blue-600 py-3 px-5">
+        <div class="container">
             <div class="flex items-center justify-center">
                 <!-- Mobile Menu -->
                 <div class="md:hidden flex items-center">
@@ -22,21 +22,23 @@
                     <a class="text-black text-2xl font-semibold no-underline" href="/home">DVJR</a>
                 </div>
                 <!-- Desktop Menu -->
-                <div class="hidden md:flex space-x-4 flex gap-5 items-center">
-
-                    <a class="text-black no-underline" href="/home">Home</a>
-                    <a class="text-black no-underline" href="/sewa">Sewa</a>
+                <div class="hidden md:flex space-x-1 flex gap-5 items-center">
                     <div class="text-center"> <!-- Menggunakan 'text-center' untuk tengah-tengah teks "DVJR" -->
                         <a class="text-black text-2xl font-semibold no-underline" href="/home">DVJR</a>
                     </div>
+                    <a class="text-black no-underline" href="#home">Home</a>
+                    <a class="text-black no-underline" href="/sewa">Sewa</a>
+
                     <a class="text-black block no-underline" href="#about-section">About</a>
                     <a class="text-black block no-underline" href="#contact-section">Contact</a>
                 </div>
                 <div class="ml-auto">
-                    <a href="/login" class="">
-                        <i class="fa-solid fa-right-to-bracket text-2xl" style="color: black;"></i>
-                    </a>
-
+                    <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
+                        Login
+                    </button>
+                    <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
+                        Sign Up
+                    </button>
                 </div>
             </div>
 
