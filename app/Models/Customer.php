@@ -3,15 +3,17 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Notifications\Notifiable;
+use Laravel\Sanctum\HasApiTokens;
 use Illuminate\Database\Eloquent\Model;
 
 class customer extends model{
+    use HasApiTokens, HasFactory, Notifiable;
 
-    protected $primaryKey = 'idCustomer';
-    protected $table ='customer';
+    protected $table ='customers';
 
     protected $fillable = [
-       'idCustomer', 'username', 'password', 'nama', 'alamat', 'email', 'no_telp','updated_at','created_at'
+        'username', 'password', 'nama', 'alamat', 'email', 'nohp',
     ];
 
 }
