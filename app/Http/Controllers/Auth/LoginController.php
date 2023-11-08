@@ -20,75 +20,40 @@ class LoginController extends Controller
      */
     protected $redirectTo = RouteServiceProvider::HOME;
 
+    use AuthenticatesUsers;
+
     public function __construct()
     {
-        $this->middleware('guest')->except([
-            'logout', 'dashboard'
-        ]);
+        $this->middleware('guest')->except('logout');
     }
-
-    public function login(Request $request)
-    {
-        $request->validate([
-            'username' => 'required',
-            'password' => 'required',
-        ]);
-   
-        $credentials = $request->only('username', 'password');
-        if (Auth::attempt($credentials)) {
-            return redirect('homeadmin')->intended('dashboard')
-                        ->withSuccess('Signed in');
-        }
-  
-        return redirect("login")->withSuccess('Login details are not valid');
-    }
-
-    // protected function authenticated(Request $request, $user)
-    // {
-    //     if ($user->isAdmin) {
-    //         // Pengguna adalah admin, alihkan ke halaman admin
-    //         return redirect('/homeadmin');
-    //     } else {
-    //         // Pengguna bukan admin, alihkan ke halaman pengguna biasa
-    //         return redirect('/home');
-    //     }
-    // }
 
     public function showLoginForm()
     {
         return view('login');
     }
 
-    public function logout(Request $request)
+    protected function authenticated(Request $request, $user)
     {
-        Auth::logout();
-        $request->session()->invalidate();
-        $request->session()->regenerateToken();
-        return redirect()->route('login')
-            ->withSuccess('You have logged out successfully!');;
-    }   
-    // public function login(Request $request)
-    // {
-    //     $this->validate($request, [
-    //         $this->username() => 'required',
-    //         'password' => 'required',
-    //     ]);
+        if ($user->isAdmin) {
+            // Pengguna adalah admin, alihkan ke halaman admin
+            return redirect('/homeadmin');
+        } else {
+            // Pengguna bukan admin, alihkan ke halaman customer
+            return redirect('/home');
+        }
+    }
 
-    //     if (Auth::attempt(['username' => $request->username, 'password' => $request->password])) {
-    //         // Pengguna berhasil masuk. Sekarang kita akan memeriksa perannya.
-    //         $user = Auth::user();
-    //         $role = $user->role;
+    protected function sendFailedLoginResponse(Request $request)
+    {
+        return redirect()->back()
+            ->withInput($request->only($this->username(), 'remember'))
+            ->withErrors([
+                $this->username() => 'Username atau password salah.',
+            ]);
+    }
 
-    //         if ($role === 'admin') {
-    //             return redirect()->route('/');
-    //         } elseif ($role === 'customer') {
-    //             return redirect()->route('home');
-    //         } elseif ($role === 'staff') {
-    //             return redirect()->route('homeadnmin');
-    //         }
-    //     }
-
-    //     return back()->withErrors(['login' => 'Login gagal. Periksa kembali username dan password Anda.']);
-    // }
-    
+    public function username()
+    {
+        return 'username'; // Ganti dengan kolom yang digunakan untuk otentikasi (dalam hal ini 'username')
+    }
 }

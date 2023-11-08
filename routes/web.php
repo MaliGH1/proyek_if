@@ -1,8 +1,7 @@
 <?php
 
-
+use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
-use Symfony\Component\HttpKernel\DependencyInjection\RegisterControllerArgumentLocatorsPass;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,7 +13,6 @@ use Symfony\Component\HttpKernel\DependencyInjection\RegisterControllerArgumentL
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-
 
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\Auth\LoginController as LoginControl;
@@ -59,7 +57,6 @@ Route::get('/back-to-home', function () {
 //         "title" => "About"
 //     ]);
 // });
-
 // Route::get('/contact', function () {
 //     return view('contact', [
 //         "title" => "Contact"
@@ -114,7 +111,6 @@ Route::get('/updatesupir', function () {
 Route::get('/back-to-mobil', function () {
     return redirect('mobil/homemobil');
 })->name('back.homemobil');
-
 // Rute untuk tombol kembali ke home admin
 Route::get('/back-to-homeadmin', function () {
     return redirect('/homeadmin');
@@ -151,12 +147,10 @@ Route::group(['middleware' => ['auth', 'checkRole:customer']], function () {
 //     });
 // });
 
-
-
-// Auth::routes();
 Route::get('/homeadmin', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/login', 'Auth\LoginController@showLoginForm')->name('login')->middleware('guest');
 Route::post('/login', 'Auth\LoginController@login');
+Route::get('/home', 'HomeController@index')->name('home');
 
 Route::group(['middleware' => ['auth','is_admin'],'prefix' => 'admin','as' => 'admin.'],function () {
     Route::get('users', [\App\Http\Controllers\UserController::class, 'index'])->name('users.index');
@@ -172,3 +166,20 @@ Route::group(['middleware' => ['auth','is_admin'],'prefix' => 'admin','as' => 'a
     Route::resource('bookings', \App\Http\Controllers\Admin\BookingController::class)->only(['index','destroy']);
     Route::resource('blogs', \App\Http\Controllers\Admin\BlogController::class);
 });
+
+
+Route::get('/', function () {
+    return view('welcome');
+});
+
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth', 'verified'])->name('dashboard');
+
+Route::middleware('auth')->group(function () {
+    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
+    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
+    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+});
+
+require __DIR__.'/auth.php';
