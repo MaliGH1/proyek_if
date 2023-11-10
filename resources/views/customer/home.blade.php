@@ -1,17 +1,22 @@
 @extends('layouts.main')
 
 @section('container')
-<section class="hero" id="home">
+<section class="hero">
     <!-- Home Page Section -->
-    <div class="h-screen bg-gray-100 flex flex-col justify-center items-center">
-        <!-- Konten beranda Anda -->
-        <div class="bg-blue-100 py-16">
-            <div class="container mx-auto text-center">
-                <h1 class="text-4xl font-semibold">Selamat datang di Situs Kami</h1>
-                <p class="mt-4 text-lg">Kami adalah tempat yang luar biasa untuk semua kebutuhan Anda.</p>
+    <div class="h-screen bg-gray-200 flex flex-col">
+        <div class="py-16 align-top" id="home">
+            <div class="h-screen bg-gray-100 flex flex-col justify-center items-center">
+                <!-- Konten beranda Anda -->
+                <div class="bg-blue-100 py-16">
+                    <div class="container mx-auto text-center">
+                        <h1 class="text-4xl font-semibold">Selamat datang di Situs Kami</h1>
+                        <p class="mt-4 text-lg">Kami adalah tempat yang luar biasa untuk semua kebutuhan Anda.</p>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
+
 
     <div class="h-screen bg-gray-200 flex flex-col">
         <!-- About Us Page Section -->
@@ -62,7 +67,7 @@
                 });
             }
         }
-        // Tambahkan event listener untuk tautan "Contact"
+        // Tambahkan event listener untuk tautan "home"
         document.querySelector('a[href="#home"]').addEventListener('click', function(event) {
             event.preventDefault();
             scrollToSection('home');
