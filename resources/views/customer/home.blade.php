@@ -4,7 +4,7 @@
 <section class="hero">
     <!-- Home Page Section -->
     <div class="h-screen bg-gray-200 flex flex-col">
-        <div class="py-16 align-top" id="home">
+        <div class="py-16 align-top bg-gray-200" id="home">
             <div class="h-screen bg-gray-100 flex flex-col justify-center items-center">
                 <!-- Konten beranda Anda -->
                 <div class="bg-blue-100 py-16">
@@ -20,7 +20,7 @@
 
     <div class="h-screen bg-gray-200 flex flex-col">
         <!-- About Us Page Section -->
-        <div id="about-section" class="py-16 align-top">
+        <div id="about-section" class="py-16 bg-gray-200 align-top">
             <div class="container mx-auto">
                 <h1 class="text-4xl font-semibold text-center">Tentang Kami</h1>
                 <p class="mt-4 text-lg">Kami adalah sebuah perusahaan yang berdedikasi untuk memberikan solusi terbaik kepada pelanggan kami. Dengan pengalaman bertahun-tahun, kami siap melayani Anda dengan sepenuh hati.</p>
@@ -28,10 +28,10 @@
         </div>
     </div>
 
-    <div class="bg-gray-100 py-16 flex flex-col justify-center items-center">
+    <div class="h-screen bg-gray-200 flex flex-col">
         <!-- Konten "Hubungi Kami" Anda -->
         <!-- Contact Page Section -->
-        <div id="contact-section" class="bg-gray-100 py-16">
+        <div id="contact-section" class="bg-gray-200 py-16">
             <div class="container mx-auto">
                 <h1 class="text-4xl font-semibold text-center">Hubungi Kami</h1>
                 <div class="mt-8 max-w-md mx-auto">
