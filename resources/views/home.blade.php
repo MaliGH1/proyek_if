@@ -1,5 +1,3 @@
-commit
-a6818f9
 @extends('layouts.main')
 @section('container')
 <section class="hero" id="home">
