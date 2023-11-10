@@ -22,6 +22,7 @@ use Illuminate\Support\Facades\Auth;
 
 Route::middleware(['admin'])->group(function () {
     Route::get('/login', 'LoginController@index')->name('login');
+    Route::post('/login/cek', 'LoginController@authenticated')->name('login.cek');
     // ... rute lainnya
 });
 
@@ -165,8 +166,6 @@ Route::group(['middleware' => ['auth', 'checkRole:customer']], function () {
 // });
 
 Route::get('/homeadmin', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Route::get('/login', 'Auth\LoginController@showLoginForm')->name('login')->middleware('guest');
-Route::post('/login/add', 'Auth\LoginController@store')->name('login.store');
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::group(['middleware' => ['auth','is_admin'],'prefix' => 'admin','as' => 'admin.'],function () {
