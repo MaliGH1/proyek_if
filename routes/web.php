@@ -18,9 +18,25 @@ use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\Auth\LoginController as LoginControl;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Auth;
+// use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return view('welcome');
+Route::middleware(['admin'])->group(function () {
+    Route::get('/login', 'LoginController@index')->name('login');
+    // ... rute lainnya
+});
+
+
+Route::get('/register', [App\Http\Controllers\Auth\RegisteredUserController::class, 'store'])->name('register');
+Route::post('/register/add', [App\Http\Controllers\Auth\RegisteredUserController::class, 'create'])->name('register.store');
+
+Route::middleware(['web'])->group(function () {
+    Route::get('/home', function () {
+        return view('home');
+    });
+
+    Auth::routes(['register' => false]);
+
+    Route::get('/home', [HomeController::class, 'index'])->name('home');
 });
 
 // Route::get('/login', function () {
@@ -125,8 +141,9 @@ Route::get('/back-to-homeadmin', function () {
 // Route untuk mengirimkan formulir kontak
 Route::get('/contact', 'ContactController@store')->name('contact.submit');
 
-Route::get('/register', [RegisterController::class, 'index'])->name('register');
-Route::post('/register/add', [RegisterController::class, 'register'])->name('register.store');
+
+
+
 
 
 // Route untuk akses menu Admin
@@ -149,7 +166,7 @@ Route::group(['middleware' => ['auth', 'checkRole:customer']], function () {
 
 Route::get('/homeadmin', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/login', 'Auth\LoginController@showLoginForm')->name('login')->middleware('guest');
-Route::post('/login', 'Auth\LoginController@login');
+Route::post('/login/add', 'Auth\LoginController@store')->name('login.store');
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::group(['middleware' => ['auth','is_admin'],'prefix' => 'admin','as' => 'admin.'],function () {
@@ -167,19 +184,5 @@ Route::group(['middleware' => ['auth','is_admin'],'prefix' => 'admin','as' => 'a
     Route::resource('blogs', \App\Http\Controllers\Admin\BlogController::class);
 });
 
-
-Route::get('/', function () {
-    return view('welcome');
-});
-
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
-
-Route::middleware('auth')->group(function () {
-    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
-    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
-    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
-});
 
 require __DIR__.'/auth.php';

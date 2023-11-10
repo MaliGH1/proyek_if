@@ -2,15 +2,26 @@
 
 namespace App\Http\Controllers\Auth;
 
+use App\User;
 use App\Http\Controllers\Controller;
-use App\Providers\RouteServiceProvider;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Validator;
+use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
-use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvider;
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
 
 class LoginController extends Controller
 {
+    /*
+    |--------------------------------------------------------------------------
+    | Login Controller
+    |--------------------------------------------------------------------------
+    |
+    | This controller handles authenticating users for the application and
+    | redirecting them to your home screen. The controller uses a trait
+    | to conveniently provide its functionality to your applications.
+    |
+    */
+
     use AuthenticatesUsers;
 
     /**
@@ -18,42 +29,25 @@ class LoginController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = RouteServiceProvider::HOME;
+    protected $redirectTo = '/home';
 
-    use AuthenticatesUsers;
-
+    /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
     public function __construct()
     {
         $this->middleware('guest')->except('logout');
     }
 
-    public function showLoginForm()
-    {
-        return view('login');
-    }
-
     protected function authenticated(Request $request, $user)
-    {
-        if ($user->isAdmin) {
-            // Pengguna adalah admin, alihkan ke halaman admin
-            return redirect('/homeadmin');
-        } else {
-            // Pengguna bukan admin, alihkan ke halaman customer
-            return redirect('/home');
-        }
+{
+    if ($user->isAdmin()) {
+        return redirect()->route('admin.dashboard');
     }
 
-    protected function sendFailedLoginResponse(Request $request)
-    {
-        return redirect()->back()
-            ->withInput($request->only($this->username(), 'remember'))
-            ->withErrors([
-                $this->username() => 'Username atau password salah.',
-            ]);
-    }
+    return redirect(RouteServiceProvider::HOME);
+}
 
-    public function username()
-    {
-        return 'username'; // Ganti dengan kolom yang digunakan untuk otentikasi (dalam hal ini 'username')
-    }
 }
