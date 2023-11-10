@@ -44,11 +44,12 @@ class User extends Authenticatable
      * @var array<string, string>
      */
     protected $casts = [
-        'password' => 'hashed',
         'is_admin' => 'boolean',
+        'password' => 'hashed',
     ];
+    
     public function isAdmin()
     {
-        return $this->is_admin;
+        return $this->role === 'admin'; // Gantilah 'role' dengan kolom yang menunjukkan peran pengguna
     }
 }

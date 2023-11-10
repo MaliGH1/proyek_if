@@ -42,12 +42,12 @@ class LoginController extends Controller
     }
 
     protected function authenticated(Request $request, $user)
-{
-    if ($user->isAdmin()) {
-        return redirect()->route('admin.dashboard');
+    {
+        if ($user->isAdmin()) {
+            return redirect()->route('admin.home');
+        } else {
+            return redirect()->route('/home'); // Ganti 'customer.dashboard' dengan rute untuk dashboard customer
+        }
     }
-
-    return redirect(RouteServiceProvider::HOME);
-}
 
 }
