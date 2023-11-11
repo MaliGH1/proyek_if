@@ -7,7 +7,9 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
-use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use App\Providers\RouteServiceProvider;
+use Illuminate\Foundation\Auth\AuthenticatesUsers; 
+use Illuminate\Http\Request;
 
 class LoginController extends Controller
 {
@@ -23,31 +25,41 @@ class LoginController extends Controller
     */
 
     use AuthenticatesUsers;
-
-    /**
-     * Where to redirect users after login.
-     *
-     * @var string
-     */
-    protected $redirectTo = '/home';
-
-    /**
-     * Create a new controller instance.
-     *
-     * @return void
-     */
+ 
+    protected $redirectTo = RouteServiceProvider::HOME;
+ 
     public function __construct()
     {
         $this->middleware('guest')->except('logout');
     }
 
-    protected function authenticated(Request $request, $user)
-    {
-        if ($user->isAdmin()) {
-            return redirect()->route('admin.home');
-        } else {
-            return redirect()->route('/home'); // Ganti 'customer.dashboard' dengan rute untuk dashboard customer
+    public function index(){
+        return view('login');
+    }
+ 
+    public function login(Request $request)
+    {   
+        $input = $request->all();
+       
+        $this->validate($request, [
+            'username' => 'required',
+            'password' => 'required',
+        ]);
+       
+        if(auth()->attempt(array('username' => $input['username'], 'password' => $input['password'])))
+        {
+            if (auth()->user()->role == 'admin') 
+            {
+              return redirect()->route('home.admin');
+            }else
+            {
+              return redirect()->route('home.customer');
+            }
+        }else{
+            return redirect()->route('login')
+                ->with('error','Username And Password Are Wrong.');
         }
+            
     }
 
 }

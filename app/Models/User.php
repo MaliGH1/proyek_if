@@ -8,6 +8,7 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use App\Http\Controllers\Auth\LoginController;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
+use Illuminate\Database\Eloquent\Casts\Attribute;
 
 class User extends Authenticatable
 {
@@ -18,14 +19,14 @@ class User extends Authenticatable
      *
      * @var array<int, string>
      */
-    //  protected $fillable = [
-    //      'name',
-    //      'username',
-    //      'alamat',
-    //      'email',
-    //      'phone',
-    //      'password',
-    //  ];
+     protected $fillable = [
+         'name',
+         'username',
+         'alamat',
+         'email',
+         'phone',
+         'password',
+     ];
 
     protected $guarded = ["id"];
 
@@ -48,8 +49,10 @@ class User extends Authenticatable
         'password' => 'hashed',
     ];
     
-    public function isAdmin()
+    protected function role(): Attribute
     {
-        return $this->role === 'admin'; // Gantilah 'role' dengan kolom yang menunjukkan peran pengguna
+        return new Attribute(
+            get: fn ($value) =>  ["customer", "admin"][$value]??null,
+        );
     }
 }

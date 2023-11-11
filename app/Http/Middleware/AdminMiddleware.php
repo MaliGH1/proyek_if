@@ -8,10 +8,7 @@ use Symfony\Component\HttpFoundation\Response;
 
 class AdminMiddleware
 {
-    protected $routeMiddleware = [
-        // ...
-        'admin' => \App\Http\Middleware\AdminMiddleware::class,
-    ];
+    
     /**
      * Handle an incoming request.
      *

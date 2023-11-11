@@ -18,11 +18,12 @@ use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\Auth\LoginController as LoginControl;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Auth;
-// use Illuminate\Support\Facades\Route;
 
-Route::middleware(['admin'])->group(function () {
-    Route::get('/login', 'LoginController@index')->name('login');
-    Route::post('/login/cek', 'LoginController@authenticated')->name('login.cek');
+Route::get('logs', [\Rap2hpoutre\LaravelLogViewer\LogViewerController::class, 'index']);
+
+Route::middleware(['auth'])->group(function () {
+    Route::get('/login', [App\Http\Controllers\Auth\LoginController::class, 'index'])->name('login');
+    Route::post('/login/cek', [App\Http\Controllers\Auth\LoginController::class, 'login'])->name('login.cek');
     // ... rute lainnya
 });
 
@@ -30,15 +31,6 @@ Route::middleware(['admin'])->group(function () {
 Route::get('/register', [App\Http\Controllers\Auth\RegisteredUserController::class, 'store'])->name('register');
 Route::post('/register/add', [App\Http\Controllers\Auth\RegisteredUserController::class, 'create'])->name('register.store');
 
-Route::middleware(['web'])->group(function () {
-    Route::get('/home', function () {
-        return view('home');
-    });
-
-    Auth::routes(['register' => false]);
-
-    Route::get('/home', [HomeController::class, 'index'])->name('home');
-});
 
 // Route::get('/login', function () {
 //     return view('login');
@@ -80,10 +72,7 @@ Route::get('/back-to-home', function () {
 //     ]);
 // });
 
-// Route untuk halaman beranda (home page)
-Route::get('/home', function () {
-    return view('customer/home');
-});
+
 // Route::get('/homeadmin', function () {
 //     return view('admin/home');
 // });
@@ -143,21 +132,6 @@ Route::get('/back-to-homeadmin', function () {
 Route::get('/contact', 'ContactController@store')->name('contact.submit');
 
 
-
-
-
-
-// Route untuk akses menu Admin
-// Auth::routes();
-
-Route::group(['middleware' => ['auth', 'isAdmin'], 'prefix' => 'admin', 'as' => 'admin'], function () {
-    Route::resource('cars', \App\Http\Controllers\Admin\CarController::class);
-});
-
-Route::group(['middleware' => ['auth', 'checkRole:customer']], function () {
-    Route::get('Home', 'StaffController@dashboard')->name('staff.dashboard');
-});
-
 // Route::group(['middleware' => ['auth', 'checkRole:staff']], function () {
 //     Route::get('homeadmin', 'StaffController@dashboard')->name('staff.dashboard');
 //     Route::get('/verifikasi', function () {
@@ -165,10 +139,14 @@ Route::group(['middleware' => ['auth', 'checkRole:customer']], function () {
 //     });
 // });
 
-Route::get('/homeadmin', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Route::get('/home', 'HomeController@index')->name('home');
+Auth::routes();
 
-Route::group(['middleware' => ['auth','is_admin'],'prefix' => 'admin','as' => 'admin.'],function () {
+Route::middleware(['auth','user-access:customer'])->group(function () {
+    Route::get('/home', [HomeController::class, 'index'])->name('home.customer');
+});
+
+Route::middleware(['auth','user-access:admin'])->group(function () {
+    Route::get('/homeadmin', [\App\Http\Controllers\HomeController::class, 'adminHome'])->name('home.admin');
     Route::get('users', [\App\Http\Controllers\UserController::class, 'index'])->name('users.index');
 
     Route::get('profile', [\App\Http\Controllers\ProfileController::class, 'show'])->name('profile.show');
