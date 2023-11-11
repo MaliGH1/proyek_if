@@ -47,6 +47,11 @@ Route::get('/sewa', function () {
         "title" => "Sewa"
     ]);
 });
+Route::get('/sewamobil', function () {
+    return view('customer/sewamobil', [
+        "title" => "Sewa"
+    ]);
+});
 Route::post('/sewa', function () {
     return view('customer/home', [
         "title" => "Home"

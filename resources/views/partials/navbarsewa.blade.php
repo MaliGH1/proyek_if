@@ -10,19 +10,19 @@
 
 <body>
     <!-- Navbar -->
-    <nav class="navbar">
-        <!-- Logo -->
-        <div class="navbar-content">
-            <span class="text-yellow-500">D</span>
-            <span class="text-yellow-500">V</span>
-            <span class="text-yellow-500">J</span>
-            <span class="text-yellow-500">R</span>
+    <nav class="navbar bg-black top-0 z-100 fixed w-full">
+        <div class="container">
+            <!-- Logo -->
+            <div class="navbar-content">
+                <a class="text-yellow-300 text-2xl font-semibold no-underline" href="/home">DVJR</a>
+            </div>
+
+            <!-- Tombol Kembali -->
+            <a href="{{ route('back.home') }}" class="text-white text-sm px-3 py-1 bg-red-500 rounded-full hover:bg-red-600 no-underline">
+                Kembali
+            </a>
         </div>
 
-        <!-- Tombol Kembali -->
-        <a href="{{ route('back.home') }}" class="text-white text-sm px-3 py-1 bg-red-500 rounded-full hover:bg-red-600 no-underline">
-            Kembali
-        </a>
     </nav>
 
 </body>

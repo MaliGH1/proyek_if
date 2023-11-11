@@ -60,41 +60,41 @@
             </div>
 
             <script>
-            document.addEventListener("DOMContentLoaded", function() {
-                const selectMobil = document.getElementById("pilih");
-                const radioSupirYa = document.querySelector('input[name="supir"][value="ya"]');
-                const radioSupirTidak = document.querySelector('input[name="supir"][value="tidak"]');
-                const totalHargaElement = document.getElementById("total-harga");
+                document.addEventListener("DOMContentLoaded", function() {
+                    const selectMobil = document.getElementById("pilih");
+                    const radioSupirYa = document.querySelector('input[name="supir"][value="ya"]');
+                    const radioSupirTidak = document.querySelector('input[name="supir"][value="tidak"]');
+                    const totalHargaElement = document.getElementById("total-harga");
 
-                // harga awal
-                let totalHarga = 0;
+                    // harga awal
+                    let totalHarga = 0;
 
-                // menghitung total harga
-                function hitungTotalHarga() {
-                    const mobilValue = selectMobil.value;
-                    const mobilOption = selectMobil.options[selectMobil.selectedIndex];
-                    const mobilHarga = parseFloat(mobilOption.getAttribute("data-harga"));
+                    // menghitung total harga
+                    function hitungTotalHarga() {
+                        const mobilValue = selectMobil.value;
+                        const mobilOption = selectMobil.options[selectMobil.selectedIndex];
+                        const mobilHarga = parseFloat(mobilOption.getAttribute("data-harga"));
 
-                    if (radioSupirYa.checked) {
-                        const hargaSupir = parseFloat(radioSupirYa.getAttribute("data-harga"));
-                        totalHarga = mobilHarga + hargaSupir;
-                    } else {
-                        totalHarga = mobilHarga;
+                        if (radioSupirYa.checked) {
+                            const hargaSupir = parseFloat(radioSupirYa.getAttribute("data-harga"));
+                            totalHarga = mobilHarga + hargaSupir;
+                        } else {
+                            totalHarga = mobilHarga;
+                        }
+
+                        totalHargaElement.textContent = totalHarga;
                     }
 
-                    totalHargaElement.textContent = totalHarga;
-                }
+                    selectMobil.addEventListener("change", hitungTotalHarga);
+                    radioSupirYa.addEventListener("change", hitungTotalHarga);
+                    radioSupirTidak.addEventListener("change", hitungTotalHarga);
 
-                selectMobil.addEventListener("change", hitungTotalHarga);
-                radioSupirYa.addEventListener("change", hitungTotalHarga);
-                radioSupirTidak.addEventListener("change", hitungTotalHarga);
-                
-                hitungTotalHarga();
-            });
+                    hitungTotalHarga();
+                });
             </script>
 
             <!-- Tombol Submit -->
-            <a href="/home"><button class="px-4 py-2 bg-blue-500 text-white rounded-lg">Sewa Mobil</button></a>           
+            <a href="/home"><button class="px-4 py-2 bg-blue-500 text-white rounded-lg">Sewa Mobil</button></a>
 
         </form>
     </div>
