@@ -74,7 +74,7 @@ Route::get('/back-to-home', function () {
 
 
 // Route untuk halaman beranda (home page)
-Route::get('/home', function () {
+Route::get('/custhome', function () {
     return view('customer/home');
 });
 Route::get('/', function () {
@@ -148,14 +148,14 @@ Route::get('/contact', 'ContactController@store')->name('contact.submit');
 
 Auth::routes();
 
-Route::middleware(['auth','user-access:customer'])->group(function () {
+Route::middleware(['auth', 'user-access:customer'])->group(function () {
     Route::get('/home', [HomeController::class, 'index'])->name('home.customer');
 });
 
-Route::middleware(['auth','user-access:admin'])->group(function () {
+Route::middleware(['auth', 'user-access:admin'])->group(function () {
     Route::get('/homeadmin', [\App\Http\Controllers\HomeController::class, 'adminHome'])->name('home.admin');
 });
-    Route::group(['middleware' => ['auth', 'is_admin'], 'prefix' => 'admin', 'as' => 'admin.'], function () {
+Route::group(['middleware' => ['auth', 'is_admin'], 'prefix' => 'admin', 'as' => 'admin.'], function () {
     Route::get('users', [\App\Http\Controllers\UserController::class, 'index'])->name('users.index');
 
     Route::get('profile', [\App\Http\Controllers\ProfileController::class, 'show'])->name('profile.show');
