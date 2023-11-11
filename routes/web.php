@@ -84,6 +84,9 @@ Route::get('/back-to-home', function () {
 Route::get('/home', function () {
     return view('customer/home');
 });
+Route::get('/', function () {
+    return view('welcome');
+});
 // Route::get('/homeadmin', function () {
 //     return view('admin/home');
 // });
@@ -168,7 +171,7 @@ Route::group(['middleware' => ['auth', 'checkRole:customer']], function () {
 Route::get('/homeadmin', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::group(['middleware' => ['auth','is_admin'],'prefix' => 'admin','as' => 'admin.'],function () {
+Route::group(['middleware' => ['auth', 'is_admin'], 'prefix' => 'admin', 'as' => 'admin.'], function () {
     Route::get('users', [\App\Http\Controllers\UserController::class, 'index'])->name('users.index');
 
     Route::get('profile', [\App\Http\Controllers\ProfileController::class, 'show'])->name('profile.show');
@@ -177,11 +180,11 @@ Route::group(['middleware' => ['auth','is_admin'],'prefix' => 'admin','as' => 'a
     Route::resource('types', \App\Http\Controllers\Admin\TypeController::class);
     Route::resource('testimonials', \App\Http\Controllers\Admin\TestimonialController::class);
     Route::resource('teams', \App\Http\Controllers\Admin\TeamController::class);
-    Route::resource('settings', \App\Http\Controllers\Admin\SettingController::class)->only(['index','store','update']);
-    Route::resource('contacts', \App\Http\Controllers\Admin\ContactController::class)->only(['index','destroy']);
-    Route::resource('bookings', \App\Http\Controllers\Admin\BookingController::class)->only(['index','destroy']);
+    Route::resource('settings', \App\Http\Controllers\Admin\SettingController::class)->only(['index', 'store', 'update']);
+    Route::resource('contacts', \App\Http\Controllers\Admin\ContactController::class)->only(['index', 'destroy']);
+    Route::resource('bookings', \App\Http\Controllers\Admin\BookingController::class)->only(['index', 'destroy']);
     Route::resource('blogs', \App\Http\Controllers\Admin\BlogController::class);
 });
 
 
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';
