@@ -38,6 +38,16 @@ Route::post('/register/add', [App\Http\Controllers\Auth\RegisteredUserController
 //     ]);
 // });
 
+Route::get('/sewa', function () {
+    return view('customer/sewa', [
+        "title" => "Sewa"
+    ]);
+});
+Route::post('/sewa', function () {
+    return view('customer/home', [
+        "title" => "Home"
+    ]);
+});
 // Route::post('/sewa', 'SewaMobilController@hitung');
 
 // Rute untuk tombol kembali
@@ -60,7 +70,9 @@ Route::get('/back-to-home', function () {
 
 
 // Route untuk halaman beranda (home page)
-Route::get('/home', [\App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/home', function () {
+    return view('customer/home');
+});
 Route::get('/', function () {
     return view('welcome');
 });
@@ -132,10 +144,14 @@ Route::get('/contact', 'ContactController@store')->name('contact.submit');
 
 Auth::routes();
 
-Route::middleware(['admin'])->group(function () {
+Route::middleware(['auth','user-access:customer'])->group(function () {
+    Route::get('/home', [HomeController::class, 'index'])->name('home.customer');
+});
+
+Route::middleware(['auth','user-access:admin'])->group(function () {
     Route::get('/homeadmin', [\App\Http\Controllers\HomeController::class, 'adminHome'])->name('home.admin');
 });
-    Route::group(['middleware' => ['auth', 'admin'], 'prefix' => 'admin', 'as' => 'admin.'], function () {
+    Route::group(['middleware' => ['auth', 'is_admin'], 'prefix' => 'admin', 'as' => 'admin.'], function () {
     Route::get('users', [\App\Http\Controllers\UserController::class, 'index'])->name('users.index');
 
     Route::get('profile', [\App\Http\Controllers\ProfileController::class, 'show'])->name('profile.show');
