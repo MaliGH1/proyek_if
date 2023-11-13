@@ -20,12 +20,18 @@ class RedirectIfAuthenticated
         $guards = empty($guards) ? [null] : $guards;
 
         foreach ($guards as $guard) {
-            if (Auth::guard($guard)->check()){//&& $request->routeIs('register')) {
-                return $next($request);
-                
+            if (Auth::guard($guard)->check()) {
+                // Jika user adalah admin, arahkan ke halaman admin
+                if ($guard === 'admin') {
+                    return redirect()->route('admin.home');
+                } 
+                // Jika user adalah user biasa, arahkan ke halaman user
+                elseif ($guard === 'user') {
+                    return redirect()->route('home');
+                }
             }
         }
-        return redirect('/home');
-        
+
+        return $next($request);
     }
 }

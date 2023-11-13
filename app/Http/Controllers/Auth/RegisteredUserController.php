@@ -32,7 +32,7 @@ class RegisteredUserController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/home';
+    protected $redirectTo = '/login';
 
     /**
      * Create a new controller instance.
@@ -91,7 +91,7 @@ class RegisteredUserController extends Controller
 
         Auth::login($user);
 
-        return redirect('/home');
+        return redirect('/login');
     }
 
     
