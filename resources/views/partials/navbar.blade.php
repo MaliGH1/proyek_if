@@ -33,10 +33,19 @@
                     <a class="text-white block no-underline" href="#contact-section">Contact</a>
                 </div>
                 <div class="ml-auto">
-                    <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
-                        Logout
-                    </button>
+                    <!-- @if(Auth::check())
+                        <a href="{{ route('logout') }}" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
+                            Logout
+                        </a>
+                    @endif -->
+                    <form action="{{ route('logout') }}" method="POST">
+                        @csrf
+                        <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
+                            Logout
+                        </button>
+                    </form>
                 </div>
+
             </div>
 
             <!-- Mobile Menu Content (Hidden by default) -->
@@ -59,6 +68,7 @@
             mobileMenu.classList.toggle('hidden');
         });
     </script>
+    
 </body>
 
 </html>
