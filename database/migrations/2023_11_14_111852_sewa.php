@@ -11,9 +11,9 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('transaksi_sewa', function (Blueprint $table) {
+        Schema::create('sewa', function (Blueprint $table) {
             $table->id('nota');
-            $table->unsignedBigInteger('id_mobil');
+            $table->unsignedBigInteger('nopol');
             $table->unsignedBigInteger('id_pelanggan');
             $table->date('tanggal_sewa');
             $table->date('tanggal_kembali');
@@ -21,12 +21,12 @@ return new class extends Migration
             $table->enum('status_bayar', ['lunas', 'belum lunas'])->default('belum lunas');
             $table->decimal('pembayaran', 10, 2)->nullable();
 
-            $table->unsignedBigInteger('id_sopir')->nullable();
+            $table->unsignedBigInteger('noktp')->nullable();
             $table->timestamps();
 
-            $table->foreign('id_mobil')->references('nopol')->on('mobils')->onDelete('cascade');
+            $table->foreign('nopol')->references('nopol')->on('mobil')->onDelete('cascade');
             $table->foreign('id_pelanggan')->references('id')->on('customers')->onDelete('cascade');
-            $table->foreign('id_sopir')->references('noktp')->on('sopir')->onDelete('set null');
+            $table->foreign('noktp')->references('noktp')->on('supir')->onDelete('set null');
         });
     }
 

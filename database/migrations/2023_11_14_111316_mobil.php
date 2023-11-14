@@ -18,7 +18,7 @@ return new class extends Migration
             $table->date('tgl_pjk');
             $table->string('status'); 
             $table->string('warna');
-            $table->int('sewa');
+            $table->integer('sewa');
             $table->string('foto');
             $table->timestamps();
         });
