@@ -34,10 +34,7 @@
                 </div>
                 <div class="ml-auto">
                     <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
-                        Login
-                    </button>
-                    <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
-                        Sign Up
+                        Logout
                     </button>
                 </div>
             </div>
