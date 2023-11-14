@@ -11,16 +11,22 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('sewa', function (Blueprint $table) {
+        Schema::create('transaksi_sewa', function (Blueprint $table) {
             $table->id('nota');
-            $table->string('nama');
-            $table->string('type');
-            $table->date('tgl_pjk');
-            $table->string('status'); 
-            $table->string('warna');
-            $table->int('sewa');
-            $table->string('image');
+            $table->unsignedBigInteger('id_mobil');
+            $table->unsignedBigInteger('id_pelanggan');
+            $table->date('tanggal_sewa');
+            $table->date('tanggal_kembali');
+            $table->boolean('sopir')->default(false);
+            $table->enum('status_bayar', ['lunas', 'belum lunas'])->default('belum lunas');
+            $table->decimal('pembayaran', 10, 2)->nullable();
+
+            $table->unsignedBigInteger('id_sopir')->nullable();
             $table->timestamps();
+
+            $table->foreign('id_mobil')->references('nopol')->on('mobils')->onDelete('cascade');
+            $table->foreign('id_pelanggan')->references('id')->on('customers')->onDelete('cascade');
+            $table->foreign('id_sopir')->references('noktp')->on('sopir')->onDelete('set null');
         });
     }
 

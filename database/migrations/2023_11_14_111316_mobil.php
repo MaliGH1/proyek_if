@@ -13,13 +13,13 @@ return new class extends Migration
     {
         Schema::create('mobil', function (Blueprint $table) {
             $table->id('nopol');
-            $table->string('nama');
+            $table->string('nama_mobil');
             $table->string('type');
             $table->date('tgl_pjk');
             $table->string('status'); 
             $table->string('warna');
             $table->int('sewa');
-            $table->string('image');
+            $table->string('foto');
             $table->timestamps();
         });
     }

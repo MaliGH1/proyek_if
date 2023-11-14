@@ -13,11 +13,11 @@ return new class extends Migration
     {
         Schema::create('customers', function (Blueprint $table) {
             $table->id(); // Kolom ID otomatis
-            $table->string('nama_lengkap');
+            $table->string('nama');
             $table->string('username')->unique();
             $table->string('email')->unique();
             $table->string('alamat');
-            $table->string('no_hp')->unique();
+            $table->string('nohp')->unique();
             $table->string('password');
             $table->timestamps(); // Kolom created_at dan updated_at otomatis
         });
