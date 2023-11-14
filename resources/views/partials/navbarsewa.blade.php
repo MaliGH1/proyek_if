@@ -18,7 +18,7 @@
             </div>
 
             <!-- Tombol Kembali -->
-            <a href="{{ route('back.home') }}" class="text-white text-sm px-3 py-1 bg-red-500 rounded-full hover:bg-red-600 no-underline">
+            <a href="{{ route('back.home') }}" class="text-white text-sm px-3 py-1 bg-blue-500 hover:bg-blue-700 rounded-full no-underline">
                 Kembali
             </a>
         </div>
