@@ -21,7 +21,6 @@ class Admin extends Authenticatable
      protected $fillable = [
          'username',
          'password',
-         'role'
      ];
 
     protected $guarded = ["id"];
@@ -41,14 +40,6 @@ class Admin extends Authenticatable
      * @var array<string, string>
      */
     protected $casts = [
-        'role' => 'enum',
         'password' => 'hashed',
     ];
-    
-    protected function role(): Attribute
-    {
-        return new Attribute(
-            get: fn ($value) =>  ["admin", "user"][$value]??null,
-        );
-    }
 }

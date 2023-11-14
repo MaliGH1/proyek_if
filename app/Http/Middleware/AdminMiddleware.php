@@ -15,11 +15,8 @@ class AdminMiddleware
      *
      * @param  \Closure(\Illuminate\Http\Request): (\Symfony\Component\HttpFoundation\Response)  $next
      */
-    public function handle(Request $request, Closure $next): Response
+    protected function redirectTo(Request $request): ?string
     {
-        if(!Auth::guard('admin')->check()){
-            return redirect('login');
-        }
-        return $next($request);
+        return $request->expectsJson() ? null : route('login');
     }
 }
