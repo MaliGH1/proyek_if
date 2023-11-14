@@ -35,12 +35,13 @@ class AuthenticatedSessionController extends Controller
                 'username.required' => 'Email atau Username dibutuhkan',
                 'username.email' => 'Username Invalid',
                 'username.exists' => 'Username tidak terdaftar di sistem',
+                'password.exists' => 'Password salah!',
                 'password.required' => 'Password dibutuhkan'
             ]);
         } else {
             $request->validate([
                 'username' => 'required|exists:users,username',
-                'password' => 'required|min:5|max:45|exists:users,password',
+                'password' => 'required|min:5|max:45',
             ], [
                 'username.required' => ' Username dibutuhkan',
                 'username.exists' => 'Username tidak terdaftar di sistem',
