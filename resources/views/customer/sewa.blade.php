@@ -2,7 +2,7 @@
 @extends('layouts.mainsewa')
 
 @section('container')
-<div class="container mx-auto mt-8">
+<div class="bg-black ">
     <div class="layout">
         <h1 class="judul">Formulir Pengisian Penyewaan Mobil</h1>
 

@@ -21,7 +21,7 @@
     </style>
 </head>
 
-<body class="bg-white">
+<body class="bg-black">
 
     @include('partials.navbaradmin')
 
