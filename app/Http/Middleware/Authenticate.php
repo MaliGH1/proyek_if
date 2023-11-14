@@ -15,10 +15,10 @@ class Authenticate extends Middleware
     {
         //return $request->expectsJson() ? null : route('login');
         if (!$request->expectsJson()) {
-            if ($request->routeIs('admin.*')) {
+            if ($request->routeIs('admin.*') && !Auth::guard('admin')->check()) {
                 session()->flash('fail', 'Kamu harus Login terlebih dahulu');
                 return route('auth.login');
-            } elseif ($request->routeIs('customer.*')) {
+            } elseif ($request->routeIs('customer.*') && !Auth::guard('web')->check()) {
                 session()->flash('fail', 'Kamu harus Login terlebih dahulu');
                 return route('auth.login');
             } 

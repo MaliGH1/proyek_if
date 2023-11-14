@@ -29,8 +29,8 @@ class AuthenticatedSessionController extends Controller
 
         if ($fieldType == 'text') {
             $request->validate([
-                'username' => 'required|email|exists:users,username',
-                'password' => 'required|min:5|max:45|exists:users,password'
+                'username' => 'required|exists:users,username',
+                'password' => 'required|min:5|max:45|exists:users,password',
             ], [
                 'username.required' => 'Email atau Username dibutuhkan',
                 'username.email' => 'Username Invalid',
@@ -40,7 +40,7 @@ class AuthenticatedSessionController extends Controller
         } else {
             $request->validate([
                 'username' => 'required|exists:users,username',
-                'password' => 'required|min:5|max:45|exists:users,password'
+                'password' => 'required|min:5|max:45|exists:users,password',
             ], [
                 'username.required' => ' Username dibutuhkan',
                 'username.exists' => 'Username tidak terdaftar di sistem',
@@ -54,15 +54,25 @@ class AuthenticatedSessionController extends Controller
             'password' => $request->password
         );
 
-        if (Auth::guard('web')->attempt($creds)) {
-            return redirect()->route('home');
-        } elseif (Auth::guard('admin')->attempt($creds)) {
+        if (Auth::guard('admin')->attempt($creds)) {
             return redirect()->route('home.admin');
+        } elseif (Auth::guard('web')->attempt($creds)) {
+            return redirect()->route('home');
         } 
         else {
             session()->flash('fail', 'Incorrect credentials');
             return redirect()->route('login');
         }
+
+        // if (Auth::attempt($creds)) {
+        //     $user = Auth::user();
+
+        //     if ($user->role() === 'admin') {
+        //         return redirect()->route('home.admin');
+        //     } else {
+        //         return redirect()->route('home');
+        //     }
+        // } 
     }
 
     /**

@@ -15,8 +15,14 @@ class AdminMiddleware
      *
      * @param  \Closure(\Illuminate\Http\Request): (\Symfony\Component\HttpFoundation\Response)  $next
      */
-    protected function redirectTo(Request $request): ?string
+    public function handle($request, Closure $next)
     {
-        return $request->expectsJson() ? null : route('login');
+        // Check if the current guard is 'admin' and user is authenticated as admin
+        if (Auth::guard('admin')->check()) {
+            return $next($request);
+        }
+
+        // If not authenticated as admin, redirect to unauthorized or home page
+        return redirect()->route('login'); // Ganti dengan rute yang sesuai
     }
 }

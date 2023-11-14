@@ -9,6 +9,9 @@ use App\Http\Controllers\Auth\LoginController;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 use Illuminate\Database\Eloquent\Casts\Attribute;
+use Illuminate\Support\Str;
+use Illuminate\Support\Facades\DB;
+
 
 class User extends Authenticatable
 {
@@ -42,14 +45,22 @@ class User extends Authenticatable
      * @var array<string, string>
      */
     protected $casts = [
-        'role' => 'enum',
+        'role' => 'string',
         'password' => 'hashed',
     ];
-    
-    protected function role(): Attribute
+
+    public function role()
     {
-        return new Attribute(
-            get: fn ($value) =>  ["admin", "user"][$value]??null,
-        );
+        $role = $this->attributes['role'];
+
+        // Jika kolom role adalah enum di basis data MySQL
+        if ($role === 'admin') {
+            return 'admin';
+        } elseif ($role === 'user') {
+            return 'user';
+        } else {
+            // Lakukan logika lain jika diperlukan
+            return 'other';
+        }
     }
 }

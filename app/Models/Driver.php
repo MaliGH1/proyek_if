@@ -12,6 +12,7 @@ class Driver extends Model
     protected $primaryKey = 'idSupir';
 
     protected $fillable = [
-        'idSupir', 'nama_supir', 'alamat_supir', 'no_telp_supir', 'foto_supir'
+        'nama', 'alamat', 'nohpsupir', 'foto'
     ];
+    
 }
