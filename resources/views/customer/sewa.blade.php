@@ -13,7 +13,7 @@
                 <input type="text" id="nama" name="nama" class="nama-input">
             </div>
 
-            <!-- <div class="mobil">
+            <div class="mobil">
                 <label for="pilih" class="mobil-label">Pilih Mobil</label>
                 <div class="w-full">
                     <select id="pilih" name="pilih" class="mobil-input">
@@ -23,8 +23,8 @@
                         <option value="mobil3" data-harga="300000">Toyota Yaris</option>
                     </select>
                 </div>
-            </div> -->
-            <div class="relative inline-block text-left">
+            </div>
+            <!-- <div class="relative inline-block text-left">
                 <button type="button"
                     class="inline-flex justify-center w-full px-4 py-2 text-lg font-medium text-black border border-black rounded-md focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75"
                     id="dropdown-button" aria-expanded="true" aria-haspopup="true">
@@ -36,7 +36,7 @@
                     role="menu" aria-orientation="vertical" aria-labelledby="dropdown-button" tabindex="-1"
                     id="dropdown-menu">
                     <!-- List mobil di sini -->
-                    <a href="#" class="flex items-center p-1 space-x-1">
+            <!-- <a href="#" class="flex items-center p-1 space-x-1">
                         <img src="https://res.cloudinary.com/mufautoshow/image/upload/f_auto,f_auto/w_1200/v1621137839/moas/news/1621137832_toyota-alphard-transformers-mpv-mewah-terbaik-di-indonesia.png"
                             alt="Mobil 1" class="w-1200 h-216" data-harga="500000">
                         <span>Toyota Alphard</span>
@@ -48,24 +48,24 @@
                     </a>
                     <!-- Tambahkan lebih banyak mobil sesuai kebutuhan -->
 
-                </div>
-            </div>
+            <!-- </div> -->
+            <!-- </div> -->
 
             <script src="{{ mix('js/app.js') }}"></script>
 
             <script>
-            document.getElementById('dropdown-button').addEventListener('click', function() {
-                var dropdownMenu = document.getElementById('dropdown-menu');
-                dropdownMenu.classList.toggle('hidden');
-            });
+                document.getElementById('dropdown-button').addEventListener('click', function() {
+                    var dropdownMenu = document.getElementById('dropdown-menu');
+                    dropdownMenu.classList.toggle('hidden');
+                });
 
-            // Tutup dropdown saat mengklik di luar dropdown
-            document.addEventListener('click', function(event) {
-                var dropdownMenu = document.getElementById('dropdown-menu');
-                if (!event.target.closest('#dropdown-button') && !event.target.closest('#dropdown-menu')) {
-                    dropdownMenu.classList.add('hidden');
-                }
-            });
+                // Tutup dropdown saat mengklik di luar dropdown
+                document.addEventListener('click', function(event) {
+                    var dropdownMenu = document.getElementById('dropdown-menu');
+                    if (!event.target.closest('#dropdown-button') && !event.target.closest('#dropdown-menu')) {
+                        dropdownMenu.classList.add('hidden');
+                    }
+                });
             </script>
 
 
@@ -104,37 +104,37 @@
             </div>
 
             <script>
-            document.addEventListener("DOMContentLoaded", function() {
-                const selectMobil = document.getElementById("pilih");
-                const radioSupirYa = document.querySelector('input[name="supir"][value="ya"]');
-                const radioSupirTidak = document.querySelector('input[name="supir"][value="tidak"]');
-                const totalHargaElement = document.getElementById("total-harga");
+                document.addEventListener("DOMContentLoaded", function() {
+                    const selectMobil = document.getElementById("pilih");
+                    const radioSupirYa = document.querySelector('input[name="supir"][value="ya"]');
+                    const radioSupirTidak = document.querySelector('input[name="supir"][value="tidak"]');
+                    const totalHargaElement = document.getElementById("total-harga");
 
-                // harga awal
-                let totalHarga = 0;
+                    // harga awal
+                    let totalHarga = 0;
 
-                // menghitung total harga
-                function hitungTotalHarga() {
-                    const mobilValue = selectMobil.value;
-                    const mobilOption = selectMobil.options[selectMobil.selectedIndex];
-                    const mobilHarga = parseFloat(mobilOption.getAttribute("data-harga"));
+                    // menghitung total harga
+                    function hitungTotalHarga() {
+                        const mobilValue = selectMobil.value;
+                        const mobilOption = selectMobil.options[selectMobil.selectedIndex];
+                        const mobilHarga = parseFloat(mobilOption.getAttribute("data-harga"));
 
-                    if (radioSupirYa.checked) {
-                        const hargaSupir = parseFloat(radioSupirYa.getAttribute("data-harga"));
-                        totalHarga = mobilHarga + hargaSupir;
-                    } else {
-                        totalHarga = mobilHarga;
+                        if (radioSupirYa.checked) {
+                            const hargaSupir = parseFloat(radioSupirYa.getAttribute("data-harga"));
+                            totalHarga = mobilHarga + hargaSupir;
+                        } else {
+                            totalHarga = mobilHarga;
+                        }
+
+                        totalHargaElement.textContent = totalHarga;
                     }
 
-                    totalHargaElement.textContent = totalHarga;
-                }
+                    selectMobil.addEventListener("change", hitungTotalHarga);
+                    radioSupirYa.addEventListener("change", hitungTotalHarga);
+                    radioSupirTidak.addEventListener("change", hitungTotalHarga);
 
-                selectMobil.addEventListener("change", hitungTotalHarga);
-                radioSupirYa.addEventListener("change", hitungTotalHarga);
-                radioSupirTidak.addEventListener("change", hitungTotalHarga);
-
-                hitungTotalHarga();
-            });
+                    hitungTotalHarga();
+                });
             </script>
 
             <!-- Tombol Submit -->

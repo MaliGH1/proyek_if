@@ -16,7 +16,7 @@
             <div class="p-8 mt-12 mb-6 md:mb-0 md:mt-0 ml-0 md:ml-12 lg:w-2/3  justify-center">
                 <div class="h-48 flex flex-wrap content-center">
                     <div>
-                        <img class="inline-block mt-28 hidden xl:block w-auto" src="https://i.pinimg.com/564x/ed/d0/28/edd0289e44aa66b1546e45cdcd0c6320.jpg">
+                        <img class="inline-block mt-28 hidden xl:block w-auto" src="https://i.pinimg.com/564x/34/49/10/344910343716de41e27f92a6c0320708.jpg">
                     </div>
                     <div>
                         <img class="inline-block mt-24 md:mt-0 p-8 md:p-0" src="">
