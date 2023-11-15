@@ -33,13 +33,13 @@
         <!-- About Us Page Section -->
         <div id="about-section" class="py-16 bg-black align-top">
             <div class="container mx-auto">
-                
+
                 <h1 class="text-4xl text-white font-semibold text-center ">Tentang Kami</h1>
                 <p class="mt-4 text-lg text-white text-justify">Kami adalah sebuah perusahaan yang berdedikasi untuk memberikan solusi terbaik kepada pelanggan kami. Dengan pengalaman bertahun-tahun, kami siap melayani Anda dengan sepenuh hati.
-                    Solusi atas semua kebutuhan transportasi dalam perjalanan wisata atupun bisnis anda di seluruh kota Sukabumi .dengan berbagai Jenis unit mobil yang sangat nyaman ketika anda pakai akan memanjakan anda saat melakukan perjalanan. Rental Mobil Murah yang kami sewakan pun sangat ber-variasi. 
+                    Solusi atas semua kebutuhan transportasi dalam perjalanan wisata atupun bisnis anda di seluruh kota Sukabumi .dengan berbagai Jenis unit mobil yang sangat nyaman ketika anda pakai akan memanjakan anda saat melakukan perjalanan. Rental Mobil Murah yang kami sewakan pun sangat ber-variasi.
                     Ini akan memudahkan anda sebagai penyewa saat menentukan kendaraan terbaik menurut selera anda atau kendaraan yang biasa anda gunakan dalam keseharian. Pelayanan DJVR.com mencakup sewa rental mobil dalam kota Sukabumi dan luar kota Sukabumi. Terutama destinasi Wisata dalam kota maupun luar kota di provinsi Jawa Barat.
                     Tidak perlu hawatir kami pun memenuhi kbutuhan akan perjalanan jauh keluar provinsi.
-</p>
+                </p>
             </div>
         </div>
     </div>
@@ -50,7 +50,7 @@
                 <div class="grid grid-cols-1 md:grid-cols-2">
                     <div class="p-6 mr-2 bg-gray-100 dark:bg-gray-800 sm:rounded-lg">
                         <h1 class="text-4xl sm:text-5xl text-gray-800 dark:text-white font-extrabold tracking-tight">
-                        Contact Info
+                            Contact Info
                         </h1>
                         <p class="text-normal text-lg sm:text-2xl font-medium text-gray-600 dark:text-gray-400 mt-2">
                             informasi valid hanya di bawah ini
@@ -62,7 +62,7 @@
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                             </svg>
                             <div class="ml-4 text-md tracking-wide font-semibold w-40">
-                               Griya Selabumi Indah Blok H-18, SKIP, 14345
+                                Griya Selabumi Indah Blok H-18, SKIP, 14345
                             </div>
                         </div>
 
