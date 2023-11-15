@@ -1,80 +1,69 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>DVJR Rent Cars | INVOICE</title>
+    <link rel="stylesheet" href="css/main.css" class="">
     <link href="/dist/tailwind.css" rel="stylesheet" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.0/font/bootstrap-icons.css" />
+    @vite('resources/css/app.css')
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 </head>
 
 <body class="bg-black">
-    <div class="bg-white rounded-lg shadow-lg px-8 py-10 max-w-xl mx-auto">
+    <div class="bg-black rounded-lg shadow-lg px-8 py-10 max-w-xl mx-auto border-8 border-white">
         <div class="flex items-center justify-between mb-8">
             <div class="flex items-center">
-                <img class="h-8 w-8 mr-2" src="https://tailwindflex.com/public/images/logos/favicon-32x32.png" alt="Logo" />
-                <div class="text-gray-700 font-semibold text-lg">Your Company Name</div>
+                <div class="font-bold text-yellow-300 text-[15px] ml-3">DVJR</div>
             </div>
-            <div class="text-gray-700">
+            <div class="text-white">
                 <div class="font-bold text-xl mb-2">INVOICE</div>
-                <div class="text-sm">Date: 01/05/2023</div>
+                <div class="text-sm">Tanggal Pemesanan</div>
                 <div class="text-sm">Invoice #: INV12345</div>
             </div>
         </div>
-        <div class="border-b-2 border-gray-300 pb-8 mb-8">
-            <h2 class="text-2xl font-bold mb-4">Bill To:</h2>
-            <div class="text-gray-700 mb-2">John Doe</div>
-            <div class="text-gray-700 mb-2">123 Main St.</div>
-            <div class="text-gray-700 mb-2">Anytown, USA 12345</div>
-            <div class="text-gray-700">johndoe@example.com</div>
+        <div class="border-b-2 border-white pb-8 mb-8">
+            <h2 class="text-white text-2xl font-bold mb-4">Tagihan Kepada:</h2>
+            <div class="text-white mb-2">Nama Customer</div>
+            <div class="text-white mb-2">No telp: </div>
+            <div class="text-white">Email: </div>
         </div>
         <table class="w-full text-left mb-8">
             <thead>
                 <tr>
-                    <th class="text-gray-700 font-bold uppercase py-2">Description</th>
-                    <th class="text-gray-700 font-bold uppercase py-2">Quantity</th>
-                    <th class="text-gray-700 font-bold uppercase py-2">Price</th>
-                    <th class="text-gray-700 font-bold uppercase py-2">Total</th>
+                    <th class="text-white font-bold uppercase py-2">Barang</th>
+                    <th class="text-white font-bold uppercase py-2">Harga</th>
+                    <th class="text-white font-bold uppercase py-2">Lama Sewa(Hari)</th>
+                    <th class="text-white font-bold uppercase py-2">Total</th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
-                    <td class="py-4 text-gray-700">Product 1</td>
-                    <td class="py-4 text-gray-700">1</td>
-                    <td class="py-4 text-gray-700">$100.00</td>
-                    <td class="py-4 text-gray-700">$100.00</td>
+                    <td class="py-4 text-white">Toyota Yaris</td>
+                    <td class="py-4 text-white">Rp 300.000,00</td>
+                    <td class="py-4 text-white">2</td>
+                    <td class="py-4 text-white">Rp 600.000,00</td>
                 </tr>
                 <tr>
-                    <td class="py-4 text-gray-700">Product 2</td>
-                    <td class="py-4 text-gray-700">2</td>
-                    <td class="py-4 text-gray-700">$50.00</td>
-                    <td class="py-4 text-gray-700">$100.00</td>
-                </tr>
-                <tr>
-                    <td class="py-4 text-gray-700">Product 3</td>
-                    <td class="py-4 text-gray-700">3</td>
-                    <td class="py-4 text-gray-700">$75.00</td>
-                    <td class="py-4 text-gray-700">$225.00</td>
+                    <td class="py-4 text-white">Supir</td>
+                    <td class="py-4 text-white">Rp 50.000,00</td>
+                    <td class="py-4 text-white">2</td>
+                    <td class="py-4 text-white">Rp 100.000,00</td>
                 </tr>
             </tbody>
         </table>
         <div class="flex justify-end mb-8">
-            <div class="text-gray-700 mr-2">Subtotal:</div>
-            <div class="text-gray-700">$425.00</div>
-        </div>
-        <div class="text-right mb-8">
-            <div class="text-gray-700 mr-2">Tax:</div>
-            <div class="text-gray-700">$25.50</div>
-
-        </div>
-        <div class="flex justify-end mb-8">
-            <div class="text-gray-700 mr-2">Total:</div>
-            <div class="text-gray-700 font-bold text-xl">$450.50</div>
+            <div class="text-white mr-2">Total:</div>
+            <div class="text-white font-bold text-xl">RP 700.000,00</div>
         </div>
         <div class="border-t-2 border-gray-300 pt-8 mb-8">
-            <div class="text-gray-700 mb-2">Payment is due within 30 days. Late payments are subject to fees.</div>
-            <div class="text-gray-700 mb-2">Please make checks payable to Your Company Name and mail to:</div>
-            <div class="text-gray-700">123 Main St., Anytown, USA 12345</div>
+            <div class="text-white mb-2">Untuk Menyelesaikan Pemesanan, Mohon mengirim Dp 50% dari total Harga</div>
+            <div class="text-white mb-2">Kirim Ke No. Rek............</div>
+            <div class="text-white">Upload Bukti Transfer</div>
+            <div class="">
+                <input class="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400" id="multiple_files" type="file" multiple>
+            </div>
         </div>
     </div>
 </body>
