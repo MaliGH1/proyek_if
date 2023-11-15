@@ -49,7 +49,6 @@ Route::post('/sewa', function () {
     ]);
 });
 
-
 Route::get('/invoice', function () {
     return view('customer/invoice');
 });
