@@ -15,22 +15,22 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 </head>
 
-<body class="bg-white">
+<body class="bg-black">
 
     <!-- Navbar -->
-    <nav class="navbar">
-        <!-- Logo -->
-        <div class="navbar-content">
-            <span class="text-yellow-500">D</span>
-            <span class="text-yellow-500">V</span>
-            <span class="text-yellow-500">J</span>
-            <span class="text-yellow-500">R</span>
+    <nav class="navbar bg-black top-0 z-100 fixed w-full">
+        <div class="container">
+            <!-- Logo -->
+            <div class="navbar-content">
+                <a class="text-yellow-300 text-2xl font-semibold no-underline" href="/home">DVJR</a>
+            </div>
+
+            <!-- Tombol Kembali -->
+            <a href=" " class="text-white text-sm px-3 py-1 bg-blue-500 hover:bg-blue-700 rounded-full no-underline">
+                Kembali
+            </a>
         </div>
 
-        <!-- Tombol Kembali -->
-        <a href="{{ route('back.homeadmin') }}" class="text-white text-sm px-3 py-1 bg-red-500 rounded-full hover:bg-red-600 no-underline">
-            Kembali
-        </a>
     </nav>
 
     <div class="container mt-4">
