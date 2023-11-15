@@ -48,7 +48,12 @@ Route::post('/sewa', function () {
         "title" => "Home"
     ]);
 });
-// Route::post('/sewa', 'SewaMobilController@hitung');
+
+
+Route::get('/invoice', function () {
+    return view('customer/invoice');
+});
+
 
 // Rute untuk tombol kembali
 Route::get('/back-to-home', function () {
