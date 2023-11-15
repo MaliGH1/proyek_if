@@ -81,7 +81,14 @@ class AuthenticatedSessionController extends Controller
      */
     public function destroy(Request $request): RedirectResponse
     {
-        Auth::logout(); // Menghapus session login pengguna
-        return redirect('/home'); 
+        if (Auth::guard('admin')->check()) {
+            Auth::guard('admin')->logout(); // Logout admin
+        }
+    
+        if (Auth::guard('web')->check()) {
+            Auth::guard('web')->logout(); // Logout customer
+        }
+    
+        return redirect('/home');
     }
 }
