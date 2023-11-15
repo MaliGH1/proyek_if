@@ -61,7 +61,7 @@
                     Supir
                 </h1>
             </a>
-            <a href="/mobil" class="text-white block no-underline">
+            <a href="/mobil/homemobil" class="text-white block no-underline">
                 <h1 class="cursor-pointer p-2 hover-bg-blue-600 rounded-md mt-1">
                     Mobil
                 </h1>

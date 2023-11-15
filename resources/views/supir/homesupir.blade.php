@@ -4,7 +4,7 @@
 <section class="hero" id="home">
     <div class="container flex left">
         <p class="">
-            IKI supir cok
+
         </p>
         <div class="">
             <a href="/updatesupir" class="">
