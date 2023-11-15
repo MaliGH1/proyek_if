@@ -68,7 +68,6 @@
             });
             </script>
 
-
                 <div class="supir">
                     <label class="supir-label">Apakah Anda Ingin Menyewa Supir?</label>
                     <div class="mt-2">
@@ -137,7 +136,7 @@
             </script>
 
                 <!-- Tombol Submit -->
-                <a href="/home"><button class="px-4 py-2 bg-blue-500 text-white rounded-lg">Sewa Mobil</button></a>
+                <a href="/invoice"><button class="px-4 py-2 bg-blue-500 text-white rounded-lg">Sewa Mobil</button></a>
 
         </form>
     </div>
