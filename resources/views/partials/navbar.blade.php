@@ -9,7 +9,7 @@
 </head>
 
 <body>
-    <nav class="bg-black top-0 z-100 fixed w-full bg-blue-600 py-3 px-5">
+    <nav class="sbg-black top-0 z-100 fixed w-full bg-black py-3 px-5 border-b-2 border-white">
         <div class="container">
             <div class="flex items-center justify-center">
                 <!-- Mobile Menu -->
@@ -68,7 +68,7 @@
             mobileMenu.classList.toggle('hidden');
         });
     </script>
-    
+
 </body>
 
 </html>
