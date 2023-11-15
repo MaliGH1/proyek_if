@@ -6,7 +6,7 @@
     <div class="layout">
         <h1 class="judul">Formulir Pengisian Penyewaan Mobil</h1>
 
-        <form action="/sewa" method="POST">
+        <form action="{{ route('invoice') }}" method="POST">
             @csrf
             <div class="nama">
                 <label for="nama" class="nama-label">Nama</label>

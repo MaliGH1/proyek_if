@@ -49,9 +49,9 @@ Route::post('/sewa', function () {
     ]);
 });
 
-Route::get('/invoice', function () {
+Route::post('/invoice', function () {
     return view('customer/invoice');
-});
+})->name('invoice');
 
 
 // Rute untuk tombol kembali
@@ -97,6 +97,8 @@ Route::get('/tambahsupir', function () {
 Route::get('/hapussupir', function () {
     return view('supir/hapussupir');
 });
+
+
 Route::get('/updatesupir', function () {
     return view('supir/updatesupir');
 });
