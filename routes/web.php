@@ -16,6 +16,7 @@ use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\Auth\LoginController as LoginControl;
+use App\Http\Controllers\MobilController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Auth;
 
@@ -107,6 +108,8 @@ Route::get('/back-to-supir', function () {
 })->name('back.homesupir');
 
 // Mobil
+Route::get('/daftarmobil', [MobilController::class, 'index']);
+
 Route::get('/mobil', function () {
     return view('mobil/homemobil');
 });
@@ -126,6 +129,9 @@ Route::get('/back-to-mobil', function () {
 Route::get('/back-to-homeadmin', function () {
     return redirect('/homeadmin');
 })->name('back.homeadmin');
+
+
+
 
 
 //Route::get('verifikasi', \App\Http\Controllers\Admin\VerifikasiController::class);

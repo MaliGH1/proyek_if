@@ -11,13 +11,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('mobil', function (Blueprint $table) {
+        Schema::create('mobils', function (Blueprint $table) {
             $table->id();
             $table->string('nopol')->unique();
             $table->string('nama_mobil');
             $table->string('type');
             $table->date('tgl_pjk');
-            $table->string('status'); 
+            $table->string('status');
             $table->string('warna');
             $table->integer('sewa');
             $table->string('foto');
@@ -30,6 +30,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('mobil');
+        Schema::dropIfExists('mobils');
     }
 };
