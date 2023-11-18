@@ -1,7 +1,8 @@
 <?php
 
-use App\Http\Controllers\ProfileController;
-use Illuminate\Support\Facades\Route;
+use App\Models\Mobil;
+use Illuminate\Support\Facades\Auth;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -14,11 +15,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\MobilController;
+use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\Auth\LoginController as LoginControl;
-use App\Http\Controllers\MobilController;
-use App\Http\Controllers\UserController;
-use Illuminate\Support\Facades\Auth;
 
 Route::get('logs', [\Rap2hpoutre\LaravelLogViewer\LogViewerController::class, 'index']);
 
@@ -108,8 +110,18 @@ Route::get('/back-to-supir', function () {
 })->name('back.homesupir');
 
 // Mobil
+// Routes menggunakan controller tapi belum jadi.
 Route::get('/daftarmobil', [MobilController::class, 'index']);
 
+//route tanpa controlerr untuk menampilkan daftar mobil.
+Route::get('/wkwk', function () {
+    return view('daftarmobil', [
+        "title" => "Daftar Mobil",
+        "mobil" => Mobil::all()
+    ]);
+});
+
+//route coba-coba boleh dihapus jika sudah tidak digunakan. 
 Route::get('/mobil', function () {
     return view('mobil/homemobil');
 });
