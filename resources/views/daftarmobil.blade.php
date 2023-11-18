@@ -18,14 +18,14 @@
     @foreach( $mobil as $mobil)
     <div class="container">
         <div class="max-w-sm rounded overflow-hidden shadow-lg">
-            <img class="w-full" src="/img/card-top.jpg" alt="Sunset in the mountains">
+            <img src="{{ $mobil->foto }}" alt="mobil" class="">
             <div class="px-6 py-4">
-                <div class="font-bold text-xl mb-2">{{ $mobil["nama_mobil"] }}</div>
-                <p class="text-gray-700 text-base">{{ $mobil["nopol"] }}</p>
-                <p class="text-gray-700 text-base">{{ $mobil["type"] }}</p>
-                <p class="text-gray-700 text-base">{{ $mobil["warna"] }}</p>
-                <p class="text-gray-700 text-base">{{ $mobil["sewa"] }}</p>
-                <p class="text-gray-700 text-base">{{ $mobil["status"] }}</p>
+                <div class="font-bold text-xl mb-2">{{ $mobil->nama_mobil }}</div>
+                <p class="text-gray-700 text-base">{{ $mobil->nopol }}</p>
+                <p class="text-gray-700 text-base">{{ $mobil->type }}</p>
+                <p class="text-gray-700 text-base">{{ $mobil->warna }}</p>
+                <p class="text-gray-700 text-base">{{ $mobil->sewa }}</p>
+                <p class="text-gray-700 text-base">{{ $mobil->status }}</p>
             </div>
         </div>
     </div>
