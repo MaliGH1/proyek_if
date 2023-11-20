@@ -2,20 +2,20 @@
 
 @section('container')
 <section class="" id="home">
-    <div class="bg-gradient-to-b from-black to-white text-white min-h-screen">
-        <div class="mx-auto flex flex-col md:flex-row items-center my-12 md:my-24">
+    <div class=" text-white min-h-screen">
+        <div class="mx-auto flex flex-col md:flex-row items-center py-32 my-0 md:my-24">
             <div class="flex flex-col w-full lg:w-1/3 justify-center items-start p-8 ">
                 <h1 class="text-3xl md:text-5xl p-2 text-yellow-300 tracking-loose">DVJR RentCar</h1>
                 <h2 class="text-3xl md:text-5xl leading-relaxed md:leading-snug mb-2">Transportasi Andalan Saat Holiday
                 </h2>
                 <p class="text-sm md:text-base text-gray-50 mb-4">Banyak pilihan Mobil sesuai dengan Kebutuhan Anda</p>
-                <a href="/wkwk" class="bg-transparent hover:bg-yellow-300 text-yellow-300 hover:text-white rounded shadow hover:shadow-lg py-2 px-4 border border-yellow-300 hover:border-transparent">
+                <a href="/daftarmobil" class="bg-transparent hover:bg-yellow-300 text-yellow-300 hover:text-white rounded shadow hover:shadow-lg py-2 px-4 border border-yellow-300 hover:border-transparent">
                     Daftar Mobil</a>
             </div>
-            <div class="p-8 mt-12 mb-6 md:mb-0 md:mt-0 ml-0 md:ml-12 lg:w-2/3  justify-center">
-                <div class="h-48 flex flex-wrap content-center">
+            <div class="p-8 mt-24 mb-6 md:mb-0 md:mt-0 ml-0 md:ml-12 lg:w-2/3  justify-center">
+                <div class="h-96 flex flex-row-reverse content-center">
                     <div>
-                        <img class="inline-block mt-28 w-11/12" src="https://i.pinimg.com/564x/34/49/10/344910343716de41e27f92a6c0320708.jpg">
+                        <img class="top-0 rounded-es-full" src="https://i.pinimg.com/564x/34/49/10/344910343716de41e27f92a6c0320708.jpg">
                     </div>
                 </div>
             </div>
@@ -23,10 +23,10 @@
     </div>
 </section>
 
-<section class="mt-8" id="about-section">
-    <div class="min-h-screen bg-black flex flex-col border-double border-4 border-sky-500">
+<section class="" id="about-section">
+    <div class="min-h-screen flex flex-col py-32 my-0">
         <!-- About Us Page Section -->
-        <div class="py-16 bg-black align-top">
+        <div class="align-middle">
             <div class="mx-auto">
                 <h1 class="text-4xl text-white font-semibold text-center ">Tentang Kami</h1>
                 <p class="mt-4 text-lg text-white text-justify">Kami adalah sebuah perusahaan yang berdedikasi untuk memberikan solusi terbaik kepada pelanggan kami. Dengan pengalaman bertahun-tahun, kami siap melayani Anda dengan sepenuh hati.
@@ -40,11 +40,11 @@
 </section>
 
 <section class="" id="contact-section">
-    <div class="flex items-top justify-center min-h-screen bg-black dark:bg-gray-900 sm:items-center sm:pt-0 border-double border-4 border-sky-500">
+    <div class="flex items-top justify-center min-h-screen sm:items-center sm:pt-0 py-0 my-0">
         <div class="max-w-6xl mx-auto sm:px-4 lg:px-6">
-            <div class="mt-6 overflow-hidden">
-                <div class="grid grid-cols-1 md:grid-cols-2">
-                    <div class="p-6 mr-2 bg-gray-100 dark:bg-gray-800 sm:rounded-lg">
+            <div class="overflow-hidden">
+                <div class="grid grid-cols-1 md:grid-cols-3">
+                    <div class="p-6 bg-gray-100 dark:bg-gray-800 sm:rounded-lg">
                         <h1 class="text-4xl sm:text-5xl text-gray-800 dark:text-white font-extrabold tracking-tight">
                             Contact Info
                         </h1>

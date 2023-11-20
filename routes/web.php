@@ -114,7 +114,7 @@ Route::get('/back-to-supir', function () {
 Route::get('/daftarmobil', [MobilController::class, 'index']);
 
 //route tanpa controlerr untuk menampilkan daftar mobil.
-Route::get('/wkwk', function () {
+Route::get('/daftarmobil', function () {
     return view('daftarmobil', [
         "title" => "Daftar Mobil",
         "mobil" => Mobil::all()
