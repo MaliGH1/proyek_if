@@ -1,11 +1,10 @@
 @extends('layouts.main')
 
 @section('container')
-
-<section>
-    <div class="bg-black text-white py-20">
-        <div class="container mx-auto flex flex-col md:flex-row items-center my-12 md:my-24" id="home">
-            <div class="flex flex-col w-full lg:w-1/3 justify-center items-start p-8">
+<section class="" id="home">
+    <div class="bg-gradient-to-b from-black to-white text-white min-h-screen">
+        <div class="mx-auto flex flex-col md:flex-row items-center my-12 md:my-24">
+            <div class="flex flex-col w-full lg:w-1/3 justify-center items-start p-8 ">
                 <h1 class="text-3xl md:text-5xl p-2 text-yellow-300 tracking-loose">DVJR RentCar</h1>
                 <h2 class="text-3xl md:text-5xl leading-relaxed md:leading-snug mb-2">Transportasi Andalan Saat Holiday
                 </h2>
@@ -16,24 +15,19 @@
             <div class="p-8 mt-12 mb-6 md:mb-0 md:mt-0 ml-0 md:ml-12 lg:w-2/3  justify-center">
                 <div class="h-48 flex flex-wrap content-center">
                     <div>
-                        <img class="inline-block mt-28 hidden xl:block w-auto" src="https://i.pinimg.com/564x/34/49/10/344910343716de41e27f92a6c0320708.jpg">
-                    </div>
-                    <div>
-                        <img class="inline-block mt-24 md:mt-0 p-8 md:p-0" src="">
-                    </div>
-                    <div>
-                        <img class="inline-block mt-28 hidden lg:block" src="">
+                        <img class="inline-block mt-28 w-11/12" src="https://i.pinimg.com/564x/34/49/10/344910343716de41e27f92a6c0320708.jpg">
                     </div>
                 </div>
             </div>
         </div>
     </div>
+</section>
 
-    <div class="h-screen bg-black flex flex-col">
+<section class="mt-8" id="about-section">
+    <div class="min-h-screen bg-black flex flex-col border-double border-4 border-sky-500">
         <!-- About Us Page Section -->
-        <div id="about-section" class="py-16 bg-black align-top">
-            <div class="container mx-auto">
-
+        <div class="py-16 bg-black align-top">
+            <div class="mx-auto">
                 <h1 class="text-4xl text-white font-semibold text-center ">Tentang Kami</h1>
                 <p class="mt-4 text-lg text-white text-justify">Kami adalah sebuah perusahaan yang berdedikasi untuk memberikan solusi terbaik kepada pelanggan kami. Dengan pengalaman bertahun-tahun, kami siap melayani Anda dengan sepenuh hati.
                     Solusi atas semua kebutuhan transportasi dalam perjalanan wisata atupun bisnis anda di seluruh kota Sukabumi .dengan berbagai Jenis unit mobil yang sangat nyaman ketika anda pakai akan memanjakan anda saat melakukan perjalanan. Rental Mobil Murah yang kami sewakan pun sangat ber-variasi.
@@ -43,9 +37,11 @@
             </div>
         </div>
     </div>
+</section>
 
-    <div class="relative flex items-top justify-center min-h-screen bg-black dark:bg-gray-900 sm:items-center sm:pt-0">
-        <div class="max-w-6xl mx-auto sm:px-4 lg:px-6" id="contact-section">
+<section class="" id="contact-section">
+    <div class="flex items-top justify-center min-h-screen bg-black dark:bg-gray-900 sm:items-center sm:pt-0 border-double border-4 border-sky-500">
+        <div class="max-w-6xl mx-auto sm:px-4 lg:px-6">
             <div class="mt-6 overflow-hidden">
                 <div class="grid grid-cols-1 md:grid-cols-2">
                     <div class="p-6 mr-2 bg-gray-100 dark:bg-gray-800 sm:rounded-lg">
@@ -89,6 +85,7 @@
         </div>
     </div>
 </section>
+
 <script>
     // Fungsi untuk menangani pengguliran ke bagian yang sesuai
     function scrollToSection(sectionId) {
@@ -117,5 +114,4 @@
         scrollToSection('contact-section');
     });
 </script>
-</section>
 @endsection
