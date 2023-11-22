@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Sewa;
+use App\Models\Mobil;
 use App\Http\Requests\StoreSewaRequest;
 use App\Http\Requests\UpdateSewaRequest;
 
@@ -13,7 +14,10 @@ class SewaController extends Controller
      */
     public function index()
     {
-        //
+        return view('customer/sewa', [
+            "title" => "Sewa Mobil",
+            "mobil" => Mobil::all()
+        ]);
     }
 
     /**
