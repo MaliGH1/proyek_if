@@ -5,11 +5,11 @@
     <div class=" text-white min-h-screen">
         <div class="mx-auto flex flex-col md:flex-row items-center py-32 my-0 md:my-24">
             <div class="flex flex-col w-full lg:w-1/3 justify-center items-start p-8 ">
-                <h1 class="text-3xl md:text-5xl p-2 text-yellow-300 tracking-loose">DVJR RentCar</h1>
+                <h1 class="text-3xl md:text-5xl text-yellow-300 tracking-loose">DVJR RentCar</h1>
                 <h2 class="text-3xl md:text-5xl leading-relaxed md:leading-snug mb-2">Transportasi Andalan Saat Holiday
                 </h2>
                 <p class="text-sm md:text-base text-gray-50 mb-4">Banyak pilihan Mobil sesuai dengan Kebutuhan Anda</p>
-                <a href="/daftarmobil" class="bg-transparent hover:bg-yellow-300 text-yellow-300 hover:text-white rounded shadow hover:shadow-lg py-2 px-4 border border-yellow-300 hover:border-transparent">
+                <a href="/daftarmobil" class="bg-transparent no-underline hover:bg-yellow-300 text-yellow-300 hover:text-white rounded shadow hover:shadow-lg py-2 px-4 border border-yellow-300 hover:border-transparent">
                     Daftar Mobil</a>
             </div>
             <div class="p-8 mt-24 mb-6 md:mb-0 md:mt-0 ml-0 md:ml-12 lg:w-2/3  justify-center">
