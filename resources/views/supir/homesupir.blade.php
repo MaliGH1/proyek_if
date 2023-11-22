@@ -1,11 +1,11 @@
 @extends('layouts.mainsupir')
 
 @section('container')
-<section class="">
+<section class="px-64">
     @foreach( $supir as $supir)
     <div class="container">
         <div class="flex flex-wrap max-w-sm rounded overflow-hidden shadow-lg">
-            <img src="{{ $supir->foto }}" alt="supir" class="">
+            <img src="{{ $supir->image }}" alt="supir" class="">
             <div class="px-6 py-4">
                 <div class="font-bold text-xl mb-2">{{ $supir->nama }}</div>
                 <p class="text-gray-700 text-base">{{ $supir->noktp }}</p>
