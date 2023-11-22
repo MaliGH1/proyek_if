@@ -18,6 +18,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\MobilController;
+use App\Http\Controllers\SupirController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\Auth\LoginController as LoginControl;
@@ -85,23 +86,23 @@ Route::get('/', function () {
 
 
 // supir
-Route::get('/supir', function () {
-    return view('supir/homesupir');
-})->name('supir');
-Route::get('/tambahsupir', function () {
-    return view('supir/tambahsupir');
-});
-Route::get('/hapussupir', function () {
-    return view('supir/hapussupir');
-});
+// Route::get('/supir', function () {
+//     return view('supir/homesupir');
+// })->name('supir');
+// Route::get('/tambahsupir', function () {
+//     return view('supir/tambahsupir');
+// });
+// Route::get('/hapussupir', function () {
+//     return view('supir/hapussupir');
+// });
 
 
-Route::get('/updatesupir', function () {
-    return view('supir/updatesupir');
-});
-Route::get('/back-to-supir', function () {
-    return redirect('supir/homesupir');
-})->name('back.homesupir');
+// Route::get('/updatesupir', function () {
+//     return view('supir/updatesupir');
+// });
+// Route::get('/back-to-supir', function () {
+//     return redirect('supir/homesupir');
+// })->name('back.homesupir');
 
 // Mobil
 // Routes menggunakan controller tapi belum jadi.
@@ -110,6 +111,11 @@ Route::get('/daftarmobil', [MobilController::class, 'daftarmobil']);
 Route::get('/tambahmobil', [MobilController::class, 'tambahmobil']);
 Route::get('/hapusmobil', [MobilController::class, 'hapusmobil']);
 Route::get('/updatemobil', [MobilController::class, 'updatemobil']);
+
+Route::get('/supir', [SupirController::class, 'index'])->name('supir');
+Route::get('/tambahsupir', [SupirController::class, 'tambahsupir']);
+Route::get('/hapussupir', [SupirController::class, 'hapussupir']);
+Route::get('/updatesupir', [SupirController::class, 'updatesupir']);
 
 //route tanpa controlerr untuk menampilkan daftar mobil.
 // Route::get('/daftarmobil', function () {

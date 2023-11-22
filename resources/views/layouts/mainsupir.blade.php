@@ -16,23 +16,7 @@
 </head>
 
 <body class="bg-black">
-    <!-- Navbar -->
-    <nav class="navbar bg-black top-0 z-100 fixed w-full">
-        <div class="container">
-            <!-- Logo -->
-            <div class="navbar-content">
-                <a class="text-yellow-300 text-2xl font-semibold no-underline" href="/homeadmin">DVJR</a>
-            </div>
-
-            <!-- Tombol Kembali -->
-            <a href="/homeadmin" class="">
-                <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 border border-blue-700 rounded">
-                    Kembali
-                </button>
-            </a>
-        </div>
-
-    </nav>
+    @include('partials.navbaradmin')
     <div class="container mt-4">
         @yield('container')
     </div>
