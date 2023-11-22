@@ -107,6 +107,9 @@ Route::get('/back-to-supir', function () {
 // Routes menggunakan controller tapi belum jadi.
 Route::get('/mobil', [MobilController::class, 'index'])->name('mobil');
 Route::get('/daftarmobil', [MobilController::class, 'daftarmobil']);
+Route::get('/tambahmobil', [MobilController::class, 'tambahmobil']);
+Route::get('/hapusmobil', [MobilController::class, 'hapusmobil']);
+Route::get('/updatemobil', [MobilController::class, 'updatemobil']);
 
 //route tanpa controlerr untuk menampilkan daftar mobil.
 // Route::get('/daftarmobil', function () {
@@ -117,22 +120,22 @@ Route::get('/daftarmobil', [MobilController::class, 'daftarmobil']);
 // });
 
 //route coba-coba boleh dihapus jika sudah tidak digunakan. 
-Route::get('/tambahmobil', function () {
-    return view('mobil/tambahmobil');
-});
-Route::get('/hapusmobil', function () {
-    return view('mobil/hapusmobil');
-});
-Route::get('/updatesupir', function () {
-    return view('mobil/updatemobil');
-});
-Route::get('/back-to-mobil', function () {
-    return redirect('mobil/homemobil');
-})->name('back.homemobil');
-// Rute untuk tombol kembali ke home admin
-Route::get('/back-to-homeadmin', function () {
-    return redirect('/homeadmin');
-})->name('back.homeadmin');
+// Route::get('/tambahmobil', function () {
+//     return view('mobil/tambahmobil');
+// });
+// Route::get('/hapusmobil', function () {
+//     return view('mobil/hapusmobil');
+// });
+// Route::get('/updatesupir', function () {
+//     return view('mobil/updatemobil');
+// });
+// Route::get('/back-to-mobil', function () {
+//     return redirect('mobil/homemobil');
+// })->name('back.homemobil');
+// // Rute untuk tombol kembali ke home admin
+// Route::get('/back-to-homeadmin', function () {
+//     return redirect('/homeadmin');
+// })->name('back.homeadmin');
 
 
 

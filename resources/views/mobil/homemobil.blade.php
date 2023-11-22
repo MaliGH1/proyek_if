@@ -1,23 +1,10 @@
-<!doctype html>
-<html lang="en">
+@extends('layouts.mainadmin')
 
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>DVJR Rent Cars | {{ $title }}</title>
-    <link rel="stylesheet" href="css/main.css" class="">
-    <link href="/dist/tailwind.css" rel="stylesheet" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-    <link rel="icon" href="favicon.ico" type="image/x-icon">
-    @vite('resources/css/app.css')
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-</head>
-
-<body>
+@section('container')
+<section class="">
     @foreach( $mobil as $mobil)
     <div class="container">
-        <div class="max-w-sm rounded overflow-hidden shadow-lg">
+        <div class="flex flex-wrap max-w-sm rounded overflow-hidden shadow-lg">
             <img src="{{ $mobil->foto }}" alt="mobil" class="">
             <div class="px-6 py-4">
                 <div class="font-bold text-xl mb-2">{{ $mobil->nama_mobil }}</div>
@@ -30,6 +17,24 @@
         </div>
     </div>
     @endforeach
-</body>
-
-</html>
+    <div class="container">
+        <div class="">
+            <a href="/updatemobil" class="">
+                <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 border border-blue-700 rounded">
+                    Update
+                </button>
+            </a>
+            <a href="/tambahmobil" class="">
+                <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 border border-blue-700 rounded">
+                    Tambah
+                </button>
+            </a>
+            <a href="/hapusmobil" class="">
+                <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 border border-blue-700 rounded">
+                    Hapus
+                </button>
+            </a>
+        </div>
+    </div>
+</section>
+@endsection
