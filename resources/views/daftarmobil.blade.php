@@ -17,7 +17,7 @@
 <body>
     @foreach( $mobil as $mobil)
     <div class="container">
-        <div class="max-w-sm rounded overflow-hidden shadow-lg">
+        <div class="flex flex-wrap max-w-sm rounded overflow-hidden shadow-lg">
             <img src="{{ $mobil->foto }}" alt="mobil" class="">
             <div class="px-6 py-4">
                 <div class="font-bold text-xl mb-2">{{ $mobil->nama_mobil }}</div>
