@@ -25,4 +25,19 @@ class MobilController extends Controller
             "mobil" => Mobil::all()
         ]);
     }
+
+    public function tambahmobil()
+    {
+        return view('mobil/tambahmobil');
+    }
+
+    public function updatemobil()
+    {
+        return view('mobil/updatemobil');
+    }
+
+    public function hapusmobil()
+    {
+        return view('mobil/hapusmobil');
+    }
 }
