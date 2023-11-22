@@ -44,7 +44,7 @@
             </div>
         </div>
         <div class="">
-            <a href="{{ route('back.homesupir') }}" class="block no-underline">
+            <a href="" class="block no-underline">
                 <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 border border-blue-700 rounded">
                     Kembali
                 </button>
