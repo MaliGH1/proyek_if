@@ -16,9 +16,9 @@
 </head>
 
 <body class="bg-black">
-
+    @include('partials.navbaradmin')
     <!-- Navbar -->
-    <nav class="navbar bg-black top-0 z-100 fixed w-full">
+    <!-- <nav class="navbar bg-black top-0 z-100 fixed w-full">
         <div class="container">
             <!-- Logo -->
             <div class="navbar-content">
@@ -31,7 +31,7 @@
             </a>
         </div>
 
-    </nav>
+    </nav> -->
 
     <div class="container mt-4">
         @yield('container')
