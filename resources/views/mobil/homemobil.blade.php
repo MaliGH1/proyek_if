@@ -2,7 +2,7 @@
 
 @section('container')
 <section class="hero" id="home">
-    <div class="container flex left">
+    <div class="container flex flex-col items-center justify-center">
         <p class="">
             
         </p>
