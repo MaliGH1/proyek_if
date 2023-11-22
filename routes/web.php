@@ -111,15 +111,16 @@ Route::get('/back-to-supir', function () {
 
 // Mobil
 // Routes menggunakan controller tapi belum jadi.
-Route::get('/daftarmobil', [MobilController::class, 'index']);
+Route::get('/mobil', [MobilController::class, 'index']);
+Route::get('/daftarmobil', [MobilController::class, 'daftarmobil']);
 
 //route tanpa controlerr untuk menampilkan daftar mobil.
-Route::get('/daftarmobil', function () {
-    return view('daftarmobil', [
-        "title" => "Daftar Mobil",
-        "mobil" => Mobil::all()
-    ]);
-});
+// Route::get('/daftarmobil', function () {
+//     return view('daftarmobil', [
+//         "title" => "Daftar Mobil",
+//         "mobil" => Mobil::all()
+//     ]);
+// });
 
 //route coba-coba boleh dihapus jika sudah tidak digunakan. 
 Route::get('/mobil', function () {

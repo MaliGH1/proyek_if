@@ -12,7 +12,15 @@ class MobilController extends Controller
 {
     public function index()
     {
-        return view('mobil/daftarmobil', [
+        return view('mobil/homemobil', [
+            "title" => "Daftar Mobil",
+            "mobil" => Mobil::all()
+        ]);
+    }
+
+    public function daftarmobil()
+    {
+        return view('daftarmobil', [
             "title" => "Daftar Mobil",
             "mobil" => Mobil::all()
         ]);
