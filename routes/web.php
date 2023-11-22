@@ -45,7 +45,7 @@ Route::get('/sewa', function () {
     return view('customer/sewa', [
         "title" => "Sewa"
     ]);
-});
+})->name('sewa');
 Route::post('/sewa', function () {
     return view('customer/home', [
         "title" => "Home"
@@ -93,7 +93,7 @@ Route::get('/', function () {
 // supir
 Route::get('/supir', function () {
     return view('supir/homesupir');
-});
+})->name('supir');
 Route::get('/tambahsupir', function () {
     return view('supir/tambahsupir');
 });
@@ -124,7 +124,7 @@ Route::get('/daftarmobil', function () {
 //route coba-coba boleh dihapus jika sudah tidak digunakan. 
 Route::get('/mobil', function () {
     return view('mobil/homemobil');
-});
+})->name('mobil');
 Route::get('/tambahmobil', function () {
     return view('mobil/tambahmobil');
 });
