@@ -21,12 +21,14 @@
         <div class="container">
             <!-- Logo -->
             <div class="navbar-content">
-                <a class="text-yellow-300 text-2xl font-semibold no-underline" href="/home">DVJR</a>
+                <a class="text-yellow-300 text-2xl font-semibold no-underline" href="/homeadmin">DVJR</a>
             </div>
 
             <!-- Tombol Kembali -->
-            <a href=" " class="text-white text-sm px-3 py-1 bg-blue-500 hover:bg-blue-700 rounded-full no-underline">
-                Kembali
+            <a href="/homeadmin" class="">
+                <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 border border-blue-700 rounded">
+                    Kembali
+                </button>
             </a>
         </div>
 
