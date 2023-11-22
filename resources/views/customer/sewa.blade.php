@@ -19,7 +19,9 @@
                     id="dropdown-button" aria-expanded="true" aria-haspopup="true">
                     Pilih Mobil
                 </button>
+                @foreach( $mobil as $mobil)
 
+                
                 <div class="static right-0 mt-2 space-y-2 origin-top-right bg-white rounded-md shadow-lg ring-1 ring-black ring-opacity-5 hidden"
                     role="menu" aria-orientation="vertical" aria-labelledby="dropdown-button" tabindex="-1"
                     id="dropdown-menu">
@@ -29,17 +31,17 @@
                         <div
                             class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 m-4">
                             <img class="rounded-t-sm"
-                                src="https://i.pinimg.com/564x/96/0d/0f/960d0f5f5f1574f2a11e96444062b0e5.jpg" alt="" />
+                                src="{{$mobil->foto}}" alt="" /> 
 
                             <div class="p-5">
                                 <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-black">
-                                    Toyota Alphard
+                                    {{ $mobil->nama_mobil}}
                                 </h5>
 
                                 <p class="mb-3 font-normal text-black-700 dark:text-black-400">
-                                    <strong style="font-size: 1.2em;">Rp. 800.000/hari</strong>
+                                    <strong style="font-size: 1.2em;">Rp. {{$mobil->sewa}}</strong>
                                 </p>
-                                <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Toyota Alphard</p>
+                                <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">{{ $mobil->nama_mobil}}</p>
                                 <a href="#"
                                     class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
                                     Sewa
@@ -106,6 +108,8 @@
                         </div>
                     </div>
 
+
+
                      <!-- <div class="mobil">
                 <label for="pilih" class="mobil-label">Pilih Mobil</label>
                 <div class="w-full">
@@ -119,7 +123,7 @@
 
                 </div>
             </div>
-
+            @endforeach
             <script src="{{ mix('js/app.js') }}"></script>
 
             <script>
