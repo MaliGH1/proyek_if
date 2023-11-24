@@ -110,10 +110,7 @@ Route::get('/hapusmobil', [MobilController::class, 'hapusmobil']);
 Route::get('/updatemobil', [MobilController::class, 'updatemobil']);
 
 
-<<<<<<< HEAD
-=======
 Route::resource('supir', SupirController::class);
->>>>>>> 1f8654874346b80b269455268d2f16caac9183cb
 Route::get('/supir', [SupirController::class, 'index'])->name('supir');
 Route::get('/tambahsupir', [SupirController::class, 'tambahsupir']);
 Route::get('/hapussupir', [SupirController::class, 'hapussupir']);
@@ -174,4 +171,4 @@ Route::group(['middleware' => 'auth:admin'], function () {
     Route::get('/homeadmin', [\App\Http\Controllers\HomeController::class, 'adminHome'])->name('home.admin');
 });
 
-require __DIR__ .'/auth.php';
+require __DIR__  . '/auth.php';
