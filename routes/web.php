@@ -32,17 +32,14 @@ Route::get('/register', [App\Http\Controllers\Auth\RegisteredUserController::cla
 Route::post('/register/add', [App\Http\Controllers\Auth\RegisteredUserController::class, 'create'])->name('register.store');
 
 Route::get('/transaksi',[AppHttp\Controllers\SewaController::class, 'show'])->name('transaksi');
+Route::get('/keuangan',[AppHttp\Controllers\SewaController::class, 'laporan'])->name('laporan');
 
 
 // Route::get('/login', function () {
 //     return view('login');
 // });
 Route::get('/sewa',[AppHttp\Controllers\SewaController::class, 'index'])->name('sewa');
-Route::get('/sewa', function () {
-    return view('customer/sewa', [
-        "title" => "Sewa"
-    ]);
-})->name('sewa');
+
 Route::post('/sewa', function () {
     return view('customer/home', [
         "title" => "Home"
