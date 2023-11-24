@@ -104,6 +104,7 @@ Route::get('/', function () {
 //     return redirect('supir/homesupir');
 // })->name('back.homesupir');
 
+
 // Mobil
 // Routes menggunakan controller tapi belum jadi.
 Route::get('/mobil', [MobilController::class, 'index'])->name('mobil');
@@ -111,6 +112,7 @@ Route::get('/daftarmobil', [MobilController::class, 'daftarmobil']);
 Route::get('/tambahmobil', [MobilController::class, 'tambahmobil']);
 Route::get('/hapusmobil', [MobilController::class, 'hapusmobil']);
 Route::get('/updatemobil', [MobilController::class, 'updatemobil']);
+
 
 Route::get('/supir', [SupirController::class, 'index'])->name('supir');
 Route::get('/tambahsupir', [SupirController::class, 'tambahsupir']);
