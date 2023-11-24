@@ -10,7 +10,7 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
 </head>
 
-<body class="bg-white">
+<body class="bg-gray-900">
     <!-- <span class="absolute text-white text-4xl top-5 left-4 cursor-pointer" onclick="openSidebar()">
         <i class="bi bi-filter-left px-2 bg-gray-900 rounded-md"></i>
     </span> -->

@@ -13,7 +13,25 @@ class SupirController extends Controller
      */
     public function index()
     {
-        //
+        return view('supir/homesupir', [
+            "title" => "Daftar Supir",
+            "supir" => Supir::all()
+        ]);
+    }
+
+    public function tambahsupir()
+    {
+        return view('supir/tambahsupir');
+    }
+
+    public function updatesupir()
+    {
+        return view('supir/updatesupir');
+    }
+
+    public function hapussupir()
+    {
+        return view('supir/hapussupir');
     }
 
     /**

@@ -18,6 +18,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\MobilController;
+use App\Http\Controllers\SupirController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\Auth\LoginController as LoginControl;
@@ -30,7 +31,16 @@ Route::get('/home', [\App\Http\Controllers\HomeController::class, 'index'])->nam
 Route::get('/register', [App\Http\Controllers\Auth\RegisteredUserController::class, 'store'])->name('register');
 Route::post('/register/add', [App\Http\Controllers\Auth\RegisteredUserController::class, 'create'])->name('register.store');
 
-Route::get('/sewa', [App\Http\Controllers\SewaController::class, 'index'])->name('sewa');
+
+// Route::get('/login', function () {
+//     return view('login');
+// });
+
+Route::get('/sewa', function () {
+    return view('customer/sewa', [
+        "title" => "Sewa"
+    ]);
+})->name('sewa');
 Route::post('/sewa', function () {
     return view('customer/home', [
         "title" => "Home"
@@ -76,23 +86,23 @@ Route::get('/', function () {
 
 
 // supir
-Route::get('/supir', function () {
-    return view('supir/homesupir');
-})->name('supir');
-Route::get('/tambahsupir', function () {
-    return view('supir/tambahsupir');
-});
-Route::get('/hapussupir', function () {
-    return view('supir/hapussupir');
-});
+// Route::get('/supir', function () {
+//     return view('supir/homesupir');
+// })->name('supir');
+// Route::get('/tambahsupir', function () {
+//     return view('supir/tambahsupir');
+// });
+// Route::get('/hapussupir', function () {
+//     return view('supir/hapussupir');
+// });
 
 
-Route::get('/updatesupir', function () {
-    return view('supir/updatesupir');
-});
-Route::get('/back-to-supir', function () {
-    return redirect('supir/homesupir');
-})->name('back.homesupir');
+// Route::get('/updatesupir', function () {
+//     return view('supir/updatesupir');
+// });
+// Route::get('/back-to-supir', function () {
+//     return redirect('supir/homesupir');
+// })->name('back.homesupir');
 
 // Mobil
 // Routes menggunakan controller tapi belum jadi.
@@ -102,9 +112,13 @@ Route::get('/tambahmobil', [MobilController::class, 'tambahmobil']);
 Route::get('/hapusmobil', [MobilController::class, 'hapusmobil']);
 Route::get('/updatemobil', [MobilController::class, 'updatemobil']);
 
-Route::get('/transaksi',[App\Http\Controllers\SewaController::class, 'show'])->name('transaksi');
-
-Route::get('/keuangan', [App\Http\Controllers\SewaController::class, 'laporan'])->name('laporan');
+//route tanpa controlerr untuk menampilkan daftar mobil.
+// Route::get('/daftarmobil', function () {
+//     return view('daftarmobil', [
+//         "title" => "Daftar Mobil",
+//         "mobil" => Mobil::all()
+//     ]);
+// });
 
 //route coba-coba boleh dihapus jika sudah tidak digunakan. 
 // Route::get('/tambahmobil', function () {
