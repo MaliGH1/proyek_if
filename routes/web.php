@@ -30,16 +30,7 @@ Route::get('/home', [\App\Http\Controllers\HomeController::class, 'index'])->nam
 Route::get('/register', [App\Http\Controllers\Auth\RegisteredUserController::class, 'store'])->name('register');
 Route::post('/register/add', [App\Http\Controllers\Auth\RegisteredUserController::class, 'create'])->name('register.store');
 
-
-// Route::get('/login', function () {
-//     return view('login');
-// });
-
-Route::get('/sewa', function () {
-    return view('customer/sewa', [
-        "title" => "Sewa"
-    ]);
-})->name('sewa');
+Route::get('/sewa', [App\Http\Controllers\SewaController::class, 'index'])->name('sewa');
 Route::post('/sewa', function () {
     return view('customer/home', [
         "title" => "Home"
@@ -111,13 +102,9 @@ Route::get('/tambahmobil', [MobilController::class, 'tambahmobil']);
 Route::get('/hapusmobil', [MobilController::class, 'hapusmobil']);
 Route::get('/updatemobil', [MobilController::class, 'updatemobil']);
 
-//route tanpa controlerr untuk menampilkan daftar mobil.
-// Route::get('/daftarmobil', function () {
-//     return view('daftarmobil', [
-//         "title" => "Daftar Mobil",
-//         "mobil" => Mobil::all()
-//     ]);
-// });
+Route::get('/transaksi',[App\Http\Controllers\SewaController::class, 'show'])->name('transaksi');
+
+Route::get('/keuangan', [App\Http\Controllers\SewaController::class, 'laporan'])->name('laporan');
 
 //route coba-coba boleh dihapus jika sudah tidak digunakan. 
 // Route::get('/tambahmobil', function () {
