@@ -41,7 +41,10 @@ class SewaController extends Controller
      */
     public function show(Sewa $sewa)
     {
-        //
+        return view('admin/verifikasi', [
+            "title" => "Daftar Transaksi",
+            "transaksi" => Sewa::all()
+        ]);
     }
 
     /**
@@ -49,7 +52,15 @@ class SewaController extends Controller
      */
     public function edit(Sewa $sewa)
     {
-        //
+        
+    }
+
+    public function laporan(Sewa $sewa)
+    {
+        return view('admin/keuangan', [
+            "title" => "Daftar Transaksi",
+            "transaksi" => Sewa::all()
+        ]);
     }
 
     /**

@@ -36,11 +36,7 @@ Route::post('/register/add', [App\Http\Controllers\Auth\RegisteredUserController
 //     return view('login');
 // });
 
-Route::get('/sewa', function () {
-    return view('customer/sewa', [
-        "title" => "Sewa"
-    ]);
-})->name('sewa');
+Route::get('/sewa', [App\Http\Controllers\SewaController::class, 'index'])->name('sewa');
 Route::post('/sewa', function () {
     return view('customer/home', [
         "title" => "Home"
@@ -114,10 +110,17 @@ Route::get('/hapusmobil', [MobilController::class, 'hapusmobil']);
 Route::get('/updatemobil', [MobilController::class, 'updatemobil']);
 
 
+<<<<<<< HEAD
+=======
+Route::resource('supir', SupirController::class);
+>>>>>>> 1f8654874346b80b269455268d2f16caac9183cb
 Route::get('/supir', [SupirController::class, 'index'])->name('supir');
 Route::get('/tambahsupir', [SupirController::class, 'tambahsupir']);
 Route::get('/hapussupir', [SupirController::class, 'hapussupir']);
 Route::get('/updatesupir', [SupirController::class, 'updatesupir']);
+
+Route::get('/transaksi', [App\Http\Controllers\SewaController::class, 'show'])->name('transaksi');
+Route::get('/keuangan', [App\Http\Controllers\SewaController::class, 'laporan'])->name('laporan');
 
 //route tanpa controlerr untuk menampilkan daftar mobil.
 // Route::get('/daftarmobil', function () {
@@ -171,4 +174,4 @@ Route::group(['middleware' => 'auth:admin'], function () {
     Route::get('/homeadmin', [\App\Http\Controllers\HomeController::class, 'adminHome'])->name('home.admin');
 });
 
-require __DIR__ . '/auth.php';
+require __DIR__ .'/auth.php';
