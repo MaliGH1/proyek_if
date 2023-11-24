@@ -31,11 +31,13 @@ Route::get('/home', [\App\Http\Controllers\HomeController::class, 'index'])->nam
 Route::get('/register', [App\Http\Controllers\Auth\RegisteredUserController::class, 'store'])->name('register');
 Route::post('/register/add', [App\Http\Controllers\Auth\RegisteredUserController::class, 'create'])->name('register.store');
 
+Route::get('/transaksi',[AppHttp\Controllers\SewaController::class, 'show'])->name('transaksi');
+
 
 // Route::get('/login', function () {
 //     return view('login');
 // });
-
+Route::get('/sewa',[AppHttp\Controllers\SewaController::class, 'index'])->name('sewa');
 Route::get('/sewa', function () {
     return view('customer/sewa', [
         "title" => "Sewa"
