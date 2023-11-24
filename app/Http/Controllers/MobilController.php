@@ -17,4 +17,5 @@ class MobilController extends Controller
             "mobil" => Mobil::all()
         ]);
     }
+    
 }
