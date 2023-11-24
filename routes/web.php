@@ -31,15 +31,12 @@ Route::get('/home', [\App\Http\Controllers\HomeController::class, 'index'])->nam
 Route::get('/register', [App\Http\Controllers\Auth\RegisteredUserController::class, 'store'])->name('register');
 Route::post('/register/add', [App\Http\Controllers\Auth\RegisteredUserController::class, 'create'])->name('register.store');
 
-Route::get('/transaksi',[App\Http\Controllers\SewaController::class, 'show'])->name('transaksi');
-Route::get('/keuangan',[App\Http\Controllers\SewaController::class, 'laporan'])->name('laporan');
-
 
 // Route::get('/login', function () {
 //     return view('login');
 // });
-Route::get('/sewa',[App\Http\Controllers\SewaController::class, 'index'])->name('sewa');
 
+Route::get('/sewa', [App\Http\Controllers\SewaController::class, 'index'])->name('sewa');
 Route::post('/sewa', function () {
     return view('customer/home', [
         "title" => "Home"
@@ -111,6 +108,16 @@ Route::get('/tambahmobil', [MobilController::class, 'tambahmobil']);
 Route::get('/hapusmobil', [MobilController::class, 'hapusmobil']);
 Route::get('/updatemobil', [MobilController::class, 'updatemobil']);
 
+
+Route::resource('supir', SupirController::class);
+Route::get('/supir', [SupirController::class, 'index'])->name('supir');
+Route::get('/tambahsupir', [SupirController::class, 'tambahsupir']);
+Route::get('/hapussupir', [SupirController::class, 'hapussupir']);
+Route::get('/updatesupir', [SupirController::class, 'updatesupir']);
+
+Route::get('/transaksi', [App\Http\Controllers\SewaController::class, 'show'])->name('transaksi');
+Route::get('/keuangan', [App\Http\Controllers\SewaController::class, 'laporan'])->name('laporan');
+
 //route tanpa controlerr untuk menampilkan daftar mobil.
 // Route::get('/daftarmobil', function () {
 //     return view('daftarmobil', [
@@ -163,4 +170,4 @@ Route::group(['middleware' => 'auth:admin'], function () {
     Route::get('/homeadmin', [\App\Http\Controllers\HomeController::class, 'adminHome'])->name('home.admin');
 });
 
-require __DIR__ . '/auth.php';
+require _DIR_ . '/auth.php';
