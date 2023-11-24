@@ -35,11 +35,7 @@ Route::post('/register/add', [App\Http\Controllers\Auth\RegisteredUserController
 //     return view('login');
 // });
 
-Route::get('/sewa', function () {
-    return view('customer/sewa', [
-        "title" => "Sewa"
-    ]);
-})->name('sewa');
+Route::get('/sewa', [App\Http\Controllers\SewaController::class, 'index'])->name('sewa');
 Route::post('/sewa', function () {
     return view('customer/home', [
         "title" => "Home"
