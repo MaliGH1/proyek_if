@@ -10,7 +10,7 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
 </head>
 
-<body class="bg-white">
+<body class="bg-gray-900">
     <!-- <span class="absolute text-white text-4xl top-5 left-4 cursor-pointer" onclick="openSidebar()">
         <i class="bi bi-filter-left px-2 bg-gray-900 rounded-md"></i>
     </span> -->
@@ -29,9 +29,9 @@
             <i class="fas fa-home"></i>
             <li class="nav-item list-none">
                 <a href="{{ route('home.admin') }}" class="nav-link hover:bg-gray-800 text-white font-bold py-2 px-4 rounded inline-block transition duration-300 text-xl">
-                <span class="text-[15px] text-gray-200 font-bold text-lg">
+                    <span class="text-[15px] text-gray-200 font-bold text-lg">
                         {{ __('Dasbor') }}
-                </span>
+                    </span>
                 </a>
             </li>
         </div>
@@ -48,18 +48,18 @@
         <div class="text-left text-sm mt-2 w-full mx-auto text-gray-200 font-bold" id="submenu-sewa">
             <li class="nav-item list-none">
                 <a href="{{ route('supir') }}" class="nav-link bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded inline-block transition duration-300 text-xl">
-                <span class="text-[15px] ml-4 text-gray-200 font-bold text-lg">
-                    <i class="nav-icon fas fa-check-circle"></i>
+                    <span class="text-[15px] ml-4 text-gray-200 font-bold text-lg">
+                        <i class="nav-icon fas fa-check-circle"></i>
                         {{ __('Verifikasi') }}
-                </span>
+                    </span>
                 </a>
             </li>
             <li class="nav-item list-none">
                 <a href="{{ route('mobil') }}" class="nav-link bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded inline-block transition duration-300 text-xl">
-                <span class="text-[15px] ml-4 text-gray-200 font-bold text-lg">
-                    <i class="nav-icon fas fa-arrow-left"></i>
+                    <span class="text-[15px] ml-4 text-gray-200 font-bold text-lg">
+                        <i class="nav-icon fas fa-arrow-left"></i>
                         {{ __('Pengembalian') }}
-                </span>
+                    </span>
                 </a>
             </li>
         </div>
@@ -77,18 +77,18 @@
         <div class="text-left text-sm mt-2 w-full mx-auto text-gray-200 font-bold" id="submenu-edit">
             <li class="nav-item list-none">
                 <a href="{{ route('supir') }}" class="nav-link bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded inline-block transition duration-300 text-xl">
-                <span class="text-[15px] ml-4 text-gray-200 font-bold text-lg">
-                    <i class="nav-icon fa fa-user"></i>
+                    <span class="text-[15px] ml-4 text-gray-200 font-bold text-lg">
+                        <i class="nav-icon fa fa-user"></i>
                         {{ __('Sopir') }}
-                </span>
+                    </span>
                 </a>
             </li>
             <li class="nav-item list-none">
-                <a href="{{ route('mobil') }}" class="nav-link bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded inline-block transition duration-300 text-xl">
-                <span class="text-[15px] ml-4 text-gray-200 font-bold text-lg">
-                    <i class="nav-icon fa fa-car"></i>
+                <a href="/mobil" class="nav-link bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded inline-block transition duration-300 text-xl">
+                    <span class="text-[15px] ml-4 text-gray-200 font-bold text-lg">
+                        <i class="nav-icon fa fa-car"></i>
                         {{ __('Mobil') }}
-                </span>
+                    </span>
                 </a>
             </li>
         </div>
@@ -103,20 +103,20 @@
             </div>
         </div>
         <div class="w-full text-left text-sm mt-2 ml-3 mx-auto text-gray-200 font-bold" id="submenu-keuangan">
-        <li class="nav-item list-none">
+            <li class="nav-item list-none">
                 <a href="{{ route('supir') }}" class="nav-link bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded inline-block transition duration-300 text-xl">
-                <span class="text-[15px] ml-4 text-gray-200 font-bold text-lg">
-                    <i class="nav-icon fas fa-calendar"></i>
+                    <span class="text-[15px] ml-4 text-gray-200 font-bold text-lg">
+                        <i class="nav-icon fas fa-calendar"></i>
                         {{ __('Bulanan') }}
-                </span>
+                    </span>
                 </a>
             </li>
             <li class="nav-item list-none">
                 <a href="{{ route('mobil') }}" class="nav-link bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded inline-block transition duration-300 text-xl">
-                <span class="text-[15px] ml-4 text-gray-200 font-bold text-lg">
-                    <i class="nav-icon fas fa-calendar"></i>
+                    <span class="text-[15px] ml-4 text-gray-200 font-bold text-lg">
+                        <i class="nav-icon fas fa-calendar"></i>
                         {{ __('Tahunan') }}
-                </span>
+                    </span>
                 </a>
             </li>
         </div>
@@ -134,7 +134,7 @@
 
     <!-- Akhir Sidebar -->
 
-    
+
     <script type="text/javascript">
         function dropdown(menu) {
             const submenu = document.querySelector(`#submenu-${menu}`);
