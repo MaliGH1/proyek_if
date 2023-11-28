@@ -26,11 +26,6 @@ Route::get('logs', [\Rap2hpoutre\LaravelLogViewer\LogViewerController::class, 'i
 
 Route::get('/home', [\App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-
-Route::get('/register', [App\Http\Controllers\Auth\RegisteredUserController::class, 'store'])->name('register');
-Route::post('/register/add', [App\Http\Controllers\Auth\RegisteredUserController::class, 'create'])->name('register.store');
-
-
 // Route::get('/login', function () {
 //     return view('login');
 // });
@@ -168,8 +163,5 @@ Auth::routes();
 Route::group(['middleware' => 'auth:admin'], function () {
     Route::get('/homeadmin', [\App\Http\Controllers\HomeController::class, 'adminHome'])->name('home.admin');
 });
-<<<<<<< HEAD
 
 require __DIR__ . '/auth.php';
-=======
->>>>>>> fbbc37afde5459eb8877614a102e44c636e7cc03
