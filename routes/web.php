@@ -3,7 +3,6 @@
 use App\Models\Mobil;
 use Illuminate\Support\Facades\Auth;
 
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -79,8 +78,6 @@ Route::get('/', function () {
 // });
 
 
-
-
 // supir
 // Route::get('/supir', function () {
 //     return view('supir/homesupir');
@@ -100,6 +97,7 @@ Route::get('/', function () {
 //     return redirect('supir/homesupir');
 // })->name('back.homesupir');
 
+
 // Mobil
 // Routes menggunakan controller tapi belum jadi.
 Route::get('/mobil', [MobilController::class, 'index'])->name('mobil');
@@ -108,12 +106,16 @@ Route::get('/tambahmobil', [MobilController::class, 'tambahmobil']);
 Route::get('/hapusmobil', [MobilController::class, 'hapusmobil']);
 Route::get('/updatemobil', [MobilController::class, 'updatemobil']);
 
-// Correct order
+
+Route::resource('supir', SupirController::class);
 Route::get('/supir', [SupirController::class, 'index'])->name('supir');
 Route::post('/supir/store', [SupirController::class, 'store'])->name('supir.store');
 Route::get('/tambahsupir', [SupirController::class, 'tambahsupir']);
 Route::get('/hapussupir', [SupirController::class, 'hapussupir']);
 Route::get('/updatesupir', [SupirController::class, 'updatesupir']);
+
+Route::get('/transaksi', [App\Http\Controllers\SewaController::class, 'show'])->name('transaksi');
+Route::get('/keuangan', [App\Http\Controllers\SewaController::class, 'laporan'])->name('laporan');
 
 //route tanpa controlerr untuk menampilkan daftar mobil.
 // Route::get('/daftarmobil', function () {
@@ -166,5 +168,3 @@ Auth::routes();
 Route::group(['middleware' => 'auth:admin'], function () {
     Route::get('/homeadmin', [\App\Http\Controllers\HomeController::class, 'adminHome'])->name('home.admin');
 });
-
-require __DIR__ . '/auth.php';
