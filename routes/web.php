@@ -108,7 +108,9 @@ Route::get('/tambahmobil', [MobilController::class, 'tambahmobil']);
 Route::get('/hapusmobil', [MobilController::class, 'hapusmobil']);
 Route::get('/updatemobil', [MobilController::class, 'updatemobil']);
 
+// Correct order
 Route::get('/supir', [SupirController::class, 'index'])->name('supir');
+Route::post('/supir/store', [SupirController::class, 'store'])->name('supir.store');
 Route::get('/tambahsupir', [SupirController::class, 'tambahsupir']);
 Route::get('/hapussupir', [SupirController::class, 'hapussupir']);
 Route::get('/updatesupir', [SupirController::class, 'updatesupir']);

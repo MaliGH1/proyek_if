@@ -8,4 +8,13 @@ use Illuminate\Database\Eloquent\Model;
 class Supir extends Model
 {
     use HasFactory;
+    protected $table = 'supirs';
+
+    protected $fillable = [
+        'noktp',
+        'nama',
+        'alamat',
+        'nohpsupir',
+        'image',
+    ];
 }
