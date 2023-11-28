@@ -16,7 +16,6 @@ return new class extends Migration
             $table->string('nama');
             $table->string('alamat');
             $table->string('nohpsupir');
-            $table->string('image');
             $table->timestamps();
         });
     }
