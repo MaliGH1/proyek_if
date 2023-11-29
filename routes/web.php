@@ -96,13 +96,13 @@ Route::get('/', function () {
 
 // Mobil
 // Routes menggunakan controller tapi belum jadi.
-<<<<<<< Updated upstream
+
 Route::get('/daftarmobil', [MobilController::class, 'daftarmobil']);
 
-=======
+
 Route::get('/daftarmobil', [MobilController::class, 'index']);
 Route::resource('/mobil', AdminMobilController::class)->middleware('auth');
->>>>>>> Stashed changes
+
 
 
 
