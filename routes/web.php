@@ -97,7 +97,7 @@ Route::get('/', function () {
 // Mobil
 // Routes menggunakan controller tapi belum jadi.
 Route::get('/daftarmobil', [MobilController::class, 'daftarmobil']);
-Route::resource('/mobil', AdminMobilController::class)->middleware('auth');
+
 
 
 
@@ -161,6 +161,7 @@ Auth::routes();
 
 Route::group(['middleware' => 'auth:admin'], function () {
     Route::get('/homeadmin', [\App\Http\Controllers\HomeController::class, 'adminHome'])->name('home.admin');
+    Route::resource('/mobil', AdminMobilController::class);
 });
 
 require __DIR__ . '/auth.php';

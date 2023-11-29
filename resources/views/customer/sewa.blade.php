@@ -6,7 +6,7 @@
     <div class="layout">
         <h1 class="judul">Formulir Pengisian Penyewaan Mobil</h1>
 
-        <form action="{{ route('invoice') }}" method="POST">
+        <!-- <form action="{{ route('invoice') }}" method="POST">
             @csrf
             <div class="nama">
                 <label for="nama" class="nama-label">Nama</label>
@@ -53,7 +53,7 @@
 
                     <div class="flex">
                         <!-- First Card -->
-                        <div
+                        <!-- <div
                             class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 m-4">
                             <img class="rounded-t-sm" src="{{$mobil->foto}}" alt="" />
 
@@ -74,7 +74,7 @@
                             </div>
                         </div>
                         <!-- Second Card -->
-                        <div
+                        <!-- <div
                         class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 m-4">
                             <img class="rounded-t-sm object-cover"
                                 src="https://i.pinimg.com/564x/cb/43/75/cb43750b56833308a168785d00e029d0.jpg" alt=""
@@ -96,9 +96,9 @@
                                 </a>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
                     <!-- Third Card -->
-                    <div
+                    <!-- <div
                         class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 m-4">
                         <img class="rounded-t-sm object-cover"
                             src="https://i.pinimg.com/564x/91/46/62/914662cf3d64159e082cc2580df4358f.jpg" alt=""
@@ -140,15 +140,36 @@
         }
 
     });
-    </script>
+    </script> -->
 
 
 
 
     <!-- Tombol Submit -->
-    <a href="/invoice"><button class="px-4 py-2 bg-blue-500 text-white rounded-lg">Sewa Mobil</button></a>
+    <!-- <a href="/invoice"><button class="px-4 py-2 bg-blue-500 text-white rounded-lg">Sewa Mobil</button></a>
 
+    </form> -->
+    <form action="{{ route('sewa') }}" method="POST">
+    @csrf
+        <label for="mobil">Pilih Mobil:</label>
+        <select name="mobil" id="mobil">
+            @foreach($mobil as $mobil)
+                <option value="{{ $mobil->nama_mobil }}">
+                    {{ $mobil->foto}} -   
+                    {{ $mobil->nama_mobil }}
+                </option>
+            @endforeach
+        </select>
+
+        <label for="sopir">Pilih Sopir:</label>
+        <select name="sopir" id="sopir">
+            @foreach($sopir as $sopir)
+                <option value="{{ $sopir->id }}">{{ $sopir->nama }}</option>
+            @endforeach
+        </select>
+
+        <button type="submit">Sewa Mobil</button>
     </form>
-</div>
+    </div>
 </div>
 @endsection

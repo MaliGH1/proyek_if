@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Sewa;
 use App\Models\Mobil;
+use App\Models\Supir;
 use App\Http\Requests\StoreSewaRequest;
 use App\Http\Requests\UpdateSewaRequest;
 
@@ -14,6 +15,8 @@ class SewaController extends Controller
      */
     public function index()
     {
+        $mobils = Mobil::all();
+        $sopirs = Supir::all();
         return view('customer/sewa', [
             "title" => "Sewa Mobil",
             "mobil" => Mobil::all()
@@ -33,7 +36,16 @@ class SewaController extends Controller
      */
     public function store(StoreSewaRequest $request)
     {
-        //
+        // Validasi request jika perlu
+
+    $sewa = new Sewa();
+    $sewa->mobil_id = $request->input('mobil');
+    $sewa->sopir_id = $request->input('sopir');
+    // Tambahkan informasi lainnya jika diperlukan
+
+    $sewa->save();
+
+    // Redirect atau tampilkan pesan sukses
     }
 
     /**
