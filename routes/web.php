@@ -97,19 +97,9 @@ Route::get('/', function () {
 
 // Mobil
 // Routes menggunakan controller tapi belum jadi.
-<<<<<<< Updated upstream
-=======
-
-Route::get('/daftarmobil', [MobilController::class, 'daftarmobil']);
->>>>>>> Stashed changes
 
 Route::get('/daftarmobil', [MobilController::class, 'index']);
 Route::resource('/mobil', AdminMobilController::class)->middleware('auth');
-
-<<<<<<< Updated upstream
-Route::get('/daftarsupir', [MobilController::class, 'index']);
-=======
->>>>>>> Stashed changes
 Route::resource('/supir', AdminSupirController::class)->middleware('auth');
 
 Route::get('/transaksi', [App\Http\Controllers\VerifikasiController::class, 'index'])->name('transaksi');
