@@ -19,7 +19,8 @@ class SewaController extends Controller
         $sopirs = Supir::all();
         return view('customer/sewa', [
             "title" => "Sewa Mobil",
-            "mobil" => Mobil::all()
+            "mobils" => $mobils, // Ubah variabel $mobil menjadi $mobils
+            "sopirs" => $sopirs  // Melewatkan data sopir ke tampilan jika diperlukan
         ]);
     }
 
