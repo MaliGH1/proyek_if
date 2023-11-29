@@ -40,11 +40,8 @@
                             <td class="px-4 py-2">{{ $data->tanggal_kembali }}</td>
                             <td class="px-4 py-2">{{ $data->jaminan }}</td>
                             <td class="px-4 py-2">{{ $data->total_biaya }}</td>
-                            <td class="px-4 py-2">
-                                <button id="checkmarkBtn"
-                                    class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded-full">&#10004;</button>
-                                <button id="crossBtn"
-                                    class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded-full">&#10008;</button>
+                            <td class="px-4 py-2"><button
+                                    class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Verifikasi</button>
                             </td>
                         </tr>
                         @endforeach
@@ -65,5 +62,4 @@ $(document).ready(function() {
     });
 });
 </script>
-
 @endsection
