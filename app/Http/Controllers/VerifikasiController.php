@@ -8,6 +8,9 @@ class VerifikasiController extends Controller
 {
     public function index()
     {
-        return view('verifikasi');
+        return view('admin/verifikasi', [
+            "title" => "Verifikasi",
+            "transaksi" => Verifikasi::all()
+        ]);
     }
 }
