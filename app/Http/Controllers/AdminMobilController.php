@@ -116,6 +116,6 @@ class AdminMobilController extends Controller
     {
         Mobil::destroy($mobil->id);
 
-        return redirect('mobil')->with('success', 'Data Mobil  telah duhapus');
+        return redirect('mobil')->with('success', 'Data Mobil telah dihapus');
     }
 }

@@ -15,6 +15,7 @@ use Illuminate\Support\Facades\Auth;
 */
 
 use App\Http\Controllers\AdminMobilController;
+use App\Http\Controllers\AdminSupirController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\MobilController;
@@ -97,21 +98,11 @@ Route::get('/', function () {
 // Mobil
 // Routes menggunakan controller tapi belum jadi.
 
-Route::get('/daftarmobil', [MobilController::class, 'daftarmobil']);
-
-
 Route::get('/daftarmobil', [MobilController::class, 'index']);
 Route::resource('/mobil', AdminMobilController::class)->middleware('auth');
 
-
-
-
-Route::resource('supir', SupirController::class);
-Route::get('/supir', [SupirController::class, 'index'])->name('supir');
-Route::post('/supir/store', [SupirController::class, 'store'])->name('supir.store');
-Route::get('/tambahsupir', [SupirController::class, 'tambahsupir']);
-Route::get('/hapussupir', [SupirController::class, 'hapussupir']);
-Route::get('/updatesupir', [SupirController::class, 'updatesupir']);
+Route::get('/daftarsupir', [MobilController::class, 'index']);
+Route::resource('/supir', AdminSupirController::class)->middleware('auth');
 
 Route::get('/transaksi', [App\Http\Controllers\VerifikasiController::class, 'index'])->name('transaksi');
 Route::get('/keuangan', [App\Http\Controllers\SewaController::class, 'laporan'])->name('laporan');
