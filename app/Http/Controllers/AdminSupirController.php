@@ -12,13 +12,8 @@ class AdminSupirController extends Controller
      */
     public function index()
     {
-<<<<<<< Updated upstream
         //return 'ini halaman supir';
         return view('supir/homesupir', [
-=======
-           //return 'ini halaman supir';
-           return view('supir/homesupir', [
->>>>>>> Stashed changes
             'supirs' => Supir::all()
         ]);
     }
@@ -40,11 +35,7 @@ class AdminSupirController extends Controller
             'noktp' => 'required',
             'nama' => 'required',
             'alamat' => 'required',
-<<<<<<< Updated upstream
             'nohpsupir' => 'required',
-=======
-            'nohpsupir' => 'required'
->>>>>>> Stashed changes
         ]);
 
         Supir::create($validateData);
@@ -63,22 +54,14 @@ class AdminSupirController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-<<<<<<< Updated upstream
     public function edit($noktp)
     {
         $supir = Supir::findOrFail($noktp);
         return view('supir/updatesupir', compact('supir'));
-=======
-    public function edit(Supir $supir)
-    {
-        //
->>>>>>> Stashed changes
     }
-
     /**
      * Update the specified resource in storage.
      */
-<<<<<<< Updated upstream
     public function update(Request $request, $noktp)
     {
         $request->validate([
@@ -96,11 +79,6 @@ class AdminSupirController extends Controller
         $supir->save();
 
         return redirect('supir')->with('success', 'Data Supir berhasil diupdate');
-=======
-    public function update(Request $request, Supir $supir)
-    {
-        //
->>>>>>> Stashed changes
     }
 
     /**

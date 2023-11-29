@@ -105,36 +105,6 @@ Route::resource('/supir', AdminSupirController::class)->middleware('auth');
 Route::get('/transaksi', [App\Http\Controllers\VerifikasiController::class, 'index'])->name('transaksi');
 Route::get('/keuangan', [App\Http\Controllers\SewaController::class, 'laporan'])->name('laporan');
 
-//route tanpa controlerr untuk menampilkan daftar mobil.
-// Route::get('/daftarmobil', function () {
-//     return view('daftarmobil', [
-//         "title" => "Daftar Mobil",
-//         "mobil" => Mobil::all()
-//     ]);
-// });
-
-//route coba-coba boleh dihapus jika sudah tidak digunakan. 
-// Route::get('/tambahmobil', function () {
-//     return view('mobil/tambahmobil');
-// });
-// Route::get('/hapusmobil', function () {
-//     return view('mobil/hapusmobil');
-// });
-// Route::get('/updatesupir', function () {
-//     return view('mobil/updatemobil');
-// });
-// Route::get('/back-to-mobil', function () {
-//     return redirect('mobil/homemobil');
-// })->name('back.homemobil');
-// // Rute untuk tombol kembali ke home admin
-// Route::get('/back-to-homeadmin', function () {
-//     return redirect('/homeadmin');
-// })->name('back.homeadmin');
-
-
-
-
-
 //Route::get('verifikasi', \App\Http\Controllers\Admin\VerifikasiController::class);
 
 
