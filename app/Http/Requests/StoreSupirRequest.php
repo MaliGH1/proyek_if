@@ -11,7 +11,7 @@ class StoreSupirRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return true;
+        return false;
     }
 
     /**
@@ -22,11 +22,7 @@ class StoreSupirRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'noktp' => 'required|string|max:255',
-            'nama' => 'required|string|max:255',
-            'alamat' => 'required|string|max:255',
-            'nohpsupir' => 'required|string|max:13',
-            'image' => 'required|string|max:255',
+            //
         ];
     }
 }

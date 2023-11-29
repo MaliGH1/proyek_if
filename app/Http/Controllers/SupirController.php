@@ -20,58 +20,42 @@ class SupirController extends Controller
     }
 
     public function tambahsupir()
-    {   
-        return view('supir.tambahsupir');
+    {
+        return view('supir/tambahsupir');
     }
 
     public function updatesupir()
     {
-        return view('supir.updatesupir');
+        return view('supir/updatesupir');
     }
 
     public function hapussupir()
     {
-        return view('supir.hapussupir');
+        return view('supir/hapussupir');
     }
-    
+
+    /**
+     * Show the form for creating a new resource.
+     */
+    public function create()
+    {
+        //
+    }
+
     /**
      * Store a newly created resource in storage.
      */
     public function store(StoreSupirRequest $request)
     {
-        try {
-            // Validation is already performed by StoreSupirRequest
-    
-            // Create a new instance of the Supir model
-            $supir = new Supir([
-                'noktp' => $request->input('noktp'),
-                'nama' => $request->input('nama'),
-                'alamat' => $request->input('alamat'),
-                'nohpsupir' => $request->input('nohpsupir'),
-                'image' => $request->input('image'),
-            ]);
-    
-            // Save the Supir model to the database
-            $supir->save();
-    
-            // Redirect to a specific route after successful save
-            return redirect()->route('supir.index')->with('success', 'Supir berhasil ditambahkan!');
-        } catch (\Exception $e) {
-            // Log the exception for further analysis
-            \Log::error($e);
-    
-            // Redirect back with an error message
-            return redirect()->back()->with('error', 'Gagal menambahkan supir. Silakan cek log untuk informasi lebih lanjut.');
-        }
+        //
     }
-    
 
     /**
      * Display the specified resource.
      */
     public function show(Supir $supir)
     {
-        return view('supir.show', ['supir' => $supir]);
+        //
     }
 
     /**
@@ -79,7 +63,7 @@ class SupirController extends Controller
      */
     public function edit(Supir $supir)
     {
-        return view('supir.edit', ['supir' => $supir]);
+        //
     }
 
     /**
@@ -87,13 +71,7 @@ class SupirController extends Controller
      */
     public function update(UpdateSupirRequest $request, Supir $supir)
     {
-        $supir -> update([
-            'nama' => $request->input('nama'),
-            'alamat' => $request->input('alamat'),
-            'nohpsupir' => $request->input('nohpsupir'),
-            'foto' => $request->input('image'),
-        ]);
-        return redirect()->route('supir.index')->with('success', 'Supir berhasil diperbarui!');
+        //
     }
 
     /**
@@ -101,8 +79,6 @@ class SupirController extends Controller
      */
     public function destroy(Supir $supir)
     {
-        $supir->delete();
-
-        return redirect()->route('supir.index')->with('success', 'Supir berhasil dihapus!');
+        //
     }
 }

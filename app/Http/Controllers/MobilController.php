@@ -7,7 +7,6 @@ use App\Models\Mobil;
 
 use Illuminate\Http\Request;
 use PhpParser\Node\Expr\FuncCall;
-use Illuminate\Support\Facades\Response;
 
 class MobilController extends Controller
 {
@@ -41,18 +40,4 @@ class MobilController extends Controller
     {
         return view('mobil/hapusmobil');
     }
-
-    // public function getMobilImage($id)
-    // {
-    //     $mobil = Mobil::findOrFail($id);
-    //     $imageFile = $mobil->foto; // 'foto' adalah kolom BLOB
-
-    //     if ($imageFile) {
-    //         $imageData = base64_encode($imageFile);
-    //         return Response::make($imageData, 200, ['Content-Type' => 'image/jpg']); // Sesuaikan 'image/jpeg' sesuai format gambar Anda
-    //     }
-
-    //     // Jika tidak ada gambar, kirim respons tidak ditemukan atau gambar default
-    //     return Response::make(null, 404);
-    // }
 }
