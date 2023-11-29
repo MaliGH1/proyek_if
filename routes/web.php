@@ -109,7 +109,7 @@ Route::get('/tambahsupir', [SupirController::class, 'tambahsupir']);
 Route::get('/hapussupir', [SupirController::class, 'hapussupir']);
 Route::get('/updatesupir', [SupirController::class, 'updatesupir']);
 
-Route::get('/transaksi', [App\Http\Controllers\SewaController::class, 'show'])->name('transaksi');
+Route::get('/transaksi', [App\Http\Controllers\VerifikasiController::class, 'index'])->name('transaksi');
 Route::get('/keuangan', [App\Http\Controllers\SewaController::class, 'laporan'])->name('laporan');
 
 //route tanpa controlerr untuk menampilkan daftar mobil.

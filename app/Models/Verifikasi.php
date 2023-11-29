@@ -8,4 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class Verifikasi extends Model
 {
     use HasFactory;
+
+    protected $table ='transaksi';
 }

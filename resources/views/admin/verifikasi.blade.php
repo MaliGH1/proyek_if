@@ -33,9 +33,8 @@
                         <tr>
                             <td class="px-4 py-2">{{ $data->no_invoice }}</td>
                             <td class="px-4 py-2">{{ $data->nama_customer }}</td>
-                            <td class="px-4 py-2">{{ $data->mobil }}</td>
-                            <td class="px-4 py-2">{{ $data->nopol }}</td>
                             <td class="px-4 py-2">{{ $data->tipe_mobil }}</td>
+                            <td class="px-4 py-2">{{ $data->nopol }}</td>
                             <td class="px-4 py-2">{{ $data->supir }}</td>
                             <td class="px-4 py-2">{{ $data->tanggal_pinjam }}</td>
                             <td class="px-4 py-2">{{ $data->tanggal_kembali }}</td>
@@ -43,6 +42,9 @@
                             <td class="px-4 py-2">{{ $data->total_biaya }}</td>
                             <td class="px-4 py-2"><button
                                     class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Verifikasi</button>
+                                    <button
+                                    class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Verifikasi</button>
+                            </td>
                             </td>
                         </tr>
                         @endforeach

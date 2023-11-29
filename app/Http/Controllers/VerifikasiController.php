@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Verifikasi;
 use Illuminate\Http\Request;
 
 class VerifikasiController extends Controller
