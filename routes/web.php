@@ -14,6 +14,7 @@ use Illuminate\Support\Facades\Auth;
 |
 */
 
+use App\Http\Controllers\AdminMobilController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\MobilController;
@@ -95,11 +96,14 @@ Route::get('/', function () {
 
 // Mobil
 // Routes menggunakan controller tapi belum jadi.
-Route::get('/mobil', [MobilController::class, 'index'])->name('mobil');
 Route::get('/daftarmobil', [MobilController::class, 'daftarmobil']);
+
+Route::resource('/mobil', AdminMobilController::class)->middleware('auth');
+// Route::get('', [MobilController::class, 'index'])->name('mobil');
 Route::get('/tambahmobil', [MobilController::class, 'tambahmobil']);
 Route::get('/hapusmobil', [MobilController::class, 'hapusmobil']);
 Route::get('/updatemobil', [MobilController::class, 'updatemobil']);
+
 
 
 Route::resource('supir', SupirController::class);
