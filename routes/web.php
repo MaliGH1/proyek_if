@@ -3,7 +3,6 @@
 use App\Models\Mobil;
 use Illuminate\Support\Facades\Auth;
 
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -26,11 +25,6 @@ use App\Http\Controllers\Auth\LoginController as LoginControl;
 Route::get('logs', [\Rap2hpoutre\LaravelLogViewer\LogViewerController::class, 'index']);
 
 Route::get('/home', [\App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
-
-Route::get('/register', [App\Http\Controllers\Auth\RegisteredUserController::class, 'store'])->name('register');
-Route::post('/register/add', [App\Http\Controllers\Auth\RegisteredUserController::class, 'create'])->name('register.store');
-
 
 // Route::get('/login', function () {
 //     return view('login');
@@ -79,8 +73,6 @@ Route::get('/', function () {
 // });
 
 
-
-
 // supir
 // Route::get('/supir', function () {
 //     return view('supir/homesupir');
@@ -100,6 +92,7 @@ Route::get('/', function () {
 //     return redirect('supir/homesupir');
 // })->name('back.homesupir');
 
+
 // Mobil
 // Routes menggunakan controller tapi belum jadi.
 Route::get('/mobil', [MobilController::class, 'index'])->name('mobil');
@@ -111,6 +104,7 @@ Route::get('/updatemobil', [MobilController::class, 'updatemobil']);
 
 Route::resource('supir', SupirController::class);
 Route::get('/supir', [SupirController::class, 'index'])->name('supir');
+Route::post('/supir/store', [SupirController::class, 'store'])->name('supir.store');
 Route::get('/tambahsupir', [SupirController::class, 'tambahsupir']);
 Route::get('/hapussupir', [SupirController::class, 'hapussupir']);
 Route::get('/updatesupir', [SupirController::class, 'updatesupir']);
@@ -170,4 +164,8 @@ Route::group(['middleware' => 'auth:admin'], function () {
     Route::get('/homeadmin', [\App\Http\Controllers\HomeController::class, 'adminHome'])->name('home.admin');
 });
 
+<<<<<<< HEAD
 require __DIR__ . '/auth.php';
+=======
+require __DIR__ . '/auth.php';
+>>>>>>> 8dfc511f6731be115ccaf71f0c3db805119ccee4
