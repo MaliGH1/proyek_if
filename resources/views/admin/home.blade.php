@@ -5,9 +5,11 @@
     <div class="container flex left bg-black">
         <p class="text-white text-4xl">
         @if(auth()->check())
-                Selamat Datang {{ auth()->user()->username }}!
+             <img src="image/DVJR.jpg" width="1000/">
+
+                Selamat Datang dan Semangat Berkerja {{ auth()->user()->username }}!
             @else
-                Selamat Datang Admin
+                Selamat Datang
             @endif
         </p>
     </div>
