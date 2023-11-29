@@ -40,8 +40,7 @@
                                     Hapus
                                 </button>
                             </form>
-
-                            <a href="/" class="">
+                            <a href="/mobil/{{ $mobil->id }}/edit" class="">
                                 <button class="bg-red-500 hover:bg-red-800 text-white font-bold py-2 px-4 border border-red-600 rounded">
                                     update
                                 </button>
