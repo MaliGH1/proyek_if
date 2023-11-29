@@ -164,8 +164,4 @@ Route::group(['middleware' => 'auth:admin'], function () {
     Route::get('/homeadmin', [\App\Http\Controllers\HomeController::class, 'adminHome'])->name('home.admin');
 });
 
-<<<<<<< HEAD
 require __DIR__ . '/auth.php';
-=======
-require __DIR__ . '/auth.php';
->>>>>>> 8dfc511f6731be115ccaf71f0c3db805119ccee4
