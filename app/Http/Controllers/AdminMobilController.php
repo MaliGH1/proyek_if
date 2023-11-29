@@ -72,8 +72,11 @@ class AdminMobilController extends Controller
     /**
      * Remove the specified resource from storage.
      */
+
     public function destroy(Mobil $mobil)
     {
-        //
+        Mobil::destroy($mobil->id);
+
+        return redirect('mobil')->with('success', 'Data Mobil  telah duhapus');
     }
 }

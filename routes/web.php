@@ -100,9 +100,9 @@ Route::get('/daftarmobil', [MobilController::class, 'daftarmobil']);
 
 Route::resource('/mobil', AdminMobilController::class)->middleware('auth');
 // Route::get('', [MobilController::class, 'index'])->name('mobil');
-Route::get('/tambahmobil', [MobilController::class, 'tambahmobil']);
-Route::get('/hapusmobil', [MobilController::class, 'hapusmobil']);
-Route::get('/updatemobil', [MobilController::class, 'updatemobil']);
+// Route::get('/tambahmobil', [MobilController::class, 'tambahmobil']);
+// Route::get('/hapusmobil', [MobilController::class, 'hapusmobil']);
+// Route::get('/updatemobil', [MobilController::class, 'updatemobil']);
 
 
 
