@@ -31,7 +31,18 @@ class AdminMobilController extends Controller
      */
     public function store(Request $request)
     {
-        return $request;
+        $validateData = $request->validate([
+            'nama_mobil' => 'required',
+            'nopol' => 'required',
+            'warna' => 'required',
+            'type' => 'required',
+            'sewa' => 'required',
+            'tgl_pjk' => 'required',
+        ]);
+
+        Mobil::create($validateData);
+
+        return redirect('mobil')->with('success', 'Mobil Baru telah ditambahkan');
     }
 
     /**

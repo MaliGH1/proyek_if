@@ -2,6 +2,16 @@
 
 @section('container')
 <section class="" id="">
+    <div class="m-6">
+        <p class="text-white">
+            Daftar Mobil DVJR RentCar
+        </p>
+        @if(session()->has('success'))
+        <div class="mb-4 rounded-lg bg-success-100 px-6 py-5 text-base text-success-700" role="alert">
+            {{ session('success') }}
+        </div>
+        @endif
+    </div>
     <div class="flex left bg-black">
         <div class="flex flex-wrap">
             <div class="m-6">
