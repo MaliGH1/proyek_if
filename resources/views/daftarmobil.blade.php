@@ -8,7 +8,7 @@
             <a href="/sewa" class="">
                 <div class="m-6">
                     <div class="rounded overflow-hidden shadow-lg">
-                        <img src="{{ $mobil->foto }}" alt="mobil" class="w-80 h-60 border-b-4 border-black ">
+                        <img src="{{ asset('storage/' . $mobil->foto) }}" alt="mobil" class="w-80 h-60 border-b-4 border-black ">
                         <div class="px-6 py-4">
                             <div class="font-bold text-xl mb-2">{{ $mobil->nama_mobil }}</div>
                             <p class="text-gray-700 text-base">{{ $mobil->nopol }}</p>

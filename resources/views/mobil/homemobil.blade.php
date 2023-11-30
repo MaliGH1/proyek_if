@@ -23,7 +23,7 @@
                 <div class="bg-white">
                     @foreach($mobils as $mobil)
                     <div class="rounded overflow-hidden shadow-lg">
-                        <img src="" alt="mobil" class="w-80 h-60 border-b-4 border-black ">
+                        <img src="{{ asset('storage/' . $mobil->foto) }}" alt="mobil" class="w-80 h-60 border-b-4 border-black ">
                         <div class="px-6 py-4">
                             <div class="font-bold text-xl mb-2">{{ $mobil->nama_mobil}} ({{ $mobil->status}})</div>
                             <p class="text-gray-700 text-base">Plat Nomor: {{ $mobil->nopol}}</p>

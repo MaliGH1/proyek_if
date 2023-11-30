@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Mobil;
 use Illuminate\Http\Request;
+use PhpParser\Node\Stmt\Return_;
 
 class AdminMobilController extends Controller
 {
@@ -38,7 +39,12 @@ class AdminMobilController extends Controller
             'type' => 'required',
             'sewa' => 'required',
             'tgl_pjk' => 'required',
+            'foto' => 'image|file|max:5000'
         ]);
+
+        if ($request->file('foto')) {
+            $validateData['foto'] = $request->file('foto')->store('foto-mobil');
+        }
 
         Mobil::create($validateData);
 
