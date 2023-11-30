@@ -3,7 +3,7 @@
 @section('container')
 <section class="" id="home">
     <div class=" text-white min-h-screen">
-        <div class="mx-auto flex flex-col md:flex-row items-center py-32 my-0 md:my-32">
+        <div class="mx-auto flex flex-col md:flex-row items-center py-32 my-0 md:my-28">
             <div class="mx-auto flex flex-col w-full lg:w-2/3 justify-start items-start p-0">
                 <h1 id="typed-output" class="text-3xl md:text-6xl text-yellow-300 tracking-loose"><span id="insertion-point"></span></h1>
                 <h2 id="animated-h2" class="text-3xl md:text-5xl leading-relaxed md:leading-snug mb-2">Solusi Sewa Mobil Cepat Untuk Kebutuhan Anda</h2>
@@ -41,7 +41,7 @@
     <div class="flex items-top justify-center min-h-screen sm:items-center sm:pt-0 py-0 my-0">
         <div class="max-w-6xl mx-auto sm:px-4 lg:px-6">
             <div class="overflow-hidden">
-                <div class="grid grid-cols-1 md:grid-cols-3">
+                <div class="grid grid-cols-1 md:grid-cols-1">
                     <div class="p-6 bg-gray-100 dark:bg-gray-800 sm:rounded-lg">
                         <h1 class="text-4xl sm:text-5xl text-gray-800 dark:text-white font-extrabold tracking-tight">
                             Hubungi Kami
@@ -77,12 +77,17 @@
                                 DJVR@gmail.com
                             </div>
                         </div>
+                        
                     </div>
+                    
                 </div>
+                
             </div>
+            
         </div>
     </div>
 </section>
+
 
 <script>
     // Fungsi untuk menangani pengguliran ke bagian yang sesuai

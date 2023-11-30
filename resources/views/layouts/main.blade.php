@@ -43,26 +43,41 @@
             color: white;
         }
     </style>
+    <style>
+        #contact-section {
+            display: flex;
+            justify-content: flex-start;
+            /* Mengatur agar konten berada di sebelah kiri */
+        }
+
+        /* Jika ingin mengatur lebar maksimum box, tambahkan properti max-width */
+        #contact-section .max-w-6xl {
+            max-width: 600px;
+            /* Sesuaikan lebar maksimum sesuai kebutuhan */
+        }
+    </style>
+
+
 
 </head>
 
 <body class="bg-gradient-to-b from-black from-45% to-white">
     @include('partials.navbar')
     <div class="margin_bottom_navbar">
-        
+
 
         <!-- Style ngetik -->
         <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
         <script>
             document.addEventListener('DOMContentLoaded', function() {
                 var options = {
-                    strings: ['DVJR RentCar'],
-                    typeSpeed: 120,
+                    strings: ['DVJR RentCar','WELLCOME'],
+                    typeSpeed: 100,
                     backSpeed: 50,
                     backDelay: 1000,
                     startDelay: 500,
-                    loop: false,
-                    showCursor: false,
+                    loop: true,
+                    showCursor: true,
                     onComplete: function(self) {
 
                         document.getElementById('animated-h2').classList.add('h2-entered');
@@ -74,9 +89,9 @@
         </script>
 
     </div>
-     <!-- Style h2 -->
+    <!-- Style h2 -->
     <div class="container ">
-       
+
         <style>
             h2 {
                 opacity: 0;
