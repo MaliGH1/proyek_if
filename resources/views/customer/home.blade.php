@@ -3,17 +3,16 @@
 @section('container')
 <section class="" id="home">
     <div class=" text-white min-h-screen">
-        <div class="mx-auto flex flex-col md:flex-row items-center py-32 my-0 md:my-24">
-            <div class="flex flex-col w-full lg:w-1/3 justify-center items-start p-8 ">
-                <h1 class="text-3xl md:text-5xl text-yellow-300 tracking-loose">DVJR RentCar</h1>
-                <h2 class="text-3xl md:text-5xl leading-relaxed md:leading-snug mb-2">Transportasi Andalan Saat Holiday
-                </h2>
-                <p class="text-sm md:text-base text-gray-50 mb-4">Banyak pilihan Mobil sesuai dengan Kebutuhan Anda</p>
+        <div class="mx-auto flex flex-col md:flex-row items-center py-32 my-0 md:my-32">
+            <div class="mx-auto flex flex-col w-full lg:w-2/3 justify-start items-start p-0">
+                <h1 id="typed-output" class="text-3xl md:text-6xl text-yellow-300 tracking-loose"><span id="insertion-point"></span></h1>
+                <h2 id="animated-h2" class="text-3xl md:text-5xl leading-relaxed md:leading-snug mb-2">Solusi Sewa Mobil Cepat Untuk Kebutuhan Anda</h2>
+                <p class="text-sm md:text-base text-gray-50 mb-4">Klik di bawah ini untuk melihat Daftar Mobil</p>
                 <a href="/daftarmobil" class="bg-transparent no-underline hover:bg-yellow-300 text-yellow-300 hover:text-white rounded shadow hover:shadow-lg py-2 px-4 border border-yellow-300 hover:border-transparent">
                     Daftar Mobil</a>
             </div>
-            <div class="p-8 mt-24 mb-6 md:mb-0 md:mt-0 ml-0 md:ml-12 lg:w-2/3  justify-center">
-                <div class="h-96 flex flex-row-reverse content-center">
+            <div class="p-1 mt-24 mb-6 md:mb-0 md:mt-0 ml-0 md:ml-0 lg:w-2/3 justify-center">
+                <div class="h-70 flex flex-row-reverse content-center">
                     <div>
                         <img class="top-0 rounded-es-full" src="https://i.pinimg.com/564x/34/49/10/344910343716de41e27f92a6c0320708.jpg">
                     </div>
@@ -23,21 +22,34 @@
     </div>
 </section>
 
-<section class="" id="about-section">
-    <div class="min-h-screen flex flex-col py-32 my-0">
-        <!-- About Us Page Section -->
-        <div class="align-middle">
-            <div class="mx-auto">
-                <h1 class="text-4xl text-white font-semibold text-center ">Tentang Kami</h1>
-                <p class="mt-4 text-lg text-white text-justify">Kami adalah sebuah perusahaan yang berdedikasi untuk memberikan solusi terbaik kepada pelanggan kami. Dengan pengalaman bertahun-tahun, kami siap melayani Anda dengan sepenuh hati.
-                    Solusi atas semua kebutuhan transportasi dalam perjalanan wisata atupun bisnis anda di seluruh kota Sukabumi. dengan berbagai Jenis unit mobil yang sangat nyaman ketika anda pakai akan memanjakan anda saat melakukan perjalanan. Rental Mobil Murah yang kami sewakan pun sangat ber-variasi.
-                    Ini akan memudahkan anda sebagai penyewa saat menentukan kendaraan terbaik menurut selera anda atau kendaraan yang biasa anda gunakan dalam keseharian. Pelayanan DJVR.com mencakup sewa rental mobil dalam kota Sukabumi dan luar kota Sukabumi. Terutama destinasi Wisata dalam kota maupun luar kota di provinsi Jawa Barat.
-                    Tidak perlu hawatir kami pun memenuhi kebutuhan akan perjalanan jauh keluar provinsi.
-                </p>
-            </div>
-        </div>
+<section id="about-section">
+    <div id="about-section-content">
+        <h1 class="text-3xl font-semibold text-center">Tentang Kami</h1>
+        <p class="mt-10 text-lg">
+            Kami adalah sebuah perusahaan yang berdedikasi untuk memberikan solusi terbaik kepada pelanggan kami. Dengan pengalaman bertahun-tahun, kami siap melayani Anda dengan sepenuh hati.
+            Solusi atas semua kebutuhan transportasi dalam perjalanan wisata atupun bisnis anda di seluruh kota Sukabumi. dengan berbagai Jenis unit mobil yang sangat nyaman ketika anda pakai akan memanjakan anda saat melakukan perjalanan. Rental Mobil Murah yang kami sewakan pun sangat ber-variasi.
+            Ini akan memudahkan anda sebagai penyewa saat menentukan kendaraan terbaik menurut selera anda atau kendaraan yang biasa anda gunakan dalam keseharian. Pelayanan DJVR.com mencakup sewa rental mobil dalam kota Sukabumi dan luar kota Sukabumi. Terutama destinasi Wisata dalam kota maupun luar kota di provinsi Jawa Barat.
+            Tidak perlu hawatir kami pun memenuhi kebutuhan akan perjalanan jauh keluar provinsi.
+        </p>
     </div>
 </section>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        window.addEventListener('scroll', function() {
+            const aboutSection = document.getElementById('about-section');
+            const distanceFromTop = aboutSection.getBoundingClientRect().top;
+            const windowHeight = window.innerHeight;
+
+            if (distanceFromTop < windowHeight / 1.5) {
+                aboutSection.style.opacity = 1;
+                aboutSection.style.transform = 'translateX(0)';
+                window.removeEventListener('scroll', checkVisibility);
+            }
+        });
+    });
+</script>
+
+
 
 <section class="" id="contact-section">
     <div class="flex items-top justify-center min-h-screen sm:items-center sm:pt-0 py-0 my-0">
@@ -96,6 +108,7 @@
             });
         }
     }
+    
     // Tambahkan event listener untuk tautan "home"
     document.querySelector('a[href="#home"]').addEventListener('click', function(event) {
         event.preventDefault();
