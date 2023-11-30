@@ -33,21 +33,7 @@
         </p>
     </div>
 </section>
-<script>
-    document.addEventListener('DOMContentLoaded', function() {
-        window.addEventListener('scroll', function() {
-            const aboutSection = document.getElementById('about-section');
-            const distanceFromTop = aboutSection.getBoundingClientRect().top;
-            const windowHeight = window.innerHeight;
 
-            if (distanceFromTop < windowHeight / 1.5) {
-                aboutSection.style.opacity = 1;
-                aboutSection.style.transform = 'translateX(0)';
-                window.removeEventListener('scroll', checkVisibility);
-            }
-        });
-    });
-</script>
 
 
 

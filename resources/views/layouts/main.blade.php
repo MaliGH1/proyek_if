@@ -28,10 +28,13 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            
-            opacity: 0; /* Tambahkan opsi ini untuk memulai elemen dalam keadaan tidak terlihat */
-            transform: translateX(100%); /* Tambahkan opsi ini untuk memulai elemen di luar layar */
-            transition: opacity 1s ease, transform 2s ease; /* Animasi transisi */
+
+            opacity: 0;
+            /* Tambahkan opsi ini untuk memulai elemen dalam keadaan tidak terlihat */
+            transform: translateX(100%);
+            /* Tambahkan opsi ini untuk memulai elemen di luar layar */
+            transition: opacity 1s ease, transform 2s ease;
+            /* Animasi transisi */
         }
 
         /* Gaya untuk konten tentang kami */
@@ -39,25 +42,14 @@
             text-align: justify;
             color: white;
         }
-
-        
     </style>
 
 </head>
 
 <body class="bg-gradient-to-b from-black from-45% to-white">
+    @include('partials.navbar')
     <div class="margin_bottom_navbar">
-        @include('partials.navbar')
-
-        <style>
-            /* Tambahkan gaya jika diperlukan */
-            #map-container {
-                width: 100%;
-                height: 400px;
-                /* Sesuaikan tinggi peta */
-                margin-top: 20px;
-            }
-        </style>
+        
 
         <!-- Style ngetik -->
         <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
@@ -70,7 +62,7 @@
                     backDelay: 1000,
                     startDelay: 500,
                     loop: false,
-                    showCursor: true,
+                    showCursor: false,
                     onComplete: function(self) {
 
                         document.getElementById('animated-h2').classList.add('h2-entered');
@@ -82,8 +74,9 @@
         </script>
 
     </div>
+     <!-- Style h2 -->
     <div class="container ">
-        <!-- Style h2 -->
+       
         <style>
             h2 {
                 opacity: 0;
@@ -101,7 +94,22 @@
             }
         </style>
 
+        <!-- Paragraf -->
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                window.addEventListener('scroll', function() {
+                    const aboutSection = document.getElementById('about-section');
+                    const distanceFromTop = aboutSection.getBoundingClientRect().top;
+                    const windowHeight = window.innerHeight;
 
+                    if (distanceFromTop < windowHeight / 1.5) {
+                        aboutSection.style.opacity = 1;
+                        aboutSection.style.transform = 'translateX(0)';
+                        window.removeEventListener('scroll', checkVisibility);
+                    }
+                });
+            });
+        </script>
         @yield('container')
 
     </div>
