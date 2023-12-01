@@ -14,7 +14,7 @@
         <table class="min-w-full text-left text-sm font-light">
           <thead class="border-b font-medium dark:border-neutral-500">
           <tr>
-                <th class="px-4 py-2">No. Nota</th>
+                <th class="px-4 py-2">No. Invoice</th>
                 <th class="px-4 py-2">Tanggal</th>
                 <th class="px-4 py-2">Saldo Masuk</th>
                 <th class="px-4 py-2">Keterangan</th>

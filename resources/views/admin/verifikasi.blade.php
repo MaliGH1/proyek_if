@@ -16,7 +16,7 @@
                 <table class="min-w-full text-left text-sm font-light">
                     <thead class="border-b font-medium dark:border-neutral-500">
                         <tr>
-                            <th class="px-4 py-2">No Invoice</th>
+                            <th class="px-4 py-2">No. Invoice</th>
                             <th class="px-4 py-2">Nama Customer</th>
                             <th class="px-4 py-2">Mobil</th>
                             <th class="px-4 py-2">Plat Mobil</th>
