@@ -24,7 +24,8 @@
 
         /* Gaya untuk mengatur tinggi layar minimal */
         #about-section {
-            min-height: 50vh;
+
+            padding-top: 10rem;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -43,6 +44,7 @@
             color: white;
         }
     </style>
+    <!-- hubungi kami -->
     <style>
         #contact-section {
             display: flex;
@@ -52,12 +54,28 @@
 
         /* Jika ingin mengatur lebar maksimum box, tambahkan properti max-width */
         #contact-section .max-w-6xl {
+            padding-top: 15rem;
             max-width: 600px;
             /* Sesuaikan lebar maksimum sesuai kebutuhan */
         }
     </style>
+    <!-- about -->
+    <style>
+        h2 {
+            opacity: 0;
+            transform: translateX(50px);
+            transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+        }
 
+        .h2-entered {
+            opacity: 1;
+            transform: translateX(0);
+        }
 
+        #image-container img {
+            transition: opacity 1s ease-in-out;
+        }
+    </style>
 
 </head>
 
@@ -71,7 +89,7 @@
         <script>
             document.addEventListener('DOMContentLoaded', function() {
                 var options = {
-                    strings: ['DVJR RentCar','WELLCOME'],
+                    strings: ['DVJR RentCar', 'WELCOME'],
                     typeSpeed: 100,
                     backSpeed: 50,
                     backDelay: 1000,
@@ -91,24 +109,6 @@
     </div>
     <!-- Style h2 -->
     <div class="container ">
-
-        <style>
-            h2 {
-                opacity: 0;
-                transform: translateX(50px);
-                transition: opacity 1s ease-in-out, transform 1s ease-in-out;
-            }
-
-            .h2-entered {
-                opacity: 1;
-                transform: translateX(0);
-            }
-
-            #image-container img {
-                transition: opacity 1s ease-in-out;
-            }
-        </style>
-
         <!-- Paragraf -->
         <script>
             document.addEventListener('DOMContentLoaded', function() {

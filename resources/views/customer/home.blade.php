@@ -3,7 +3,7 @@
 @section('container')
 <section class="" id="home">
     <div class=" text-white min-h-screen">
-        <div class="mx-auto flex flex-col md:flex-row items-center py-32 my-0 md:my-28">
+        <div class="mx-auto flex flex-col md:flex-row items-center py-32 my-0 md:my-24">
             <div class="mx-auto flex flex-col w-full lg:w-2/3 justify-start items-start p-0">
                 <h1 id="typed-output" class="text-3xl md:text-6xl text-yellow-300 tracking-loose"><span id="insertion-point"></span></h1>
                 <h2 id="animated-h2" class="text-3xl md:text-5xl leading-relaxed md:leading-snug mb-2">Solusi Sewa Mobil Cepat Untuk Kebutuhan Anda</h2>
@@ -11,7 +11,7 @@
                 <a href="/daftarmobil" class="bg-transparent no-underline hover:bg-yellow-300 text-yellow-300 hover:text-white rounded shadow hover:shadow-lg py-2 px-4 border border-yellow-300 hover:border-transparent">
                     Daftar Mobil</a>
             </div>
-            <div class="p-1 mt-24 mb-6 md:mb-0 md:mt-0 ml-0 md:ml-0 lg:w-2/3 justify-center">
+            <div class="p-1 mt-24 mb-6 md:mb-0 md:mt-0 mt-0 ml-0 md:ml-0 lg:w-2/3 justify-center">
                 <div class="h-70 flex flex-row-reverse content-center">
                     <div>
                         <img class="top-0 rounded-es-full" src="https://i.pinimg.com/564x/34/49/10/344910343716de41e27f92a6c0320708.jpg">
@@ -22,9 +22,9 @@
     </div>
 </section>
 
-<section id="about-section">
+<section id="about-section" class="">
     <div id="about-section-content">
-        <h1 class="text-3xl font-semibold text-center">Tentang Kami</h1>
+        <h1 class="text-3x1 font-semibold text-center">Tentang Kami</h1>
         <p class="mt-10 text-lg">
             Kami adalah sebuah perusahaan yang berdedikasi untuk memberikan solusi terbaik kepada pelanggan kami. Dengan pengalaman bertahun-tahun, kami siap melayani Anda dengan sepenuh hati.
             Solusi atas semua kebutuhan transportasi dalam perjalanan wisata atupun bisnis anda di seluruh kota Sukabumi. dengan berbagai Jenis unit mobil yang sangat nyaman ketika anda pakai akan memanjakan anda saat melakukan perjalanan. Rental Mobil Murah yang kami sewakan pun sangat ber-variasi.
@@ -77,13 +77,13 @@
                                 DJVR@gmail.com
                             </div>
                         </div>
-                        
+
                     </div>
-                    
+
                 </div>
-                
+
             </div>
-            
+
         </div>
     </div>
 </section>
@@ -99,7 +99,7 @@
             });
         }
     }
-    
+
     // Tambahkan event listener untuk tautan "home"
     document.querySelector('a[href="#home"]').addEventListener('click', function(event) {
         event.preventDefault();
