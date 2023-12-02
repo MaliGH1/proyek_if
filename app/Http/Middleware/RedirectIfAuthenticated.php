@@ -26,7 +26,7 @@ class RedirectIfAuthenticated
                     return redirect()->route('admin.home');
                 } 
                 // Jika user adalah user biasa, arahkan ke halaman user
-                elseif ($guard === 'user') {
+                elseif ($guard === 'customer') {
                     return redirect()->route('home');
                 }
             }

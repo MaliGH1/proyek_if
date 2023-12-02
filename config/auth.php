@@ -15,7 +15,7 @@ return [
 
     'defaults' => [
         'guard' => 'web',
-        'passwords' => 'users',
+        'passwords' => 'customers',
     ],
 
     /*
@@ -38,7 +38,7 @@ return [
     'guards' => [
         'web' => [
             'driver' => 'session',
-            'provider' => 'users',
+            'provider' => 'customers',
         ],
         'admin' => [
             'driver' => 'session',
@@ -64,9 +64,9 @@ return [
     */
 
     'providers' => [
-        'users' => [
+        'customers' => [
             'driver' => 'eloquent',
-            'model' => App\Models\User::class,
+            'model' => App\Models\Customer::class,
         ],
         'admins' => [
             'driver' => 'eloquent',
@@ -94,8 +94,8 @@ return [
     */
 
     'passwords' => [
-        'users' => [
-            'provider' => 'users',
+        'customers' => [
+            'provider' => 'customers',
             'table' => 'password_reset_tokens',
             'expire' => 60,
             'throttle' => 60,
@@ -118,30 +118,18 @@ return [
         'guards' => [
             'web' => [
                 'driver' => 'session',
-                'provider' => 'users',
+                'provider' => 'customers',
             ],
     
             'admin' => [
                 'driver' => 'session',
                 'provider' => 'admins', // Gunakan provider 'admins' untuk admin
             ],
-    
-            'customer' => [
-                'driver' => 'session',
-                'provider' => 'customers', // Gunakan provider 'customers' untuk customer
-            ],
-    
-            'staff' => [
-                'driver' => 'session',
-                'provider' => 'staffs', // Gunakan provider 'staffs' untuk staff
-            ],
+
         ],
     
         'providers' => [
-            'users' => [
-                'driver' => 'eloquent',
-                'model' => App\Models\User::class,
-            ],
+            
     
             'admins' => [
                 'driver' => 'eloquent',
@@ -151,11 +139,6 @@ return [
             'customers' => [
                 'driver' => 'eloquent',
                 'model' => App\Models\Customer::class,
-            ],
-    
-            'staffs' => [
-                'driver' => 'eloquent',
-                'model' => App\Models\Staff::class,
             ],
         ],
     

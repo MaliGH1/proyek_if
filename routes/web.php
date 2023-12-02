@@ -33,11 +33,7 @@ Route::get('/home', [\App\Http\Controllers\HomeController::class, 'index'])->nam
 // });
 
 Route::get('/sewa', [App\Http\Controllers\SewaController::class, 'index'])->name('sewa');
-Route::post('/sewa', function () {
-    return view('customer/home', [
-        "title" => "Home"
-    ]);
-});
+Route::post('/sewa', [App\Http\Controllers\SewaController::class, 'store'])->name('sewa.store');
 
 Route::post('/invoice', function () {
     return view('customer/invoice');

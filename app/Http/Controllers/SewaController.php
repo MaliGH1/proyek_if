@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Sewa;
 use App\Models\Mobil;
 use App\Models\Supir;
+use App\Models\Customer;
 use App\Http\Requests\StoreSewaRequest;
 use App\Http\Requests\UpdateSewaRequest;
 
@@ -17,10 +18,12 @@ class SewaController extends Controller
     {
         $mobils = Mobil::all();
         $sopirs = Supir::all();
+        $customers =  Customer::all();
         return view('customer/sewa', [
             "title" => "Sewa Mobil",
             "mobils" => $mobils, // Ubah variabel $mobil menjadi $mobils
-            "sopirs" => $sopirs  // Melewatkan data sopir ke tampilan jika diperlukan
+            "sopirs" => $sopirs,  // Melewatkan data sopir ke tampilan jika diperlukan
+            "customers" => $customers
         ]);
     }
 
@@ -35,18 +38,31 @@ class SewaController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(StoreSewaRequest $request)
+    public function store(Request $request)
     {
-        // Validasi request jika perlu
+        $user = Auth::guard('web')->user(); // mendapatkan user yang sedang login
+        if ($user) {
+            $customer = Customer::where('username', $user->username)->first(); // mendapatkan objek Customer pertama yang memenuhi kondisi tersebut
+            if ($customer) {
+                return view('profile', compact('customer')); // kirim data customer ke view
+            }
+        }
 
-    $sewa = new Sewa();
-    $sewa->mobil_id = $request->input('mobil');
-    $sewa->sopir_id = $request->input('sopir');
-    // Tambahkan informasi lainnya jika diperlukan
+        $mobil = Mobil::find($request->pilih_mobil);
+        $sopir = Sopir::find($request->pilih_sopir);
 
-    $sewa->save();
-
-    // Redirect atau tampilkan pesan sukses
+        $sewa = new Sewa;
+        $sewa->nama_penyewa = $request->nama_penyewa;
+        $sewa->nomor_hp = $request->nomor_hp;
+        $sewa->alamat = $request->alamat;
+        $sewa->pilih_mobil = $mobil->nama;
+        $sewa->pilih_sopir = $sopir->nama;
+        $sewa->tanggal_pinjam = $request->tgl_pjm;
+        $sewa->tanggal_kembali = $request->tgl_kmbl;
+        $sewa->total_biaya = $mobil->harga_sewa + $sopir->harga_sewa; // hitung total biaya
+        $sewa->save();
+    
+        return redirect('/invoice');
     }
 
     /**

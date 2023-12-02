@@ -64,16 +64,6 @@ class AuthenticatedSessionController extends Controller
             session()->flash('fail', 'Incorrect credentials');
             return redirect()->route('login');
         }
-
-        // if (Auth::attempt($creds)) {
-        //     $user = Auth::user();
-
-        //     if ($user->role() === 'admin') {
-        //         return redirect()->route('home.admin');
-        //     } else {
-        //         return redirect()->route('home');
-        //     }
-        // } 
     }
 
     /**
