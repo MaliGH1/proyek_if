@@ -12,13 +12,20 @@ class Sewa extends Model
     protected $table = 'transaksi';
 
     protected $fillable = [
+        'no_invoice',
         'nama_customer',
         'nohp',
         'alamat',
         'nama_mobil',
-        'nama_supir',
+        'supir',
         'tanggal_pinjam',
+        'jaminan',
         'tanggal_kembali',
-        'total_biaya'
+        'total_biaya',
+        'verifikasi'
     ];
+
+    public function getHargaMobil(){
+        return $this->belongsTo(Mobil::class);
+    }
 }

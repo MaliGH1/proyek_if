@@ -15,7 +15,7 @@
                 </label>
                 <!-- @foreach ($customers as $customer) -->
                 @if(isset($customer) && $customer->username == auth()->user()->username)
-                <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="nama" type="text" value="{{ $customer->nama}}" required>
+                <input class="nama shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="nama" name="nama" type="text" value="{{ $customer->nama}}" required>
                 @endif
                 <!-- @endforeach -->
             </div>
@@ -24,43 +24,44 @@
                     {{ __('No. Hp')}}
                 </label>
                 @if(isset($customer) && $customer->username == auth()->user()->username)
-                <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="nohp" type="text" value="{{ $customer->nohp}}">
+                <input class="nohp shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="nohp" name="nohp" type="text" value="{{ $customer->nohp}}">
                 @endif
             </div>
             <div>
-                <label class="block text-white text-sm font-bold mb-2" for="Tanggal_Pinjam">
-                    {{ __('Tanggal Pinjam')}}
+                <label class="block text-white text-sm font-bold mb-2" for="tgl_pjm">
+                    {{ __('Waktu Peminjaman')}}
                 </label>
-                <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="tgl_pjm" type="date" placeholder="Nama">
+                <input class="tgl_pjm shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="tgl_pjm"  name="tgl_pjm" type="datetime-local">
             </div>
             <div>
-                <label class="block text-white text-sm font-bold mb-2" for="Tanggal_kembali">
-                    {{ __('Tanggal Kembali')}}
+                <label class="block text-white text-sm font-bold mb-2" for="durasi">
+                    {{ __('Durasi Peminjaman')}}
                 </label>
-                <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="tgl_kmbl" type="date" placeholder="{ __('Tanggal Kembali')}}">
+                <select id="durasi" name="durasi" class="durasi">
+                    <option value="24">24 Jam</option>
+                    <!-- tambahkan opsi lain sesuai kebutuhan -->
+                </select>
             </div>
             <div>
                 <label class="block text-white text-sm font-bold mb-2" for="alamat">
                     {{ __('Alamat')}}
                 </label>
                 @if(isset($customer) && $customer->username == auth()->user()->username)
-                <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="alamat"  type="text" value="{{ $customer->alamat}}" required>
+                <input class="alamat shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" name="alamat" id="alamat"  type="text" value="{{ $customer->alamat}}" required>
                 @endif
             </div>
             <div>
                 <label class="block text-white text-sm font-bold mb-2" for="jaminan">
                     {{ __('Jaminan')}}
                 </label>
-                <input class="cursor-not-allowed shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="jaminan"  type="text" placeholder="KTP" disable readonly>
+                <input class="jaminan cursor-not-allowed shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" name="jaminan" id="jaminan" type="text" value="KTP" disable readonly>
             </div>
             
             <div>
             <label for="mobil" class="text-white">Pilih Mobil:</label>
                 <select name="mobil" id="mobil" class="block appearance-none w-full bg-white border border-gray-400 hover:border-gray-500 px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline">
-                        <option value="Pilih Mobil">Pilih Mobil</option>
                     @foreach($mobils as $mobil)
-                        <option value="{{ $mobil->nama_mobil }}">
-                            {{ $mobil->id}} -   
+                        <option value="{{$mobil->nama_mobil}}" data-price="{{$mobil->sewa}}">
                             {{ $mobil->nama_mobil }}
                         </option>
                     @endforeach
@@ -71,7 +72,7 @@
                 <label for="sopir" class="text-white">Pilih Sopir:</label>
                 <select name="sopir" id="sopir" class="block appearance-none w-full bg-white border border-gray-400 hover:border-gray-500 px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline">
                     @foreach($sopirs as $sopir)
-                        <option value="{{ $sopir->nama }}">{{ $sopir->nama }}</option>
+                        <option value="{{ $sopir->nama }}" data-price="{{$sopir->harga}}">{{ $sopir->nama }}</option>
                     @endforeach
                 </select>
             </div>
@@ -81,9 +82,28 @@
             </div>
             <div>
                 <label for="total" class="text-white font-bold">TOTAL BAYAR:</label>
-                <input class="cursor-not-allowed shadow appearance-none border rounded py-2 px-3 text-black text-center font-bold focus:outline-none focus:shadow-outline" id="total"  type="text" value="{{ $mobil->sewa + $sopir->harga}}" disable readonly>
+                <input class="total cursor-not-allowed shadow appearance-none border rounded py-2 px-3 text-black text-center font-bold focus:outline-none focus:shadow-outline"  name="total" id="total" type="text" value="{{ $mobil->sewa + $sopir->harga}}" readonly>
+
+                <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+                <script>
+                $(document).ready(function(){
+                    // Ketika pilihan mobil atau sopir berubah
+                    $('#mobil, #sopir').change(function(){
+                        // Ambil harga dari pilihan mobil dan sopir
+                        var mobil_price = $('#mobil option:selected').data('price');
+                        var sopir_price = $('#sopir option:selected').data('price');
+
+                        // Hitung total harga
+                        var total = mobil_price + sopir_price;
+
+                        // Update total harga
+                        $('#total').val(total);
+                    });
+                });
+                </script>
             </div>
         </form>
+
     </div>
 </div>
 @endsection

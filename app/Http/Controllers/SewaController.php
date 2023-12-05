@@ -6,6 +6,8 @@ use App\Models\Sewa;
 use App\Models\Mobil;
 use App\Models\Supir;
 use App\Models\Customer;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use App\Http\Requests\StoreSewaRequest;
 use App\Http\Requests\UpdateSewaRequest;
 
@@ -41,27 +43,52 @@ class SewaController extends Controller
     public function store(Request $request)
     {
         $user = Auth::guard('web')->user(); // mendapatkan user yang sedang login
-        if ($user) {
-            $customer = Customer::where('username', $user->username)->first(); // mendapatkan objek Customer pertama yang memenuhi kondisi tersebut
-            if ($customer) {
-                return view('profile', compact('customer')); // kirim data customer ke view
-            }
-        }
-
+        $customer = Customer::where('username', $user->username)->first();
+         
         $mobil = Mobil::find($request->pilih_mobil);
-        $sopir = Sopir::find($request->pilih_sopir);
+        $sopir = Supir::find($request->pilih_sopir);
 
-        $sewa = new Sewa;
-        $sewa->nama_penyewa = $request->nama_penyewa;
-        $sewa->nomor_hp = $request->nomor_hp;
-        $sewa->alamat = $request->alamat;
-        $sewa->pilih_mobil = $mobil->nama;
-        $sewa->pilih_sopir = $sopir->nama;
-        $sewa->tanggal_pinjam = $request->tgl_pjm;
-        $sewa->tanggal_kembali = $request->tgl_kmbl;
-        $sewa->total_biaya = $mobil->harga_sewa + $sopir->harga_sewa; // hitung total biaya
-        $sewa->save();
-    
+        $nama = $request->input('nama');
+        $nohp = $request->input('nohp');
+        $waktu_pjm = $request->input('tgl_pjm');
+        $durasi = $request->input('durasi');
+        $alamat = $request->input('alamat');
+        $jaminan = $request->input('jaminan');
+        $mobil = $request->input('mobil');
+        $sopir = $request->input('sopir');
+        $total = $request->input('total');
+
+        $waktu_balik = date('Y-m-d H:i:s', strtotime("+$durasi hours", strtotime($waktu_pjm)));
+
+        $lastRecord = Sewa::orderBy('id', 'desc')->first();
+        $newId = $lastRecord ? $lastRecord->id + 1 : 1;
+
+        $no_invoice = 'RNT' . str_pad($newId, 5, '0', STR_PAD_LEFT);
+        
+
+        Sewa::create([
+            'no_invoice'=> $no_invoice,
+            'nama_customer' => $nama,
+            'nohp'=> $nohp,
+            'alamat' => $alamat,
+            'nama_mobil'=> $mobil,
+            'supir' => $sopir,
+            'tanggal_pinjam' => $waktu_pjm,
+            'tanggal_kembali'=> $waktu_balik,
+            'jaminan' => $jaminan,
+            'total_biaya' => $total
+        ]);
+       
+        // $sewa->nama_penyewa = $request->nama_penyewa;
+        // $sewa->nomor_hp = $request->nomor_hp;
+        // $sewa->alamat = $request->alamat;
+        // $sewa->pilih_mobil = $mobil->nama;
+        // $sewa->pilih_sopir = $sopir->nama;
+        // $sewa->tanggal_pinjam = $request->tgl_pjm;
+        // $sewa->tanggal_kembali = $request->tgl_kmbl;
+        // $sewa->total_biaya = $mobil->harga_sewa + $sopir->harga_sewa; // hitung total biaya
+        // $sewa->save();
+        
         return redirect('/invoice');
     }
 
@@ -82,6 +109,27 @@ class SewaController extends Controller
     public function edit(Sewa $sewa)
     {
         
+    }
+
+    public function invoice()
+    {
+        $sewa = new Sewa;
+        // Ambil data sewa terakhir
+        $sewa = Sewa::latest()->first();
+        $mobil = Mobil::all()->first();
+        $sopir = Supir::all()->first();
+
+        // Jika tidak ada data sewa, redirect ke halaman sebelumnya
+        if (!$sewa) {
+            return redirect()->back();
+        }
+
+        // Tampilkan halaman invoice dengan data sewa
+        return view('customer/invoice', [
+            'sewa' => $sewa,
+            'mobil' => $mobil,
+            'sopir' => $sopir
+        ]);
     }
 
     public function laporan(Sewa $sewa)

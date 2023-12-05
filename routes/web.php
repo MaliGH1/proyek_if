@@ -33,70 +33,20 @@ Route::get('/home', [\App\Http\Controllers\HomeController::class, 'index'])->nam
 // });
 
 Route::get('/sewa', [App\Http\Controllers\SewaController::class, 'index'])->name('sewa');
+Route::get('/hitung', [App\Http\Controllers\SewaController::class, 'calculatePrice']);
 Route::post('/sewa', [App\Http\Controllers\SewaController::class, 'store'])->name('sewa.store');
-
-Route::post('/invoice', function () {
-    return view('customer/invoice');
-})->name('invoice');
-
+Route::get('/invoice', [App\Http\Controllers\SewaController::class, 'invoice'])->name('invoice');
 
 // Rute untuk tombol kembali
 Route::get('/back-to-home', function () {
     return redirect('/home');
 })->name('back.home');
 
-
-// Route::get('/login', [LoginController::class, 'login']);
-// Route::get('/about', function () {
-//     return view('about', [
-//         "title" => "About"
-//     ]);
-// });
-// Route::get('/contact', function () {
-//     return view('contact', [
-//         "title" => "Contact"
-//     ]);
-// });
-
-
 Route::get('/', function () {
     return view('welcome');
 });
-// Route::get('/homeadmin', function () {
-//     return view('admin/home');
-// });
-
-// Route::get('/homeadmin', function () {
-//     return view('admin/home');
-// });
-
-
-// supir
-// Route::get('/supir', function () {
-//     return view('supir/homesupir');
-// })->name('supir');
-// Route::get('/tambahsupir', function () {
-//     return view('supir/tambahsupir');
-// });
-// Route::get('/hapussupir', function () {
-//     return view('supir/hapussupir');
-// });
-
-
-// Route::get('/updatesupir', function () {
-//     return view('supir/updatesupir');
-// });
-// Route::get('/back-to-supir', function () {
-//     return redirect('supir/homesupir');
-// })->name('back.homesupir');
-
-
-// Mobil
-// Routes menggunakan controller tapi belum jadi.
 
 Route::get('/daftarmobil', [MobilController::class, 'index']);
-Route::resource('/mobil', AdminMobilController::class)->middleware('auth');
-Route::resource('/supir', AdminSupirController::class)->middleware('auth');
 
 Route::get('/transaksi', [App\Http\Controllers\VerifikasiController::class, 'index'])->name('transaksi');
 Route::get('/keuangan', [App\Http\Controllers\SewaController::class, 'laporan'])->name('laporan');
@@ -122,6 +72,7 @@ Auth::routes();
 Route::group(['middleware' => 'auth:admin'], function () {
     Route::get('/homeadmin', [\App\Http\Controllers\HomeController::class, 'adminHome'])->name('home.admin');
     Route::resource('/mobil', AdminMobilController::class);
+    Route::resource('/supir', AdminSupirController::class);
 });
 
 require __DIR__ . '/auth.php';
