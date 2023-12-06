@@ -16,5 +16,6 @@ class Supir extends Model
         'nama',
         'alamat',
         'nohpsupir',
+        'harga'
     ];
 }

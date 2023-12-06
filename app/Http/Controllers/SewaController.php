@@ -111,13 +111,13 @@ class SewaController extends Controller
         
     }
 
-    public function invoice()
+    public function invoice(Sewa $sewa)
     {
         $sewa = new Sewa;
         // Ambil data sewa terakhir
         $sewa = Sewa::latest()->first();
-        $mobil = Mobil::all()->first();
-        $sopir = Supir::all()->first();
+        $mobil = Mobil::latest()->first();
+        $sopir = Supir::latest()->first();
 
         // Jika tidak ada data sewa, redirect ke halaman sebelumnya
         if (!$sewa) {
