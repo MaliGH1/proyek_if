@@ -38,10 +38,11 @@
         </div>
         <div class="mb-5">
             <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white" for="foto">Upload Gambar Mobil</label>
+            <input type="hidden" name="oldfoto" value="{{ $mobil->foto }}">
             @if($mobil->foto)
-            <img src="{{ asset('storage/' . $mobil->foto) }}" class="img-preview block">
+            <img src="{{ asset('storage/' . $mobil->foto) }}" class="img-preview" style="display: block; max-width: 200px; margin-top: 10px;">
             @else
-            <img class="img-preview img-fluid">
+            <img class="img-preview" style="display: none; max-width: 200px; margin-top: 10px;">
             @endif
             <input id="foto" name="foto" onchange="previewImage()" class="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400" aria-describedby="file_input_help" id="file_input" type="file">
             <p class="mt-1 text-sm text-gray-500 dark:text-gray-300" id="file_input_help">SVG, PNG, JPG or GIF (MAX. 800x400px).</p>
@@ -55,12 +56,14 @@
 <script>
     function previewImage() {
         const image = document.querySelector('#foto');
-        const imgPreview = document.querySelector('img-preview');
+        const imgPreview = document.querySelector('.img-preview');
 
         imgPreview.style.display = 'block';
 
         const oFReader = new FileReader();
-        oFReader.readAsDataURL(image.file[0]);
+
+        // Change 'imge' to 'image' in the line below
+        oFReader.readAsDataURL(image.files[0]);
 
         oFReader.onload = function(oFREvent) {
             imgPreview.src = oFREvent.target.result;

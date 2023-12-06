@@ -38,7 +38,7 @@ class AdminSupirController extends Controller
             'nama' => 'required',
             'alamat' => 'required',
             'nohpsupir' => 'required',
-            'image' => 'image|file|max:5000'
+            'image' => 'image|file|max:50000'
         ]);
 
         if ($request->file('image')) {
@@ -46,8 +46,6 @@ class AdminSupirController extends Controller
         }
 
         Supir::create($validateData);
-
-
 
         return redirect('supir')->with('success', 'Supir Baru telah ditambahkan');
     }
@@ -90,31 +88,29 @@ class AdminSupirController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, $noktp)
+    public function update(Request $request, Supir $supir)
     {
-        $request->validate([
+        $rules = [
             'noktp' => 'required',
             'nama' => 'required',
             'alamat' => 'required',
             'nohpsupir' => 'required',
-        ]);
+            'image' => 'image|file|max:50000'
+        ];
 
-        $supir = Supir::findOrFail($noktp);
-        $supir->noktp = $request->noktp;
-        $supir->nama = $request->nama;
-        $supir->alamat = $request->alamat;
-        $supir->nohpsupir = $request->nohpsupir;
+        $validateData = $request->validate($rules);
 
         if ($request->file('image')) {
-            if ($supir->image) {
-                Storage::delete($supir->image);
+            if ($request->oldimage) {
+                Storage::delete($request->oldimage);
             }
-            $supir->image = $request->file('image')->store('foto-supir');
+            $validateData['image'] = $request->file('image')->store('foto-supir');
         }
 
-        $supir->save();
+        Supir::where('noktp', $supir->noktp)
+            ->update($validateData);
 
-        return redirect('supir')->with('success', 'Data Supir berhasil diupdate');
+        return redirect('supir')->with('success', 'Data Supir  telah diupdate');
     }
     // public function update(Request $request, $noktp)
     // {
@@ -138,22 +134,13 @@ class AdminSupirController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy($noktp)
+    public function destroy(Supir $supir)
     {
-        $supir = Supir::findOrFail($noktp);
-
         if ($supir->image) {
             Storage::delete($supir->image);
         }
-
-        Supir::destroy($noktp);
+        Supir::destroy($supir->noktp);
 
         return redirect('supir')->with('success', 'Data Supir telah dihapus');
     }
-    // public function destroy(Supir $supir)
-    // {
-    //     Supir::destroy($supir->noktp);
-
-    //     return redirect('supir')->with('success', 'Data Supir telah dihapus');
-    // }
 }

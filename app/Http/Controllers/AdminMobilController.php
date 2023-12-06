@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Mobil;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 use PhpParser\Node\Stmt\Return_;
 
 class AdminMobilController extends Controller
@@ -68,37 +69,38 @@ class AdminMobilController extends Controller
         return view('mobil/updatemobil', compact('mobil'));
     }
 
-    public function update(Request $request, $id)
+    public function update(Request $request, Mobil $mobil)
     {
-        $request->validate([
+        $rules = [
+            'nama_mobil' => 'required',
             'nopol' => 'required',
             'warna' => 'required',
             'type' => 'required',
             'sewa' => 'required',
             'tgl_pjk' => 'required',
-        ]);
+            'foto' => 'image|file|max:5000'
+        ];
 
-        $mobil = Mobil::findOrFail($id);
-        $mobil->nopol = $request->nopol;
-        $mobil->warna = $request->warna;
-        $mobil->type = $request->type;
-        $mobil->sewa = $request->sewa;
-        $mobil->tgl_pjk = $request->tgl_pjk;
-        $mobil->save();
+        $validateData = $request->validate($rules);
 
-        if ($request->hasFile('foto')) {
-            $image = $request->file('foto');
-            $imageName = $image->getClientOriginalName();
-            $imagePath = 'storage/images/' . $imageName;
-            $image->move(public_path('storage/images'), $imageName);
-            $mobil->foto = $imagePath;
+        if ($request->file('foto')) {
+            if ($request->oldfoto) {
+                Storage::delete($request->oldfoto);
+            }
+            $validateData['foto'] = $request->file('foto')->store('foto-mobil');
         }
 
-        return redirect('mobil')->with('success', 'Data Mobil berhasil diupdate');
+        Mobil::where('id', $mobil->id)
+            ->update($validateData);
+
+        return redirect('mobil')->with('success', 'Data Mobil telah Di Update');
     }
 
     public function destroy(Mobil $mobil)
     {
+        if ($mobil->foto) {
+            Storage::delete($mobil->foto);
+        }
         Mobil::destroy($mobil->id);
 
         return redirect('mobil')->with('success', 'Data Mobil telah dihapus');
