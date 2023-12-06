@@ -121,14 +121,16 @@
                     <tr>
                         <td class="border px-4 py-2 font-bold">Mobil</td>
                         <td class="border px-4 py-2">{{ $sewa->nama_mobil }}</td>
+                        @if(isset($sewa) && isset($mobil) && $sewa->nama_mobil == $mobil->nama_mobil)
                         <td class="border px-4 py-2">Rp. {{ $mobil->sewa }}</td>
+                        @endif
                     </tr>
                 </tbody>
                 <tbody>
                     <tr>
                         <td class="border px-4 py-2 font-bold">Sopir</td>
-                        <td class="border px-4 py-2">{{ $sopir->nama }}</td>
-                        <td class="border px-4 py-2">Rp. {{ $sopir->harga }}</td>
+                        <td class="border px-4 py-2">{{ $sewa->nama_supir }}</td>
+                        <td class="border px-4 py-2">Rp. {{ ($sewa->total_biaya-$mobil->sewa) }}</td>
                     </tr>
                     <tr>
                         <td class="border px-4 py-2 font-bold">Tanggal Ambil</td>
