@@ -7,8 +7,6 @@
     <link rel="icon" href="favicon.ico" type="image/x-icon">
     <title>Document</title>
     <style>
-      
-
         nav {
             position: sticky;
             top: 0;
@@ -17,37 +15,6 @@
             padding: 10px 0;
             border-bottom: 2px solid white;
         }
-/* 
-        nav a {
-            color: white;
-            text-decoration: none;
-            padding: 0 10px;
-        }
-
-        nav a:hover {
-            color: yellow;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .flex {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .text-center {
-            text-align: center;
-        }
-
-        .ml-auto {
-            margin-left: auto;
-        } */
-
-        /* Add your other styles as needed */
     </style>
 </head>
 

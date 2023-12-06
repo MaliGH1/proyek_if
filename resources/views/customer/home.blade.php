@@ -1,6 +1,7 @@
 @extends('layouts.main')
 
 @section('container')
+
 <section class="" id="home">
     <div class=" text-white min-h-screen">
         <div class="mx-auto flex flex-col md:flex-row items-center py-32 my-0 md:my-24">
@@ -25,7 +26,7 @@
     </div>
 </section>
 
-<section id="about-section" class="">
+<section id="about-section" class="about-section">
     <div id="about-section-content" data-aos="zoom-in-left">
         <h1 class="text-3x1 font-semibold text-center">Tentang Kami</h1>
         <p class="mt-10 text-lg">
@@ -36,8 +37,6 @@
         </p>
     </div>
 </section>
-
-
 
 <section class="" id="contact-section">
     <div class="flex items-top justify-center min-h-screen sm:items-center sm:pt-0 py-0 my-0">

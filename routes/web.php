@@ -57,7 +57,6 @@ Route::get('/keuangan', [App\Http\Controllers\SewaController::class, 'laporan'])
 // Route::get('/login', 'Auth\LoginController@login')->name('login');
 // Route::get('/login', [Auth\LoginController::class, 'login'])->name('login');
 // Route untuk mengirimkan formulir kontak
-Route::get('/contact', 'ContactController@store')->name('contact.submit');
 
 
 // Route::group(['middleware' => ['auth', 'checkRole:staff']], function () {
