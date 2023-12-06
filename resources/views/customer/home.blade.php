@@ -7,17 +7,14 @@
             <div class="mx-auto flex flex-col w-full lg:w-2/3 justify-start items-start p-0">
                 <h1 id="typed-output" class="text-3xl md:text-6xl text-yellow-300 tracking-loose"><span id="insertion-point"></span></h1>
                 <h2 id="animated-h2" class="text-3xl md:text-5xl leading-relaxed md:leading-snug mb-2">Solusi Sewa Mobil Cepat Untuk Kebutuhan Anda</h2>
-                
-                <div data-aos="fade-zoom-in"
-     data-aos-easing="ease-in-back"
-     data-aos-delay="3000"
-     data-aos-offset="0">
-                <p class="text-sm md:text-base text-gray-50 mb-4">Klik di bawah ini untuk melihat Daftar Mobil</p>
-                <a href="/daftarmobil" class="bg-transparent no-underline hover:bg-yellow-300 text-yellow-300 hover:text-white rounded shadow hover:shadow-lg py-2 px-4 border border-yellow-300 hover:border-transparent">
-                    Daftar Mobil</a>
+
+                <div data-aos="fade-zoom-in" data-aos-easing="ease-in-back" data-aos-delay="3000" data-aos-offset="0">
+                    <p class="text-sm md:text-base text-gray-50 mb-4">Klik di bawah ini untuk melihat Daftar Mobil</p>
+                    <a href="/daftarmobil" class="bg-transparent no-underline hover:bg-yellow-300 text-yellow-300 hover:text-white rounded shadow hover:shadow-lg py-2 px-4 border border-yellow-300 hover:border-transparent">
+                        Daftar Mobil</a>
+                </div>
             </div>
-            </div>
-            <div class="p-1 mt-24 mb-6 md:mb-0 md:mt-0 mt-0 ml-0 md:ml-0 lg:w-2/3 justify-center">
+            <div class="p-1  mb-6 md:mb-0 md:mt-0 mt-0 ml-0 md:ml-0 lg:w-2/3 justify-center">
                 <div class="h-70 flex flex-row-reverse content-center">
                     <div>
                         <img class="top-0 rounded-es-full" src="https://i.pinimg.com/564x/34/49/10/344910343716de41e27f92a6c0320708.jpg">
@@ -45,7 +42,7 @@
 <section class="" id="contact-section">
     <div class="flex items-top justify-center min-h-screen sm:items-center sm:pt-0 py-0 my-0">
         <div class="max-w-6xl mx-auto sm:px-4 lg:px-6" data-aos="zoom-out">
-       
+
             <div class="overflow-hidden">
                 <div class="grid grid-cols-1 md:grid-cols-1">
                     <div class="p-6 bg-gray-100 dark:bg-gray-800 sm:rounded-lg">
