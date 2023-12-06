@@ -14,35 +14,19 @@
     @vite('resources/css/app.css')
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 
-    <!-- Transisi paragraf -->
+    <!-- Transisi paragraf  ABOUT -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <style>
-        /* Gaya tambahan jika diinginkan */
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-        }
-
-        /* Gaya untuk mengatur tinggi layar minimal */
-        #about-section {
-
+    #about-section {
+            min-height: 50vh;
             padding-top: 10rem;
             display: flex;
             align-items: center;
             justify-content: center;
-
-            opacity: 0;
-            /* Tambahkan opsi ini untuk memulai elemen dalam keadaan tidak terlihat */
-            transform: translateX(100%);
-            /* Tambahkan opsi ini untuk memulai elemen di luar layar */
-            transition: opacity 1s ease, transform 2s ease;
-            /* Animasi transisi */
-        }
-
-        /* Gaya untuk konten tentang kami */
-        #about-section-content {
-            text-align: justify;
             color: white;
         }
+    </style>
+
     </style>
     <!-- hubungi kami -->
     <style>
@@ -51,31 +35,15 @@
             justify-content: flex-start;
             /* Mengatur agar konten berada di sebelah kiri */
         }
-
         /* Jika ingin mengatur lebar maksimum box, tambahkan properti max-width */
         #contact-section .max-w-6xl {
-            padding-top: 15rem;
+            padding-top: 10rem;
             max-width: 600px;
             /* Sesuaikan lebar maksimum sesuai kebutuhan */
         }
     </style>
-    <!-- about -->
-    <style>
-        h2 {
-            opacity: 0;
-            transform: translateX(50px);
-            transition: opacity 1s ease-in-out, transform 1s ease-in-out;
-        }
 
-        .h2-entered {
-            opacity: 1;
-            transform: translateX(0);
-        }
 
-        #image-container img {
-            transition: opacity 1s ease-in-out;
-        }
-    </style>
 
 </head>
 
@@ -90,10 +58,10 @@
             document.addEventListener('DOMContentLoaded', function() {
                 var options = {
                     strings: ['DVJR RentCar', 'WELCOME'],
-                    typeSpeed: 100,
-                    backSpeed: 50,
+                    typeSpeed: 50,
+                    backSpeed: 20,
                     backDelay: 1000,
-                    startDelay: 500,
+                    startDelay: 250,
                     loop: true,
                     showCursor: true,
                     onComplete: function(self) {
@@ -105,29 +73,34 @@
                 var typed = new Typed('#insertion-point', options);
             });
         </script>
-
+ <!-- about -->
+ <style>
+        h2 {
+            opacity: 0;
+            transform: translateX(50px);
+            transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+        }
+        .h2-entered {
+            opacity: 1;
+            transform: translateX(0);
+        }
+        #image-container img {
+            transition: opacity 1s ease-in-out;
+        }
+    </style>
     </div>
     <!-- Style h2 -->
     <div class="container ">
-        <!-- Paragraf -->
+        <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
         <script>
-            document.addEventListener('DOMContentLoaded', function() {
-                window.addEventListener('scroll', function() {
-                    const aboutSection = document.getElementById('about-section');
-                    const distanceFromTop = aboutSection.getBoundingClientRect().top;
-                    const windowHeight = window.innerHeight;
-
-                    if (distanceFromTop < windowHeight / 1.5) {
-                        aboutSection.style.opacity = 1;
-                        aboutSection.style.transform = 'translateX(0)';
-                        window.removeEventListener('scroll', checkVisibility);
-                    }
-                });
-            });
+            AOS.init();
         </script>
+        
+
         @yield('container')
 
     </div>
+            
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 </body>
 
