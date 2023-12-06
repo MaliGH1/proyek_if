@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string('nama_mobil');
             $table->string('type');
             $table->date('tgl_pjk');
-            $table->string('status');
+            $table->string('status')->default('TERSEDIA');
             $table->string('warna');
             $table->integer('sewa');
             $table->string('foto')->nullable()->change();
