@@ -20,7 +20,7 @@ return new class extends Migration
             $table->string('status');
             $table->string('warna');
             $table->integer('sewa');
-            $table->string('foto');
+            $table->string('foto')->nullable()->change();
             $table->timestamps();
         });
     }
