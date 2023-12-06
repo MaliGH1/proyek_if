@@ -7,14 +7,16 @@ use Illuminate\Database\Eloquent\Model;
 
 class Supir extends Model
 {
-    use HasFactory;
+        use HasFactory;
 
-    protected $table = 'supirs';
-    protected $primaryKey = 'noktp';
-    protected $fillable = [
-        'noktp',
-        'nama',
-        'alamat',
-        'nohpsupir',
-    ];
+        protected $table = 'supirs';
+        protected $primaryKey = 'noktp';
+        protected $fillable = [
+                'noktp',
+                'nama',
+                'alamat',
+                'nohpsupir',
+                'image',
+                'harga'
+        ];
 }

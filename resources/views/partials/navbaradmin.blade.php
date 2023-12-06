@@ -76,7 +76,7 @@
         </div>
         <div class="text-left text-sm mt-2 w-full mx-auto text-gray-200 font-bold" id="submenu-edit">
             <li class="nav-item list-none">
-                <a href="/supir"  class="nav-link bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded inline-block transition duration-300 text-xl">
+                <a href="/supir" class="nav-link bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded inline-block transition duration-300 text-xl">
                     <span class="text-[15px] ml-4 text-gray-200 font-bold text-lg">
                         <i class="nav-icon fa fa-user"></i>
                         {{ __('Supir') }}
