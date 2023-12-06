@@ -14,7 +14,6 @@ class AdminSupirController extends Controller
      */
     public function index()
     {
-        //return 'ini halaman supir';
         return view('supir/homesupir', [
             'supirs' => Supir::all()
         ]);
@@ -49,26 +48,6 @@ class AdminSupirController extends Controller
 
         return redirect('supir')->with('success', 'Supir Baru telah ditambahkan');
     }
-
-
-    // public function store(Request $request)
-    // {
-    //     $validateData = $request->validate([
-    //         'noktp' => 'required',
-    //         'nama' => 'required',
-    //         'alamat' => 'required',
-    //         'nohpsupir' => 'required',
-    //         'image' => 'image|file|max:5000'
-    //     ]);
-    //     if ($request->file('image')) {
-    //         $validateData['image'] = $request->file('image')->store('foto-supir');
-    //     }
-
-    //     Supir::create($validateData);
-
-    //     return redirect('supir')->with('success', 'Supir Baru telah ditambahkan');
-    // }
-
     /**
      * Display the specified resource.
      */
@@ -112,25 +91,6 @@ class AdminSupirController extends Controller
 
         return redirect('supir')->with('success', 'Data Supir  telah diupdate');
     }
-    // public function update(Request $request, $noktp)
-    // {
-    //     $request->validate([
-    //         'noktp' => 'required',
-    //         'nama' => 'required',
-    //         'alamat' => 'required',
-    //         'nohpsupir' => 'required',
-    //     ]);
-
-    //     $supir = Supir::findOrFail($noktp);
-    //     $supir->noktp = $request->noktp;
-    //     $supir->nama = $request->nama;
-    //     $supir->alamat = $request->alamat;
-    //     $supir->nohpsupir = $request->nohpsupir;
-    //     $supir->save();
-
-    //     return redirect('supir')->with('success', 'Data Supir berhasil diupdate');
-    // }
-
     /**
      * Remove the specified resource from storage.
      */

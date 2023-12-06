@@ -14,7 +14,6 @@ class AdminMobilController extends Controller
      */
     public function index()
     {
-        //return 'ini halaman mobil';
         return view('mobil/homemobil', [
             'mobils' => Mobil::all()
         ]);
