@@ -50,12 +50,6 @@ class AdminSupirController extends Controller
 
 
         return redirect('supir')->with('success', 'Supir Baru telah ditambahkan');
-
-        if ($validator->fails()) {
-            return redirect()->route('supir.create')
-                ->withErrors($validator)
-                ->withInput();
-        }
     }
 
 

@@ -44,7 +44,7 @@ class SewaController extends Controller
     {
         $user = Auth::guard('web')->user(); // mendapatkan user yang sedang login
         $customer = Customer::where('username', $user->username)->first();
-         
+
         $mobil = Mobil::find($request->pilih_mobil);
         $sopir = Supir::find($request->pilih_sopir);
 
@@ -64,21 +64,21 @@ class SewaController extends Controller
         $newId = $lastRecord ? $lastRecord->id + 1 : 1;
 
         $no_invoice = 'RNT' . str_pad($newId, 5, '0', STR_PAD_LEFT);
-        
+
 
         Sewa::create([
-            'no_invoice'=> $no_invoice,
+            'no_invoice' => $no_invoice,
             'nama_customer' => $nama,
-            'nohp'=> $nohp,
+            'nohp' => $nohp,
             'alamat' => $alamat,
-            'nama_mobil'=> $mobil,
+            'nama_mobil' => $mobil,
             'supir' => $sopir,
             'tanggal_pinjam' => $waktu_pjm,
-            'tanggal_kembali'=> $waktu_balik,
+            'tanggal_kembali' => $waktu_balik,
             'jaminan' => $jaminan,
             'total_biaya' => $total
         ]);
-       
+
         // $sewa->nama_penyewa = $request->nama_penyewa;
         // $sewa->nomor_hp = $request->nomor_hp;
         // $sewa->alamat = $request->alamat;
@@ -88,7 +88,7 @@ class SewaController extends Controller
         // $sewa->tanggal_kembali = $request->tgl_kmbl;
         // $sewa->total_biaya = $mobil->harga_sewa + $sopir->harga_sewa; // hitung total biaya
         // $sewa->save();
-        
+
         return redirect('/invoice');
     }
 
@@ -108,7 +108,6 @@ class SewaController extends Controller
      */
     public function edit(Sewa $sewa)
     {
-        
     }
 
     public function invoice(Sewa $sewa)
