@@ -23,7 +23,7 @@
                 <div class="bg-white">
                     @foreach($supirs as $supir)
                     <div class="rounded overflow-hidden shadow-lg">
-                        <img src="{{ asset('storage/' . $supir->image) }} alt=" Supir" class="w-80 h-60 border-b-4 border-black ">
+                        <img src="{{ asset('storage/' . $supir->image) }}" alt="Supir" class="w-80 h-60 border-b-4 border-black ">
                         <div class="px-6 py-4">
                             <div class="font-bold text-xl mb-2">{{ $supir->noktp}}</div>
                             <p class="text-gray-700 text-base">{{ $supir->nama}}</p>
