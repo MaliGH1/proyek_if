@@ -86,37 +86,16 @@ class AdminMobilController extends Controller
         $mobil->tgl_pjk = $request->tgl_pjk;
         $mobil->save();
 
+        if ($request->hasFile('foto')) {
+            $image = $request->file('foto');
+            $imageName = $image->getClientOriginalName();
+            $imagePath = 'storage/images/' . $imageName;
+            $image->move(public_path('storage/images'), $imageName);
+            $mobil->foto = $imagePath;
+        }
+
         return redirect('mobil')->with('success', 'Data Mobil berhasil diupdate');
     }
-    // public function edit(Mobil $mobil)
-    // {
-    //     return view('mobil/updatemobil', [
-    //         'mobils' => Mobil::all()
-    //     ]);
-    // }
-
-    // /**
-    //  * Update the specified resource in storage.
-    //  */
-    // public function update(Request $request, Mobil $mobil)
-    // {
-    //     $validateData = $request->validate([
-    //         'nama_mobil' => 'required',
-    //         'nopol' => 'required',
-    //         'warna' => 'required',
-    //         'type' => 'required',
-    //         'sewa' => 'required',
-    //         'tgl_pjk' => 'required',
-    //     ]);
-
-    //     Mobil::create($validateData);
-
-    //     return redirect('mobil')->with('success', 'Mobil Baru telah ditambahkan');
-    // }
-
-    /**
-     * Remove the specified resource from storage.
-     */
 
     public function destroy(Mobil $mobil)
     {

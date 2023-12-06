@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\Storage;
 use App\Models\Supir;
 use Illuminate\Http\Request;
+
 
 class AdminSupirController extends Controller
 {
@@ -36,12 +38,44 @@ class AdminSupirController extends Controller
             'nama' => 'required',
             'alamat' => 'required',
             'nohpsupir' => 'required',
+            'image' => 'image|file|max:5000'
         ]);
+
+        if ($request->file('image')) {
+            $validateData['image'] = $request->file('image')->store('foto-supir');
+        }
 
         Supir::create($validateData);
 
+
+
         return redirect('supir')->with('success', 'Supir Baru telah ditambahkan');
+
+        if ($validator->fails()) {
+            return redirect()->route('supir.create')
+                ->withErrors($validator)
+                ->withInput();
+        }
     }
+
+
+    // public function store(Request $request)
+    // {
+    //     $validateData = $request->validate([
+    //         'noktp' => 'required',
+    //         'nama' => 'required',
+    //         'alamat' => 'required',
+    //         'nohpsupir' => 'required',
+    //         'image' => 'image|file|max:5000'
+    //     ]);
+    //     if ($request->file('image')) {
+    //         $validateData['image'] = $request->file('image')->store('foto-supir');
+    //     }
+
+    //     Supir::create($validateData);
+
+    //     return redirect('supir')->with('success', 'Supir Baru telah ditambahkan');
+    // }
 
     /**
      * Display the specified resource.
@@ -76,18 +110,56 @@ class AdminSupirController extends Controller
         $supir->nama = $request->nama;
         $supir->alamat = $request->alamat;
         $supir->nohpsupir = $request->nohpsupir;
+
+        if ($request->file('image')) {
+            if ($supir->image) {
+                Storage::delete($supir->image);
+            }
+            $supir->image = $request->file('image')->store('foto-supir');
+        }
+
         $supir->save();
 
         return redirect('supir')->with('success', 'Data Supir berhasil diupdate');
     }
+    // public function update(Request $request, $noktp)
+    // {
+    //     $request->validate([
+    //         'noktp' => 'required',
+    //         'nama' => 'required',
+    //         'alamat' => 'required',
+    //         'nohpsupir' => 'required',
+    //     ]);
+
+    //     $supir = Supir::findOrFail($noktp);
+    //     $supir->noktp = $request->noktp;
+    //     $supir->nama = $request->nama;
+    //     $supir->alamat = $request->alamat;
+    //     $supir->nohpsupir = $request->nohpsupir;
+    //     $supir->save();
+
+    //     return redirect('supir')->with('success', 'Data Supir berhasil diupdate');
+    // }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Supir $supir)
+    public function destroy($noktp)
     {
-        Supir::destroy($supir->noktp);
+        $supir = Supir::findOrFail($noktp);
+
+        if ($supir->image) {
+            Storage::delete($supir->image);
+        }
+
+        Supir::destroy($noktp);
 
         return redirect('supir')->with('success', 'Data Supir telah dihapus');
     }
+    // public function destroy(Supir $supir)
+    // {
+    //     Supir::destroy($supir->noktp);
+
+    //     return redirect('supir')->with('success', 'Data Supir telah dihapus');
+    // }
 }
