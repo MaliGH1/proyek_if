@@ -86,9 +86,18 @@
 
             </div>
 
+
         </div>
-    </div>
+       <!-- PETA -->
+       
+       <div class="max-w-1xl mx-auto sm:px-1 lg:px-1" data-aos="zoom-out">
+        <img src="image/PetaDJVR.png" alt="Peta DJVR"  width="800" />
+        <div>
+   
+
+    
 </section>
+
 
 
 <script>

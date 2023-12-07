@@ -14,18 +14,19 @@
     @vite('resources/css/app.css')
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 
-    <!-- Transisi paragraf  ABOUT -->
-    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-    <style>
+<!-- Transisi paragraf ABOUT -->
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+<style>
     #about-section {
-            min-height: 50vh;
-            padding-top: 10rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-        }
-    </style>
+        min-height: 50vh;
+        padding-top: 7rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        text-align: justify; /* Menambahkan properti text-align untuk membuat paragraf menjadi rata kiri dan kanan */
+    }
+</style>
 
     </style>
     <!-- hubungi kami -->
@@ -37,9 +38,13 @@
         }
         /* Jika ingin mengatur lebar maksimum box, tambahkan properti max-width */
         #contact-section .max-w-6xl {
-            padding-top: 10rem;
-            max-width: 600px;
+            padding-top: 20rem;
+            max-width: 500px;
             /* Sesuaikan lebar maksimum sesuai kebutuhan */
+        }
+        #contact-section .max-w-1xl{
+            padding-top: 18rem;
+            max-width: 1000px;
         }
     </style>
 
