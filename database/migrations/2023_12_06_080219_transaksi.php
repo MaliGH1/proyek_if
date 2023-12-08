@@ -20,7 +20,7 @@ return new class extends Migration
             $table->string('nama_mobil');
             $table->string('nama_supir');
             $table->datetime('tanggal_pinjam');
-            $table->datetime('tanggal kembali');
+            $table->datetime('tanggal_kembali');
             $table->string('jaminan');
             $table->string('total_biaya');
             $table->string('verifikasi');
