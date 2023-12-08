@@ -48,16 +48,22 @@
                                     <input type="submit" name="deny" value="Deny" />
                                 </form>
                             </td> -->
-                            <td><label class="badge bg-success" style="display: inline-block;min-width: 90px;">{{ $data->verifikasi }}</label></td>
-                                    <td class="text-right">
-                                        <div class="dropdown dropdown-action">
-                                            <a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="material-icons">more_vert</i></a>
-                                            <div class="dropdown-menu dropdown-menu-right">
-                                                <a class="dropdown-item" href="#"><i class="fa fa-thumbs-o-up m-r-5"></i> Approved</a>
-                                                <a class="dropdown-item" href="#"><i class="fa fa-ban m-r-5"></i> Rejected</a>
-                                            </div>
-                                        </div>
-                                    </td>
+                            <td><label class="badge bg-success"
+                                    style="display: inline-block;min-width: 90px;">{{ $data->verifikasi }}</label></td>
+                            <td class="text-right">
+                                <div class="dropdown">
+                                    <a href="#" class="dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                                        <i class="material-icons">more_vert</i>
+                                    </a>
+                                    <ul class="dropdown-menu dropdown-menu-right">
+                                        <li><a class="dropdown-item" href="#"><i class="fa fa-thumbs-o-up m-r-5"></i>
+                                                Approved</a></li>
+                                        <li><a class="dropdown-item" href="#"><i class="fa fa-ban m-r-5"></i>
+                                                Rejected</a></li>
+                                    </ul>
+                                </div>
+
+                            </td>
                         </tr>
                         @endforeach
                     </tbody>
