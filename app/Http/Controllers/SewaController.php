@@ -72,7 +72,7 @@ class SewaController extends Controller
             'nohp' => $nohp,
             'alamat' => $alamat,
             'nama_mobil' => $mobil,
-            'supir' => $sopir,
+            'nama_supir' => $sopir,
             'tanggal_pinjam' => $waktu_pjm,
             'tanggal_kembali' => $waktu_balik,
             'jaminan' => $jaminan,
