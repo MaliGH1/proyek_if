@@ -53,7 +53,7 @@
                             <td class="text-right">
                                 <div class="dropdown">
                                     <a href="#" class="dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-                                        <i class="material-icons">more_vert</i>
+                                        <i class="material-icons white-icon">more_vert</i>
                                     </a>
                                     <ul class="dropdown-menu dropdown-menu-right">
                                         <li><a class="dropdown-item bg-success" href="#"></i>

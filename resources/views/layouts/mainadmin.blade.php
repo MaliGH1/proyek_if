@@ -22,7 +22,14 @@
         margin-right: 0;
         /* Pastikan margin kanan adalah 0 */
     }
+
+    .white-icon {
+        color: #ffffff;
+        /* Set the color to white */
+    }
     </style>
+
+
 </head>
 
 <body class="bg-black pl-72">
