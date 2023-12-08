@@ -131,6 +131,26 @@ class SewaController extends Controller
         ]);
     }
 
+    public function updateInvoice(Request $request)
+    {
+        $request->validate([
+            'bukti' => 'required'
+        ]);
+
+        $sewa = Sewa::latest()->first();
+        $sewa->save();
+
+        if ($request->hasFile('bukti')) {
+            $image = $request->file('bukti');
+            $imageName = $image->getClientOriginalName();
+            $imagePath = 'storage/images/' . $imageName;
+            $image->move(public_path('storage/images'), $imageName);
+            $sewa->bukti = $imagePath;
+        }
+
+        return redirect('home')->with('success', 'Bukti transfer telah diunggah! Halaman akan kembali ke home...');
+    }
+
     public function laporan(Sewa $sewa)
     {
         return view('admin/keuangan', [

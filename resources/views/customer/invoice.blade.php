@@ -165,7 +165,8 @@
                 </div>
             </div>
             <div class="p-4">
-                <form action="" method="post">
+                <form action="{{ route('invoice') }}" method="post">
+                    @csrf
                     <label class="block mb-2 text-sm font-medium dark:text-white" for="bukti">Upload Bukti Transfer</label>
                     <input class="bukti block w-2/3 mb-5 text-sm text-gray-900 border border-gray-300 cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400" id="bukti" name="bukti" type="file">
                     <button class="px-4 py-2 text-sm text-white bg-blue-500">Kirim</button>

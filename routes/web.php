@@ -36,6 +36,7 @@ Route::get('/sewa', [App\Http\Controllers\SewaController::class, 'index'])->name
 Route::get('/hitung', [App\Http\Controllers\SewaController::class, 'calculatePrice']);
 Route::post('/sewa', [App\Http\Controllers\SewaController::class, 'store'])->name('sewa.store');
 Route::get('/invoice', [App\Http\Controllers\SewaController::class, 'invoice'])->name('invoice');
+Route::post('/invoice', [App\Http\Controllers\SewaController::class, 'updateInvoice']);
 
 // Rute untuk tombol kembali
 Route::get('/back-to-home', function () {
