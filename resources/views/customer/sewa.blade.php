@@ -72,7 +72,7 @@
                 <label for="sopir" class="text-white">Pilih Sopir:</label>
                 <select name="sopir" id="sopir" class="block appearance-none w-full bg-white border border-gray-400 hover:border-gray-500 px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline">
                     @foreach($sopirs as $sopir)
-                        <option value="{{ $sopir->nama }}" data-price="{{$sopir->harga}}">{{ $sopir->nama }}</option>
+                        <option value="{{ $sopir->nama }}" data-price="{{$sopir->harga}}">{{ $sopir->nama_supir }}</option>
                     @endforeach
                 </select>
             </div>
