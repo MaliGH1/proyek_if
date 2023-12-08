@@ -25,6 +25,7 @@
                             <th class="px-4 py-2">Tanggal Kembali</th>
                             <th class="px-4 py-2">Jaminan</th>
                             <th class="px-4 py-2">Total Biaya</th>
+                            <th class="px-4 py-2">Status</th>
                             <th class="px-4 py-2">Verifikasi</th>
                         </tr>
                     </thead>
@@ -40,13 +41,23 @@
                             <td class="px-4 py-2">{{ $data->tanggal_kembali }}</td>
                             <td class="px-4 py-2">{{ $data->jaminan }}</td>
                             <td class="px-4 py-2">{{ $data->total_biaya }}</td>
-                            <td class="px-4 py-2">
+                            <!-- <td class="px-4 py-2">
                                 <form action="verifikasi.blade.php" method="POST">
                                     <input type="hidden" name="no_invoice" value={{ $data->no_invoice }} />
                                     <input type="submit" name="approve" value="Approve" />
                                     <input type="submit" name="deny" value="Deny" />
                                 </form>
-                            </td>
+                            </td> -->
+                            <td><label class="badge bg-success" style="display: inline-block;min-width: 90px;">{{ $data->verifikasi }}</label></td>
+                                    <td class="text-right">
+                                        <div class="dropdown dropdown-action">
+                                            <a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="material-icons">more_vert</i></a>
+                                            <div class="dropdown-menu dropdown-menu-right">
+                                                <a class="dropdown-item" href="#"><i class="fa fa-thumbs-o-up m-r-5"></i> Approved</a>
+                                                <a class="dropdown-item" href="#"><i class="fa fa-ban m-r-5"></i> Rejected</a>
+                                            </div>
+                                        </div>
+                                    </td>
                         </tr>
                         @endforeach
                     </tbody>
