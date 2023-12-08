@@ -56,10 +56,10 @@
                                         <i class="material-icons">more_vert</i>
                                     </a>
                                     <ul class="dropdown-menu dropdown-menu-right">
-                                        <li><a class="dropdown-item" href="#"><i class="fa fa-thumbs-o-up m-r-5"></i>
-                                                Approved</a></li>
-                                        <li><a class="dropdown-item" href="#"><i class="fa fa-ban m-r-5"></i>
-                                                Rejected</a></li>
+                                        <li><a class="dropdown-item bg-success" href="#"></i>
+                                                Approve</a></li>
+                                        <li><a class="dropdown-item bg-danger" href="#"></i>
+                                                Reject</a></li>
                                     </ul>
                                 </div>
 
