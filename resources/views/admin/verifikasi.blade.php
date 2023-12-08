@@ -40,8 +40,12 @@
                             <td class="px-4 py-2">{{ $data->tanggal_kembali }}</td>
                             <td class="px-4 py-2">{{ $data->jaminan }}</td>
                             <td class="px-4 py-2">{{ $data->total_biaya }}</td>
-                            <td class="px-4 py-2"><button
-                                    class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Verifikasi</button>
+                            <td class="px-4 py-2">
+                                <form action="verifikasi.blade.php" method="POST">
+                                    <input type="hidden" name="no_invoice" value={{ $data->no_invoice }} />
+                                    <input type="submit" name="approve" value="Approve" />
+                                    <input type="submit" name="deny" value="Deny" />
+                                </form>
                             </td>
                         </tr>
                         @endforeach
@@ -62,4 +66,5 @@ $(document).ready(function() {
     });
 });
 </script>
+
 @endsection
