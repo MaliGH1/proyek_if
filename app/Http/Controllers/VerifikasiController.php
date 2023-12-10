@@ -14,4 +14,20 @@ class VerifikasiController extends Controller
             "transaksi" => Verifikasi::all()
         ]);
     }
+
+    public function approve_transaksi($id) {
+        $status = Verifikasi::find($id);
+
+        $status->verifikasi='Approved';
+        $status->save();
+        return redirect()->back()->with('success', 'Transaksi Diterima');
+    }
+
+    public function reject_transaksi($id) {
+        $status = Verifikasi::find($id);
+
+        $status->verifikasi='Rejected';
+        $status->save();
+        return redirect()->back()->with('success', 'Transaksi Ditolak');
+    }
 }
