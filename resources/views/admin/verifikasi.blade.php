@@ -48,6 +48,7 @@
                                     <input type="submit" name="deny" value="Deny" />
                                 </form>
                             </td> -->
+                            
                             <td><label class="badge bg-success"
                                     style="display: inline-block;min-width: 90px;">{{ $data->verifikasi }}</label></td>
                             <td class="text-right">
