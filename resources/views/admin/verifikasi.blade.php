@@ -1,4 +1,4 @@
-@extends('layouts.mainadmin')
+@extends('layouts.mainverifikasi')
 
 @section('head')
 <!-- CSS DataTables -->
@@ -26,7 +26,8 @@
                             <th class="px-4 py-2">Jaminan</th>
                             <th class="px-4 py-2">Total Biaya</th>
                             <th class="px-4 py-2">Status</th>
-                            <th class="px-4 py-2">Verifikasi</th>
+                            <th class="px-4 py-2">Approve</th>
+                            <th class="px-4 py-2">Reject</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -48,16 +49,18 @@
                                     <input type="submit" name="deny" value="Deny" />
                                 </form>
                             </td> -->
-                            <td><label class="badge bg-success" style="display: inline-block;min-width: 90px;">{{ $data->verifikasi }}</label></td>
-                                    <td class="text-right">
-                                        <div class="dropdown dropdown-action">
-                                            <a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="material-icons">more_vert</i></a>
-                                            <div class="dropdown-menu dropdown-menu-right">
-                                                <a class="dropdown-item" href="#"><i class="fa fa-thumbs-o-up m-r-5"></i> Approved</a>
-                                                <a class="dropdown-item" href="#"><i class="fa fa-ban m-r-5"></i> Rejected</a>
-                                            </div>
-                                        </div>
-                                    </td>
+
+                            <td><label class="badge"
+                                    style="display: inline-block;min-width: 90px;">{{ $data->verifikasi }}</label></td>
+                            </td>
+                            <td>
+                                <a onclick="return confirm('Apakah Anda yakin ingin MENERIMA Transaksi ini ?')"
+                                    href="{{url('approve_transaksi', $data->id)}}" class="btn btn-success">Approve</a>
+                            </td>
+                            <td>
+                                <a onclick="return confirm('Apakah Anda yakin ingin MENOLAK Transaksi ini ?')"
+                                    href="{{url('reject_transaksi', $data->id)}}" class="btn btn-danger">Reject</a>
+                            </td>
                         </tr>
                         @endforeach
                     </tbody>

@@ -23,7 +23,18 @@
             <select name="type" class="border-0 cursor-pointer rounded-full drop-shadow-md bg-sky-200 w-72 duration-300 hover:bg-sky-400 focus:bg-amber-300">
                 <option>MPV</option>
                 <option>SUV</option>
-                <option>SPORT</option>
+                <option>Crossover</option>
+                <option>Hatchback </option>
+                <option>Sedan </option>
+                <option>Sport</option>
+                <option>Convertible</option>
+                <option>Station Wagon</option>
+                <option>Off road </option>
+                <option>Double Cabin </option>
+                <option>Pickup Truck</option>
+                <option>Elektrik </option>
+                <option>Hybrid</option>
+                <option>LCGC</option>
             </select>
         </div>
         <div class="mb-5">
