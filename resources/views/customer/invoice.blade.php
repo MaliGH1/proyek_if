@@ -130,7 +130,9 @@
                     <tr>
                         <td class="border px-4 py-2 font-bold">Sopir</td>
                         <td class="border px-4 py-2">{{ $sewa->nama_supir }}</td>
-                        <td class="border px-4 py-2">Rp. {{ ($sewa->total_biaya-$mobil->sewa) }}</td>
+                        @if(isset($sewa) && isset($mobil) && $sewa->nama_supir == $sopir->nama)
+                        <td class="border px-4 py-2">Rp. {{ ($sopir->harga) }}</td>
+                        @endif
                     </tr>
                     <tr>
                         <td class="border px-4 py-2 font-bold">Tanggal Ambil</td>
