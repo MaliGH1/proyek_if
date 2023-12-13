@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('sewa', function (Blueprint $table) {
+        Schema::create('transaksi', function (Blueprint $table) {
             $table->id();
             $table->string('no_invoice');
             $table->string('nama_customer');
@@ -23,7 +23,7 @@ return new class extends Migration
             $table->datetime('tanggal_kembali');
             $table->string('jaminan');
             $table->string('total_biaya');
-            $table->string('verifikasi');
+            $table->string('verifikasi')->default('Requested');
             $table->longText('bukti');
             $table->timestamps();
         });
