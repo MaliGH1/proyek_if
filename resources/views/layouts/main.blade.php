@@ -44,7 +44,7 @@
         }
         #contact-section .max-w-1xl{
             padding-top: 18rem;
-            max-width: 1000px;
+            max-width: 1590px;
         }
     </style>
 
