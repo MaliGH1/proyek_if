@@ -18,6 +18,7 @@
                         <tr>
                             <th class="px-4 py-2">No. Invoice</th>
                             <th class="px-4 py-2">Nama Customer</th>
+                            <th class="px-4 py-2">No.Hp Cust</th>
                             <th class="px-4 py-2">Mobil</th>
                             <th class="px-4 py-2">Plat Mobil</th>
                             <th class="px-4 py-2">Nama Supir</th>
@@ -35,20 +36,14 @@
                         <tr>
                             <td class="px-4 py-2">{{ $data->no_invoice }}</td>
                             <td class="px-4 py-2">{{ $data->nama_customer }}</td>
-                            <td class="px-4 py-2">{{ $data->tipe_mobil }}</td>
-                            <td class="px-4 py-2">{{ $data->nopol }}</td>
-                            <td class="px-4 py-2">{{ $data->supir }}</td>
+                            <td class="px-4 py-2">{{ $data->nohp }}</td>
+                            <td class="px-4 py-2">{{ $data->nama_mobil }}</td>
+                            <!-- <td class="px-4 py-2">{{ $data->nopol }}</td> -->
+                            <td class="px-4 py-2">{{ $data->nama_supir }}</td>
                             <td class="px-4 py-2">{{ $data->tanggal_pinjam }}</td>
                             <td class="px-4 py-2">{{ $data->tanggal_kembali }}</td>
                             <td class="px-4 py-2">{{ $data->jaminan }}</td>
                             <td class="px-4 py-2">{{ $data->total_biaya }}</td>
-                            <!-- <td class="px-4 py-2">
-                                <form action="verifikasi.blade.php" method="POST">
-                                    <input type="hidden" name="no_invoice" value={{ $data->no_invoice }} />
-                                    <input type="submit" name="approve" value="Approve" />
-                                    <input type="submit" name="deny" value="Deny" />
-                                </form>
-                            </td> -->
 
                             <td><label class="badge"
                                     style="display: inline-block;min-width: 90px;">{{ $data->verifikasi }}</label></td>
