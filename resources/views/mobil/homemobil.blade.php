@@ -11,7 +11,7 @@
         </button>
     </a>
     @if(session()->has('success'))
-    <div class="mb-4 rounded-lg bg-success-100 px-6 py-5 text-base text-success-700" role="alert">
+    <div class="mb-4 rounded-lg bg-green-600 px-6 py-5 text-base text-white" role="alert">
         {{ session('success') }}
     </div>
     @endif
@@ -21,11 +21,23 @@
             <div class="rounded bg-gray-900 border-gray-500 border-4 overflow-hidden shadow-lg m-2">
                 <img src="{{ asset('storage/' . $mobil->foto) }}" alt="mobil" class="w-80 h-56 border-b-4 border-black">
                 <div class="px-6 py-4">
-                    <div class="font-bold text-xl mb-2">{{ $mobil->nama_mobil}} ({{ $mobil->status}})</div>
-                    <p class="text-white text-base">Plat Nomor: {{ $mobil->nopol}}</p>
-                    <p class="text-white text-base">Tipe Mobil: {{ $mobil->type}}</p>
-                    <p class="text-white text-base">Warna: {{ $mobil->warna}}</p>
-                    <p class="text-white text-base">Harga Sewa: Rp{{ $mobil->sewa}}</p>
+                    <div class="font-bold text-white text-xl mb-2">{{ $mobil->nama_mobil}} ({{ $mobil->status}})</div>
+                    <div class="flex space-x-2">
+                        <p class="text-white text-base">Plat Nomor</p>
+                        <p class="text-white text-base">: {{ $mobil->nopol }}</p>
+                    </div>
+                    <div class="flex space-x-3.5">
+                        <p class="text-white text-base">Tipe Mobil</p>
+                        <p class="text-white text-base">: {{ $mobil->type }}</p>
+                    </div>
+                    <div class="flex space-x-11">
+                        <p class="text-white text-base">Warna</p>
+                        <p class="text-white text-base">: {{ $mobil->warna }}</p>
+                    </div>
+                    <div class="flex space-x-1.5">
+                        <p class="text-white text-base">Harga Sewa</p>
+                        <p class="text-white text-base">: Rp{{ $mobil->sewa }}</p>
+                    </div>
                 </div>
                 <div class="flex flex-wrap p-2">
                     <form action="/mobil/{{ $mobil->id }}" method="post" class="p-2">
