@@ -20,7 +20,7 @@
                             <th class="px-4 py-2">Nama Customer</th>
                             <th class="px-4 py-2">No.Hp Cust</th>
                             <th class="px-4 py-2">Mobil</th>
-                            <th class="px-4 py-2">Plat Mobil</th>
+                            <!-- <th class="px-4 py-2">Plat Mobil</th> -->
                             <th class="px-4 py-2">Nama Supir</th>
                             <th class="px-4 py-2">Tanggal Pinjam</th>
                             <th class="px-4 py-2">Tanggal Kembali</th>
