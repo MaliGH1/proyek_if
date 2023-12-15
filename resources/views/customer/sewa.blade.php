@@ -39,6 +39,7 @@
                 </label>
                 <select id="durasi" name="durasi" class="durasi">
                     <option value="24">24 Jam</option>
+                    <option value="24">12 Jam</option>
                     <!-- tambahkan opsi lain sesuai kebutuhan -->
                 </select>
             </div>
