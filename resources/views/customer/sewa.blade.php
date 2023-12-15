@@ -31,7 +31,7 @@
                     <label class="block text-white text-sm font-bold mb-2" for="tgl_pjm">
                         {{ __('Waktu Peminjaman')}}
                     </label>
-                    <input class="tgl_pjm shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="tgl_pjm" name="tgl_pjm" type="datetime-local" required>
+                    <input class="tgl_pjm shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline @error('tgl_pjm') is-invalid @enderror" id="tgl_pjm" name="tgl_pjm" type="datetime-local" required>
                     @error('tgl_pjm')
                     <div class="invalid-feedback">
                         {{$message}}
@@ -44,7 +44,6 @@
                     </label>
                     <select id="durasi" name="durasi" class="durasi">
                         <option value="24">24 Jam</option>
-                        <option value="24">12 Jam</option>
                         <!-- tambahkan opsi lain sesuai kebutuhan -->
                     </select>
                 </div>

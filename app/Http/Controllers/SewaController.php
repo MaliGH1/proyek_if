@@ -82,7 +82,7 @@ class SewaController extends Controller
             'nama_mobil' => $mobil,
             'nopol' => $nopol,
             'nama_supir' => $supir,
-            'tanggal_pinjam' => $waktu_pjm, 'required', 'date', 'after_or_equal:' . Carbon::today()->toDateString(),
+            'tanggal_pinjam' => $waktu_pjm,
             'tanggal_kembali' => $waktu_balik,
             'jaminan' => $jaminan,
             'total_biaya' => $total,
