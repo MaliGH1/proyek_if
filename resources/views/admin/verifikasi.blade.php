@@ -20,7 +20,7 @@
                             <th class="px-4 py-2">Nama Customer</th>
                             <th class="px-4 py-2">No.Hp Cust</th>
                             <th class="px-4 py-2">Mobil</th>
-                            <!-- <th class="px-4 py-2">Plat Mobil</th> -->
+                            <th class="px-4 py-2">Plat Mobil</th>
                             <th class="px-4 py-2">Nama Supir</th>
                             <th class="px-4 py-2">Tanggal Pinjam</th>
                             <th class="px-4 py-2">Tanggal Kembali</th>
@@ -38,7 +38,7 @@
                             <td class="px-4 py-2">{{ $data->nama_customer }}</td>
                             <td class="px-4 py-2">{{ $data->nohp }}</td>
                             <td class="px-4 py-2">{{ $data->nama_mobil }}</td>
-                            <!-- <td class="px-4 py-2">{{ $data->nopol }}</td> -->
+                            <td class="px-4 py-2">{{ $data->nopol }}</td>
                             <td class="px-4 py-2">{{ $data->nama_supir }}</td>
                             <td class="px-4 py-2">{{ $data->tanggal_pinjam }}</td>
                             <td class="px-4 py-2">{{ $data->tanggal_kembali }}</td>
