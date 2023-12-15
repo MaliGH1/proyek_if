@@ -47,7 +47,6 @@ class SewaController extends Controller
 
         $mobil = Mobil::find($request->pilih_mobil);
         $sopir = Supir::find($request->pilih_sopir);
-        
 
         $nama = $request->input('nama');
         $nohp = $request->input('nohp');
@@ -67,7 +66,6 @@ class SewaController extends Controller
 
         $no_invoice = 'RNT' . str_pad($newId, 5, '0', STR_PAD_LEFT);
 
-        
 
         Sewa::create([
             'no_invoice' => $no_invoice,

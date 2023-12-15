@@ -41,4 +41,18 @@ class VerifikasiController extends Controller
         $status->save();
         return redirect()->back()->with('success', 'Transaksi Ditolak');
     }
+    public function pengembalian($id)
+    {
+        $status = Verifikasi::find($id);
+        $mobil = Mobil::where('nama_mobil', $status->nama_mobil)->first();
+
+        if ($mobil) {
+            $mobil->status = 'Tersedia';
+            $mobil->save();
+        }
+
+        $status->verifikasi = 'Kembali';
+        $status->save();
+        return redirect()->back()->with('success', 'Transaksi Selesai');
+    }
 }

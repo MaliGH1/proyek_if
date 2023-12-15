@@ -73,6 +73,7 @@
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -96,6 +97,7 @@
         }
     </script>
 </head>
+
 <body class="bg-black">
     <div class="container mx-auto p-10">
         <div class="bg-black text-white border-solid border-2 border-white rounded shadow p-8">
@@ -148,7 +150,7 @@
                         <td class="border px-4 py-2 font-bold">Sopir</td>
                         <td class="border px-4 py-2">{{ $sewa->nama_supir }}</td>
                         @if(isset($sewa) && isset($supir) && $sewa->nama_supir == $supir->nama)
-                        <td class="border px-4 py-2">Rp. {{ ($sopir->harga) }}</td>
+                        <td class="border px-4 py-2">Rp. {{ ($supir->sewa) }}</td>
                         @endif
                     </tr>
                     <tr>
@@ -169,7 +171,7 @@
             <div class="flex justify-between p-4">
                 <div>
                     <h3 class="text-xl text-red-600">Harap Diperhatikan :</h3>
-                        <ul class="text-xs list-disc list-inside">
+                    <ul class="text-xs list-disc list-inside">
                         <li>Bawa nota ini pada saat pengambilan mobil (Capture Invoice ini).</li>
                         <li>Riwayat pemesanan anda dapat dibatalkan jika terindikasi melakukan penipuan (Mengirimkan bukti transfer palsu).</li>
                         <li>Jika anda tidak melakukan pembayaran sampai tanggal pengambilan, maka transaksi dianggap hangus.</li>
@@ -178,9 +180,9 @@
                     </ul>
                 </div>
                 <div class="p-4">
-                        <h3>No. Rekening: </h3>
-                        <div class="text-4xl italic text-indigo-500">123456789</div>
-                        <h6><i>*rekening atas nama XXXXX</i></h6>
+                    <h3>No. Rekening: </h3>
+                    <div class="text-4xl italic text-indigo-500">123456789</div>
+                    <h6><i>*rekening atas nama XXXXX</i></h6>
                 </div>
             </div>
             <div class="p-4">
@@ -192,8 +194,9 @@
                     <p class="mt-1 text-sm text-gray-500 dark:text-gray-300" id="file_input_help">SVG, PNG, JPG or GIF (MAX. 800x400px).</p>
                     <button class="px-4 py-2 text-sm text-white bg-blue-500">Kirim</button>
                 </form>
-             </div>
+            </div>
         </div>
     </div>
 </body>
+
 </html>
