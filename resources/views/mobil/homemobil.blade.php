@@ -11,7 +11,8 @@
         </button>
     </a>
     @if(session()->has('success'))
-    <div class="mb-4 rounded-lg bg-green-600 px-6 py-5 text-base text-white" role="alert">
+    <div class="alert alert-success alert-dismissible fade show">
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
         {{ session('success') }}
     </div>
     @endif

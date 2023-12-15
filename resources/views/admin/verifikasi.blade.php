@@ -45,18 +45,16 @@
                             <td class="px-4 py-2">{{ $data->tanggal_kembali }}</td>
                             <td class="px-4 py-2">{{ $data->jaminan }}</td>
                             <td class="px-4 py-2">{{ $data->total_biaya }}</td>
-                            <td class="px-4 py-2">{{ $data->bukti }}</td>
-
-                            <td><label class="badge"
-                                    style="display: inline-block;min-width: 90px;">{{ $data->verifikasi }}</label></td>
+                            <td class="px-4 py-2">
+                                <img src="{{ asset('storage/' . $data->bukti) }}" alt="Bukti-Tf">
+                            </td>
+                            <td><label class="badge" style="display: inline-block;min-width: 90px;">{{ $data->verifikasi }}</label></td>
                             </td>
                             <td>
-                                <a onclick="return confirm('Apakah Anda yakin ingin MENERIMA Transaksi ini ?')"
-                                    href="{{url('approve_transaksi', $data->id)}}" class="btn btn-success">Approve</a>
+                                <a onclick="return confirm('Apakah Anda yakin ingin MENERIMA Transaksi ini ?')" href="{{url('approve_transaksi', $data->id)}}" class="btn btn-success">Approve</a>
                             </td>
                             <td>
-                                <a onclick="return confirm('Apakah Anda yakin ingin MENOLAK Transaksi ini ?')"
-                                    href="{{url('reject_transaksi', $data->id)}}" class="btn btn-danger">Reject</a>
+                                <a onclick="return confirm('Apakah Anda yakin ingin MENOLAK Transaksi ini ?')" href="{{url('reject_transaksi', $data->id)}}" class="btn btn-danger">Reject</a>
                             </td>
                         </tr>
                         @endforeach
@@ -70,12 +68,12 @@
 @section('scripts')
 <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
 <script>
-$(document).ready(function() {
-    $('#rentalTable').DataTable({
-        "lengthMenu": [10, 25, 50, 75, 100],
-        "pageLength": 10
+    $(document).ready(function() {
+        $('#rentalTable').DataTable({
+            "lengthMenu": [10, 25, 50, 75, 100],
+            "pageLength": 10
+        });
     });
-});
 </script>
 
 @endsection
