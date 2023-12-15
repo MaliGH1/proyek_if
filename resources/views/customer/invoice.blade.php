@@ -6,6 +6,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>View Invoice</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <script>
+        function previewImage() {
+            const image = document.querySelector('#bukti');
+            const imgPreview = document.querySelector('.img-preview');
+
+            imgPreview.style.display = 'block';
+
+            const oFReader = new FileReader();
+
+            // Change 'imge' to 'image' in the line below
+            oFReader.readAsDataURL(image.files[0]);
+
+            oFReader.onload = function(oFREvent) {
+                imgPreview.src = oFREvent.target.result;
+            }
+        }
+    </script>
 </head>
 
 <body class="bg-black">
@@ -96,10 +113,12 @@
                 </div>
             </div>
             <div class="p-4">
-                <form action="{{ route('invoice') }}" method="post">
+                <form action="{{ route('invoice') }}" method="post" enctype="multipart/form-data">
                     @csrf
-                    <label class="block mb-2 text-sm font-medium dark:text-white" for="bukti">Upload Bukti Transfer</label>
-                    <input class="bukti block w-2/3 mb-5 text-sm text-gray-900 border border-gray-300 cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400" id="bukti" name="bukti" type="file">
+                    <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white" for="bukti">Upload bukti</label>
+                    <img class="img-preview" style="display: none; max-width: 200px; margin-top: 10px;">
+                    <input id="bukti" name="bukti" onchange="previewImage()" class="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400" aria-describedby="file_input_help" id="file_input" type="file">
+                    <p class="mt-1 text-sm text-gray-500 dark:text-gray-300" id="file_input_help">SVG, PNG, JPG or GIF (MAX. 800x400px).</p>
                     <button class="px-4 py-2 text-sm text-white bg-blue-500">Kirim</button>
                 </form>
             </div>

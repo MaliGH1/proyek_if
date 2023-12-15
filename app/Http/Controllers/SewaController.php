@@ -79,7 +79,8 @@ class SewaController extends Controller
             'tanggal_pinjam' => $waktu_pjm,
             'tanggal_kembali' => $waktu_balik,
             'jaminan' => $jaminan,
-            'total_biaya' => $total
+            'total_biaya' => $total,
+            'bukti' => null
         ]);
 
         // $sewa->nama_penyewa = $request->nama_penyewa;
@@ -136,20 +137,22 @@ class SewaController extends Controller
 
     public function updateInvoice(Request $request)
     {
+
+
+        // $sewa = Sewa::latest()->first();
+        // $sewa->save();
+
+
         $request->validate([
-            'bukti' => 'required'
+            $sewa = Sewa::latest()->first(),
+            'bukti' => 'image|file|max:5000'
         ]);
 
-        $sewa = Sewa::latest()->first();
-        $sewa->save();
-
-        if ($request->hasFile('bukti')) {
-            $image = $request->file('bukti');
-            $imageName = $image->getClientOriginalName();
-            $imagePath = 'storage/images/' . $imageName;
-            $image->move(public_path('storage/images'), $imageName);
-            $sewa->bukti = $imagePath;
+        if ($request->file('bukti')) {
+            $validateData['bukti'] = $request->file('bukti')->store('bukti-tf');
         }
+        Sewa::where('id', $sewa->id)
+            ->update($validateData);
 
         return redirect('home')->with('success', 'Bukti transfer telah diunggah! Halaman akan kembali ke home...');
     }

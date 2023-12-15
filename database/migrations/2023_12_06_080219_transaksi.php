@@ -25,7 +25,7 @@ return new class extends Migration
             $table->string('jaminan');
             $table->string('total_biaya');
             $table->string('verifikasi')->default('Requested');
-            $table->longText('bukti');
+            $table->string('bukti');
             $table->timestamps();
         });
     }
