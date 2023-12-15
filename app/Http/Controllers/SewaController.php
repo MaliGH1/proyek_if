@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Carbon\Carbon;
 use App\Models\Sewa;
 use App\Models\Mobil;
 use App\Models\Supir;
@@ -19,12 +20,12 @@ class SewaController extends Controller
     public function index()
     {
         $mobils = Mobil::all();
-        $sopirs = Supir::all();
-        $customers =  Customer::all();
+        $supirs = Supir::all();
+        $customers = Customer::all();
         return view('customer/sewa', [
             "title" => "Sewa Mobil",
             "mobils" => $mobils, // Ubah variabel $mobil menjadi $mobils
-            "sopirs" => $sopirs,  // Melewatkan data sopir ke tampilan jika diperlukan
+            "supirs" => $supirs,  // Melewatkan data sopir ke tampilan jika diperlukan
             "customers" => $customers
         ]);
     }
@@ -46,8 +47,8 @@ class SewaController extends Controller
         $customer = Customer::where('username', $user->username)->first();
 
         $mobil = Mobil::find($request->pilih_mobil);
-        $sopir = Supir::find($request->pilih_sopir);
-        
+        $supir = Supir::find($request->pilih_supir);
+
 
         $nama = $request->input('nama');
         $nohp = $request->input('nohp');
@@ -57,7 +58,7 @@ class SewaController extends Controller
         $nopol = $request->input('nopol');
         $jaminan = $request->input('jaminan');
         $mobil = $request->input('mobil');
-        $sopir = $request->input('sopir');
+        $supir = $request->input('supir');
         $total = $request->input('total');
 
         $waktu_balik = date('Y-m-d H:i:s', strtotime("+$durasi hours", strtotime($waktu_pjm)));
@@ -67,7 +68,10 @@ class SewaController extends Controller
 
         $no_invoice = 'RNT' . str_pad($newId, 5, '0', STR_PAD_LEFT);
 
-        
+        $validateData = $request->validate([
+            'tgl_pjm' => ['required', 'date', 'after_or_equal:' . Carbon::today()->toDateString()],
+            // tambahkan aturan validasi untuk input lainnya sesuai kebutuhan
+        ]);
 
         Sewa::create([
             'no_invoice' => $no_invoice,
@@ -76,8 +80,8 @@ class SewaController extends Controller
             'alamat' => $alamat,
             'nama_mobil' => $mobil,
             'nopol' => $nopol,
-            'nama_supir' => $sopir,
-            'tanggal_pinjam' => $waktu_pjm,
+            'nama_supir' => $supir,
+            'tanggal_pinjam' => $waktu_pjm, 'required', 'date', 'after_or_equal:' . Carbon::today()->toDateString(),
             'tanggal_kembali' => $waktu_balik,
             'jaminan' => $jaminan,
             'total_biaya' => $total,
@@ -95,6 +99,7 @@ class SewaController extends Controller
         // $sewa->save();
 
         return redirect('/invoice');
+
     }
 
     /**
@@ -121,7 +126,7 @@ class SewaController extends Controller
         // Ambil data sewa terakhir
         $sewa = Sewa::latest()->first();
         $mobil = Mobil::latest()->first();
-        $sopir = Supir::latest()->first();
+        $supir = Supir::latest()->first();
 
         // Jika tidak ada data sewa, redirect ke halaman sebelumnya
         if (!$sewa) {
@@ -132,7 +137,7 @@ class SewaController extends Controller
         return view('customer/invoice', [
             'sewa' => $sewa,
             'mobil' => $mobil,
-            'sopir' => $sopir
+            'supir' => $supir
         ]);
     }
 
