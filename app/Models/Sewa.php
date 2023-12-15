@@ -23,10 +23,12 @@ class Sewa extends Model
         'jaminan',
         'tanggal_kembali',
         'total_biaya',
+        'bukti',
         'verifikasi'
     ];
 
-    public function getHargaMobil(){
+    public function getHargaMobil()
+    {
         return $this->belongsTo(Mobil::class);
     }
 }

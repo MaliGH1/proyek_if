@@ -50,8 +50,8 @@ Route::get('/', function () {
 Route::get('/daftarmobil', [MobilController::class, 'index']);
 
 Route::get('/transaksi', [App\Http\Controllers\VerifikasiController::class, 'index'])->name('transaksi');
-Route::get('/approve_transaksi/{id}', [App\Http\Controllers\VerifikasiController::class, 'approve_transaksi']);
-Route::get('/reject_transaksi/{id}', [App\Http\Controllers\VerifikasiController::class, 'reject_transaksi']);
+Route::get('/approve_transaksi/{id}',[App\Http\Controllers\VerifikasiController::class,'approve_transaksi']);
+Route::get('/reject_transaksi/{id}',[App\Http\Controllers\VerifikasiController::class,'reject_transaksi']);
 Route::get('/keuangan', [App\Http\Controllers\SewaController::class, 'laporan'])->name('laporan');
 
 //Route::get('verifikasi', \App\Http\Controllers\Admin\VerifikasiController::class);

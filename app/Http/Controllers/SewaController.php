@@ -19,12 +19,12 @@ class SewaController extends Controller
     public function index()
     {
         $mobils = Mobil::all();
-        $supirs = Supir::all();
+        $sopirs = Supir::all();
         $customers =  Customer::all();
         return view('customer/sewa', [
             "title" => "Sewa Mobil",
             "mobils" => $mobils, // Ubah variabel $mobil menjadi $mobils
-            "supirs" => $supirs,  // Melewatkan data sopir ke tampilan jika diperlukan
+            "sopirs" => $sopirs,  // Melewatkan data sopir ke tampilan jika diperlukan
             "customers" => $customers
         ]);
     }
@@ -46,7 +46,8 @@ class SewaController extends Controller
         $customer = Customer::where('username', $user->username)->first();
 
         $mobil = Mobil::find($request->pilih_mobil);
-        $supir = Supir::find($request->pilih_supir);
+        $sopir = Supir::find($request->pilih_sopir);
+        
 
         $nama = $request->input('nama');
         $nohp = $request->input('nohp');
@@ -56,9 +57,8 @@ class SewaController extends Controller
         $nopol = $request->input('nopol');
         $jaminan = $request->input('jaminan');
         $mobil = $request->input('mobil');
-        $supir = $request->input('supir');
+        $sopir = $request->input('sopir');
         $total = $request->input('total');
-
 
         $waktu_balik = date('Y-m-d H:i:s', strtotime("+$durasi hours", strtotime($waktu_pjm)));
 
@@ -67,19 +67,21 @@ class SewaController extends Controller
 
         $no_invoice = 'RNT' . str_pad($newId, 5, '0', STR_PAD_LEFT);
 
+        
 
         Sewa::create([
             'no_invoice' => $no_invoice,
             'nama_customer' => $nama,
             'nohp' => $nohp,
             'alamat' => $alamat,
-            'nopol' => $nopol,
             'nama_mobil' => $mobil,
-            'nama_supir' => $supir,
+            'nopol' => $nopol,
+            'nama_supir' => $sopir,
             'tanggal_pinjam' => $waktu_pjm,
             'tanggal_kembali' => $waktu_balik,
             'jaminan' => $jaminan,
-            'total_biaya' => $total
+            'total_biaya' => $total,
+            'bukti' => null
         ]);
 
         // $sewa->nama_penyewa = $request->nama_penyewa;
@@ -119,7 +121,7 @@ class SewaController extends Controller
         // Ambil data sewa terakhir
         $sewa = Sewa::latest()->first();
         $mobil = Mobil::latest()->first();
-        $supir = Supir::latest()->first();
+        $sopir = Supir::latest()->first();
 
         // Jika tidak ada data sewa, redirect ke halaman sebelumnya
         if (!$sewa) {
@@ -130,26 +132,28 @@ class SewaController extends Controller
         return view('customer/invoice', [
             'sewa' => $sewa,
             'mobil' => $mobil,
-            'supir' => $supir
+            'sopir' => $sopir
         ]);
     }
 
     public function updateInvoice(Request $request)
     {
+
+
+        // $sewa = Sewa::latest()->first();
+        // $sewa->save();
+
+
         $request->validate([
-            'bukti' => 'required'
+            $sewa = Sewa::latest()->first(),
+            'bukti' => 'image|file|max:5000'
         ]);
 
-        $sewa = Sewa::latest()->first();
-        $sewa->save();
-
-        if ($request->hasFile('bukti')) {
-            $image = $request->file('bukti');
-            $imageName = $image->getClientOriginalName();
-            $imagePath = 'storage/images/' . $imageName;
-            $image->move(public_path('storage/images'), $imageName);
-            $sewa->bukti = $imagePath;
+        if ($request->file('bukti')) {
+            $validateData['bukti'] = $request->file('bukti')->store('bukti-tf');
         }
+        Sewa::where('id', $sewa->id)
+            ->update($validateData);
 
         return redirect('home')->with('success', 'Bukti transfer telah diunggah! Halaman akan kembali ke home...');
     }

@@ -33,10 +33,10 @@ class AdminSupirController extends Controller
     public function store(Request $request)
     {
         $validateData = $request->validate([
-            'noktp' => 'required',
+            'noktp' => 'required|min:16|max:16',
             'nama' => 'required',
             'alamat' => 'required',
-            'nohpsupir' => 'required',
+            'nohpsupir' => 'required|max:12',
             'image' => 'image|file|max:50000'
         ]);
 
