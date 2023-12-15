@@ -28,7 +28,7 @@ class VerifikasiController extends Controller
             $mobil->save();
         }
 
-        $status->verifikasi = 'Approved';
+        $status->verifikasi = 'DITERIMA';
         $status->save();
         return redirect()->back()->with('success', 'Transaksi Diterima');
     }
@@ -37,7 +37,7 @@ class VerifikasiController extends Controller
     {
         $status = Verifikasi::find($id);
 
-        $status->verifikasi = 'Rejected';
+        $status->verifikasi = 'DITOLAK';
         $status->save();
         return redirect()->back()->with('success', 'Transaksi Ditolak');
     }
@@ -51,7 +51,7 @@ class VerifikasiController extends Controller
             $mobil->save();
         }
 
-        $status->verifikasi = 'Kembali';
+        $status->verifikasi = 'SELESAI';
         $status->save();
         return redirect()->back()->with('success', 'Transaksi Selesai');
     }

@@ -1,4 +1,4 @@
-@extends('layouts.mainverifikasi')
+@extends('layouts.mainkeuangan')
 
 @section('head')
 <!-- CSS DataTables -->
@@ -19,35 +19,20 @@
                             <th class="px-4 py-2">No. Invoice</th>
                             <th class="px-4 py-2">Tanggal</th>
                             <th class="px-4 py-2">Saldo Masuk</th>
-                            <th class="px-4 py-2">Keterangan</th>
-                            <th class="px-4 py-2">Approve</th>
-                            <th class="px-4 py-2">Reject</th>
                         </tr>
                     </thead>
                     <tbody>
                    
-                        @foreach($transaksi as $data)
+                        @foreach($status as $data)
                         <tr>
                             <td class="px-4 py-2">{{ $data->no_invoice }}</td>
                             <td class="px-4 py-2">{{ $data->tanggal_pinjam }}</td>
                             <td class="px-4 py-2">{{ $data->total_biaya }}</td>
-                            <td><label class="badge"
-                                    style="display: inline-block;min-width: 90px;">{{ $data->verifikasi }}</label></td>
-                            </td>
-                            <td>
-                                <a onclick="return confirm('Apakah Anda yakin ingin MENERIMA Transaksi ini ?')"
-                                    href="{{url('approve_transaksi', $data->id)}}" class="btn btn-success">Approve</a>
-                            </td>
-                            <td>
-                                <a onclick="return confirm('Apakah Anda yakin ingin MENOLAK Transaksi ini ?')"
-                                    href="{{url('reject_transaksi', $data->id)}}" class="btn btn-danger">Reject</a>
-                            </td>
-                        </tr>
                         @endforeach
 
                         <tr style="border-top: 2px solid #fff;">
                             <td colspan="2" class="px-4 py-2 font-medium"><strong>Total</td>
-                            <td class="px-4 py-2 font-medium"><strong>{{ $transaksi->sum('total_biaya') }}</td>
+                            <td class="px-4 py-2 font-medium"><strong>{{ $status->sum('total_biaya') }}</td>
                             <td colspan="3"></td>
                         </tr>
 

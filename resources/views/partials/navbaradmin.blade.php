@@ -104,7 +104,7 @@
         </div>
         <div class="w-full text-left text-sm mt-2 ml-3 mx-auto text-gray-200 font-bold" id="submenu-keuangan">
             <li class="nav-item list-none">
-                <a href="{{ route('laporan') }}" class="nav-link bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded inline-block transition duration-300 text-xl">
+                <a href="{{ route('keuangan') }}" class="nav-link bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded inline-block transition duration-300 text-xl">
                     <span class="text-[15px] ml-4 text-gray-200 font-bold text-lg">
                         <i class="nav-icon fas fa-calendar"></i>
                         {{ __('Bulanan') }}
@@ -112,7 +112,7 @@
                 </a>
             </li>
             <li class="nav-item list-none">
-                <a href="{{ route('laporan') }}" class="nav-link bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded inline-block transition duration-300 text-xl">
+                <a href="{{ route('keuangan') }}" class="nav-link bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded inline-block transition duration-300 text-xl">
                     <span class="text-[15px] ml-4 text-gray-200 font-bold text-lg">
                         <i class="nav-icon fas fa-calendar"></i>
                         {{ __('Tahunan') }}

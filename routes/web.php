@@ -53,7 +53,7 @@ Route::get('/transaksi', [App\Http\Controllers\VerifikasiController::class, 'ind
 Route::get('/approve_transaksi/{id}', [App\Http\Controllers\VerifikasiController::class, 'approve_transaksi']);
 Route::get('/reject_transaksi/{id}', [App\Http\Controllers\VerifikasiController::class, 'reject_transaksi']);
 Route::get('/pengembalian/{id}', [App\Http\Controllers\VerifikasiController::class, 'pengembalian']);
-Route::get('/keuangan', [App\Http\Controllers\SewaController::class, 'laporan'])->name('laporan');
+Route::get('/keuangan', [App\Http\Controllers\KeuanganController::class, 'index'])->name('keuangan');
 
 //Route::get('verifikasi', \App\Http\Controllers\Admin\VerifikasiController::class);
 
