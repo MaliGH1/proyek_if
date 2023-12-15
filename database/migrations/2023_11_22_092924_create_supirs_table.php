@@ -17,6 +17,7 @@ return new class extends Migration
             $table->string('alamat');
             $table->string('nohpsupir');
             $table->string('image');
+            $table->integer('sewa')->default('50000');
             $table->timestamps();
         });
     }
