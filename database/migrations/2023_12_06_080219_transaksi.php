@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('nohp');
             $table->string('alamat');
             $table->string('nama_mobil');
+            $table->string('nopol');
             $table->string('nama_supir');
             $table->datetime('tanggal_pinjam');
             $table->datetime('tanggal_kembali');
