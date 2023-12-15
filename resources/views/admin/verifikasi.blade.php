@@ -26,6 +26,7 @@
                             <th class="px-4 py-2">Tanggal Kembali</th>
                             <th class="px-4 py-2">Jaminan</th>
                             <th class="px-4 py-2">Total Biaya</th>
+                            <th class="px-4 py-2">Bukti TF</th>
                             <th class="px-4 py-2">Status</th>
                             <th class="px-4 py-2">Approve</th>
                             <th class="px-4 py-2">Reject</th>
@@ -44,6 +45,7 @@
                             <td class="px-4 py-2">{{ $data->tanggal_kembali }}</td>
                             <td class="px-4 py-2">{{ $data->jaminan }}</td>
                             <td class="px-4 py-2">{{ $data->total_biaya }}</td>
+                            <td class="px-4 py-2">{{ $data->bukti }}</td>
 
                             <td><label class="badge"
                                     style="display: inline-block;min-width: 90px;">{{ $data->verifikasi }}</label></td>
