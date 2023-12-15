@@ -77,7 +77,6 @@
                         <td class="border px-4 py-2 font-bold">Supir</td>
                         <td class="border px-4 py-2">{{ $sewa->nama_supir }}</td>
                         @if(isset($sewa) && isset($supir) && $sewa->nama_supir == $supir->nama)
-
                         <td class="border px-4 py-2">Rp. {{ ($supir->sewa) }}</td>
                         @endif
                     </tr>
