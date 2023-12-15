@@ -30,6 +30,7 @@
                             <th class="px-4 py-2">Status</th>
                             <th class="px-4 py-2">Approve</th>
                             <th class="px-4 py-2">Reject</th>
+                            <th class="px-4 py-2">Kembali</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -48,13 +49,17 @@
                             <td class="px-4 py-2">
                                 <img src="{{ asset('storage/' . $data->bukti) }}" alt="Bukti-Tf">
                             </td>
-                            <td><label class="badge" style="display: inline-block;min-width: 90px;">{{ $data->verifikasi }}</label></td>
+                            <td>
+                                <label class="badge" style="display: inline-block;min-width: 90px;">{{ $data->verifikasi }}</label>
                             </td>
                             <td>
                                 <a onclick="return confirm('Apakah Anda yakin ingin MENERIMA Transaksi ini ?')" href="{{url('approve_transaksi', $data->id)}}" class="btn btn-success">Approve</a>
                             </td>
                             <td>
                                 <a onclick="return confirm('Apakah Anda yakin ingin MENOLAK Transaksi ini ?')" href="{{url('reject_transaksi', $data->id)}}" class="btn btn-danger">Reject</a>
+                            </td>
+                            <td>
+                                <a onclick="return confirm('Apakah Anda yakin Mobil sudah kembali ?')" href="{{url('pengembalian', $data->id)}}" class="btn btn-success">Kembali</a>
                             </td>
                         </tr>
                         @endforeach

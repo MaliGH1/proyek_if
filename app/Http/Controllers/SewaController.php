@@ -47,8 +47,8 @@ class SewaController extends Controller
         $customer = Customer::where('username', $user->username)->first();
 
         $mobil = Mobil::find($request->pilih_mobil);
-        $supir = Supir::find($request->pilih_supir);
 
+        $supir = Supir::find($request->pilih_supir);
 
         $nama = $request->input('nama');
         $nohp = $request->input('nohp');
@@ -72,6 +72,7 @@ class SewaController extends Controller
             'tgl_pjm' => ['required', 'date', 'after_or_equal:' . Carbon::today()->toDateString()],
             // tambahkan aturan validasi untuk input lainnya sesuai kebutuhan
         ]);
+
 
         Sewa::create([
             'no_invoice' => $no_invoice,
