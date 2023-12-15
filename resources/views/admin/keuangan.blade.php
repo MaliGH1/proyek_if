@@ -26,7 +26,7 @@
                         @foreach($status as $data)
                         <tr>
                             <td class="px-4 py-2">{{ $data->no_invoice }}</td>
-                            <td class="px-4 py-2">{{ $data->tanggal_pinjam }}</td>
+                            <td class="px-4 py-2">{{ $data->tanggal_kembali }}</td>
                             <td class="px-4 py-2">{{ $data->total_biaya }}</td>
                         @endforeach
 
