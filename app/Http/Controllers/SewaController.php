@@ -47,12 +47,14 @@ class SewaController extends Controller
 
         $mobil = Mobil::find($request->pilih_mobil);
         $sopir = Supir::find($request->pilih_sopir);
+        
 
         $nama = $request->input('nama');
         $nohp = $request->input('nohp');
         $waktu_pjm = $request->input('tgl_pjm');
         $durasi = $request->input('durasi');
         $alamat = $request->input('alamat');
+        $nopol = $request->input('nopol');
         $jaminan = $request->input('jaminan');
         $mobil = $request->input('mobil');
         $sopir = $request->input('sopir');
@@ -65,6 +67,7 @@ class SewaController extends Controller
 
         $no_invoice = 'RNT' . str_pad($newId, 5, '0', STR_PAD_LEFT);
 
+        
 
         Sewa::create([
             'no_invoice' => $no_invoice,
@@ -72,6 +75,7 @@ class SewaController extends Controller
             'nohp' => $nohp,
             'alamat' => $alamat,
             'nama_mobil' => $mobil,
+            'nopol' => $nopol,
             'nama_supir' => $sopir,
             'tanggal_pinjam' => $waktu_pjm,
             'tanggal_kembali' => $waktu_balik,

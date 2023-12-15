@@ -17,6 +17,7 @@ class Sewa extends Model
         'nohp',
         'alamat',
         'nama_mobil',
+        'nopol',
         'nama_supir',
         'tanggal_pinjam',
         'jaminan',

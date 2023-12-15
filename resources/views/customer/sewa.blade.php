@@ -50,12 +50,14 @@
                 <input class="alamat shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" name="alamat" id="alamat"  type="text" value="{{ $customer->alamat}}" required>
                 @endif
             </div>
+
             <div>
                 <label class="block text-white text-sm font-bold mb-2" for="jaminan">
                     {{ __('Jaminan')}}
                 </label>
                 <input class="jaminan cursor-not-allowed shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" name="jaminan" id="jaminan" type="text" value="KTP" disable readonly>
             </div>
+
             
             <div>
             <label for="mobil" class="text-white">Pilih Mobil:</label>
@@ -77,9 +79,8 @@
                 </select>
             </div>
 
-            <div class="flex items-center justify-between">
-                <button type="submit" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Submit</button>
-            </div>
+            
+
             <div>
                 <label for="total" class="text-white font-bold">TOTAL BAYAR:</label>
                 <input class="total cursor-not-allowed shadow appearance-none border rounded py-2 px-3 text-black text-center font-bold focus:outline-none focus:shadow-outline"  name="total" id="total" type="text" value="{{ $mobil->sewa + $sopir->harga}}" readonly>
@@ -102,6 +103,19 @@
                 });
                 </script>
             </div>
+
+            <div class="flex items-center justify-between">
+                <button type="submit" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Submit</button>
+            </div>
+
+            <div>
+                <label class="block text-white text-sm font-bold mb-2" for="nopol">
+                @foreach($mobils as $mobil)
+                @endforeach
+                </label>
+                <input class="nopol cursor-not-allowed shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" name="nopol" id="nopol" type="hidden" value="{{$mobil->nopol}}">
+            </div>
+           
         </form>
 
     </div>
