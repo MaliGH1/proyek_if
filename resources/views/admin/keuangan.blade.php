@@ -27,12 +27,12 @@
                         <tr>
                             <td class="px-4 py-2">{{ $data->no_invoice }}</td>
                             <td class="px-4 py-2">{{ $data->tanggal_kembali }}</td>
-                            <td class="px-4 py-2">{{ $data->total_biaya }}</td>
+                            <td class="px-4 py-2">Rp. {{ $data->total_biaya }}</td>
                         @endforeach
 
                         <tr style="border-top: 2px solid #fff;">
                             <td colspan="2" class="px-4 py-2 font-medium"><strong>Total</td>
-                            <td class="px-4 py-2 font-medium"><strong>{{ $status->sum('total_biaya') }}</td>
+                            <td class="px-4 py-2 font-medium"><strong>Rp. {{ $status->sum('total_biaya') }}</td>
                             <td colspan="3"></td>
                         </tr>
 
