@@ -19,8 +19,8 @@ class SewaController extends Controller
      */
     public function index()
     {
-        $mobils = Mobil::where('status', 'Tersedia')->get();
-        $supirs = Supir::where('status', 'Tersedia')->get();
+        $mobils = Mobil::where('status','Tersedia')->get();
+        $supirs = Supir::where('status','Tersedia')->get();
         $customers = Customer::all();
         return view('customer/sewa', [
             "title" => "Sewa Mobil",
@@ -53,37 +53,13 @@ class SewaController extends Controller
         $nama = $request->input('nama');
         $nohp = $request->input('nohp');
         $waktu_pjm = $request->input('tgl_pjm');
+        $durasi = $request->input('durasi');
         $alamat = $request->input('alamat');
         $nopol = $request->input('nopol');
         $jaminan = $request->input('jaminan');
         $mobil = $request->input('mobil');
         $supir = $request->input('supir');
         $total = $request->input('total');
-
-        $durasi = $request->input('durasi');
-        // Fetch the selected mobil and supir
-        $selectedMobil = Mobil::find($request->pilih_mobil);
-        $selectedSupir = Supir::find($request->pilih_supir);
-
-        // Fetch the selected mobil and supir
-        // Check if mobil is found and has a valid harga_sewa property
-        if ($selectedMobil && property_exists($selectedMobil, 'harga_sewa')) {
-            // Jika durasi peminjaman 12 jam, potong harga mobil setengah
-            $mobil_price = ($durasi == 12) ? ($selectedMobil->harga_sewa / 2) : $selectedMobil->harga_sewa;
-        } else {
-            // Handle the case where mobil is not found or harga_sewa is not valid
-            $mobil_price = 0; // Set a default value or handle the error as needed
-        }
-
-        // Check if supir is found and has a valid harga_sewa property
-        if ($selectedSupir && property_exists($selectedSupir, 'harga_sewa')) {
-            $supir_price = $selectedSupir->harga_sewa;
-        } else {
-            // Handle the case where supir is not found or harga_sewa is not valid
-            $supir_price = 0; // Set a default value or handle the error as needed
-        }
-
-        $total = $mobil_price + $supir_price;
 
         $waktu_balik = date('Y-m-d H:i:s', strtotime("+$durasi hours", strtotime($waktu_pjm)));
 
