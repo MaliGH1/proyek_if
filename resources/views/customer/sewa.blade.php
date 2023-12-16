@@ -38,7 +38,7 @@
                     </div>
                     @enderror
                 </div>
-                <!-- <div>
+                <div>
                     <label class="block text-white text-sm font-bold mb-2" for="durasi">
                         {{ __('Durasi Peminjaman')}}
                     </label>
@@ -46,7 +46,7 @@
                         <option value="24">24 Jam</option>
                          tambahkan opsi lain sesuai kebutuhan 
                     </select>
-                </div> -->
+                </div>
                 <div>
                     <label class="block text-white text-sm font-bold mb-2" for="alamat">
                         {{ __('Alamat')}}
