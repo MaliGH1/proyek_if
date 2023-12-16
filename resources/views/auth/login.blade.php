@@ -28,17 +28,21 @@
         <div class="block mt-4">
             <label for="remember_me" class="inline-flex items-center">
                 <input id="remember_me" type="checkbox" class="rounded border-gray-300 text-indigo-600 shadow-sm focus:ring-indigo-500" name="remember">
-                <span class="ms-2 text-sm text-white">{{ __('Remember me') }}</span>
+                <span class="ms-2 text-sm text-white">{{ __('Ingat saya') }}</span>
+                @if (Route::has('password.request'))
+                <a class="underline text-sm text-white ml-52 hover:text-blue-400 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" href="{{ route('password.request') }}">
+                    {{ __('Lupa password?') }}
+                </a>
             </label>
+            
+            @endif
         </div>
 
         <div class="flex items-center justify-end mt-4">
-            @if (Route::has('password.request'))
-                <a class="underline text-sm text-white hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" href="{{ route('password.request') }}">
-                    {{ __('Forgot your password?') }}
+            
+            <a class="underline text-sm text-white hover:text-blue-400 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" href="{{ route('register') }}">
+                    {{ __('Belum punya akun?') }}
                 </a>
-            @endif
-
             <x-primary-button class="ms-3">
                 {{ __('Log in') }}  
             </x-primary-button>

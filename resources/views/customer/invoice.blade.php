@@ -115,7 +115,7 @@
             <div class="p-4">
                 <form action="{{ route('invoice') }}" method="post" enctype="multipart/form-data">
                     @csrf
-                    <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white" for="bukti">Upload bukti</label>
+                    <label class="block mb-2 text-sm font-medium text-white dark:text-white" for="bukti">Upload bukti</label>
                     <img class="img-preview" style="display: none; max-width: 200px; margin-top: 10px;">
                     <input id="bukti" name="bukti" onchange="previewImage()" class="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400" aria-describedby="file_input_help" id="file_input" type="file">
                     <p class="mt-1 text-sm text-gray-500 dark:text-gray-300" id="file_input_help">SVG, PNG, JPG or GIF (MAX. 800x400px).</p>

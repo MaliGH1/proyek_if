@@ -38,15 +38,7 @@
                     </div>
                     @enderror
                 </div>
-                <div>
-                    <label class="block text-white text-sm font-bold mb-2" for="durasi">
-                        {{ __('Durasi Peminjaman')}}
-                    </label>
-                    <select id="durasi" name="durasi" class="durasi">
-                        <option value="24">24 Jam</option>
-                         tambahkan opsi lain sesuai kebutuhan 
-                    </select>
-                </div>
+                
                 <div>
                     <label class="block text-white text-sm font-bold mb-2" for="alamat">
                         {{ __('Alamat')}}
@@ -84,7 +76,9 @@
                     </select>
                 </div>
 
-
+                <div>
+                <input class="nopol cursor-not-allowed shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" name="durasi" id="durasi" type="hidden" value="24">
+                </div>
 
                 <div>
                     <label for="total" class="text-white font-bold">TOTAL BAYAR:</label>
@@ -120,6 +114,8 @@
                     </label>
                     <input class="nopol cursor-not-allowed shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" name="nopol" id="nopol" type="hidden" value="{{$mobil->nopol}}">
                 </div>
+
+                
 
         </form>
 

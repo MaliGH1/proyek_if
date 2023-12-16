@@ -19,30 +19,48 @@
 </head>
 
 <body>
-    <nav class="top-0 z-100 fixed w-full bg-black py-3 px-5 border-b-2 border-white">
-        <div class="container">
-            <div class="flex items-center justify-center">
-                <div class=" md:flex space-x-1 flex gap-5 items-center">
-                    <div class="text-center"> <!-- Menggunakan 'text-center' untuk tengah-tengah teks "DVJR" -->
-                        <a class="text-yellow-300 text-2xl font-semibold no-underline" href="/home">DVJR</a>
-                    </div>
-                    <a class="text-white no-underline" href="#home">Home</a>
-                    <a class="text-white no-underline" href="/sewa">Sewa</a>
-
-                    <a class="text-white block no-underline" href="#about-section">About</a>
-                    <a class="text-white block no-underline" href="#contact-section">Contact</a>
-                </div>
-                <div class="ml-auto">
-                    <form action="{{ route('logout') }}" method="POST">
-                        @csrf
-                        <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
-                            Logout
-                        </button>
-                    </form>
-                </div>
+<nav class="top-0 z-100 fixed w-full bg-black py-3 px-5 border-b-2">
+    <div class="container mx-auto px-6 md:px-12">
+        <div class="flex items-center gap-5 justify-between">
+            <div class="text-center">
+                <a class="text-yellow-300 text-2xl font-semibold no-underline" href="/home">DVJR</a>
+            </div>
+            <div class="hidden md:flex items-center space-x-10">
+                <a class="text-white no-underline hover:text-yellow-500" href="#home">Home</a>
+                <a class="text-white no-underline hover:text-yellow-500" href="/sewa">Sewa</a>
+                <a class="text-white block no-underline hover:text-yellow-500" href="#about-section">About</a>
+                <a class="text-white block no-underline hover:text-yellow-500" href="#contact-section">Contact</a>
+            </div>
+            <div class="md:hidden flex items-center">
+                <button class="mobile-menu-button">
+                    <svg class="w-6 h-6 text-gray-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+            <div class="ml-auto">
+                <form action="{{ route('logout') }}" method="POST">
+                    @csrf
+                    <button type="submit" class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded-sm">
+                        Logout
+                    </button>
+                </form>
             </div>
         </div>
-    </nav>
+    </div>
+    <div class="mobile-menu hidden md:hidden">
+        <a href="#home" class="block py-2 px-4 text-sm text-white">Home</a>
+        <a href="/sewa" class="block py-2 px-4 text-sm text-white">Sewa</a>
+        <a href="#about-section" class="block py-2 px-4 text-sm text-white">About</a>
+        <a href="#contact-section" class="block py-2 px-4 text-sm text-white">Contact</a>
+    </div>
+</nav>
+
+<script>
+    document.querySelector('.mobile-menu-button').addEventListener('click', function() {
+    document.querySelector('.mobile-menu').classList.toggle('hidden');
+});
+</script>
 </body>
 
 </html>
