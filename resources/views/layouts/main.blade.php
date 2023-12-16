@@ -30,7 +30,7 @@
     </style>
 
     <!-- hubungi kami -->
-    <!-- <style>
+    <style>
         #contact-section {
             display: flex;
             justify-content: flex-start;
@@ -48,13 +48,13 @@
             padding-top: 18rem;
             max-width: 1590px;
         }
-    </style> -->
+    </style>
 
 
 
 </head>
 
-<body class="bg-gradient-to-b from-black from-45% to-white">
+<body class="bg-gradient-to-b from-black from-100% to-white">
     @include('partials.navbar')
     <div class="margin_bottom_navbar">
 
@@ -90,7 +90,7 @@
 
             .h2-entered {
                 opacity: 1;
-                transform: translateX(0);
+                transform: translateX();
             }
 
             #image-container img {

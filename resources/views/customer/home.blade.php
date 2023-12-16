@@ -38,95 +38,93 @@
     </div>
 </section>
 
-    <section class="" id="contact-section">
-        <div class="flex items-top justify-center min-h-screen sm:items-center sm:pt-0 py-0 my-0" data-aos="zoom-out">
-            <div class="max-w-1xl mx-auto sm:px-4 lg:px-6">
+<section class="" id="contact-section">
+    <div class="flex items-top justify-center min-h-screen sm:items-center sm:pt-0 py-0 my-0" data-aos="zoom-out">
+        <div class="max-w-3xl mx-auto sm:px-4 lg:px-6">
 
-                <div class="overflow-hidden">
-                    <div class="text-center grid grid-cols-1 md:grid-cols-1">
-                        <div class="p-6 bg-gray-100 dark:bg-gray-800 sm:rounded-lg">
-                            <h1 class="text-4xl sm:text-5xl text-gray-800 dark:text-white font-extrabold tracking-tight">
-                                Hubungi Kami
-                            </h1>
+            <div class="overflow-hidden">
+                <div class="text-center grid grid-cols-1 md:grid-cols-1">
+                    <div class="p-6 bg-gray-100 dark:bg-gray-800 sm:rounded-lg">
+                        <h1 class="text-4xl sm:text-5xl text-gray-800 dark:text-white font-extrabold tracking-tight">
+                            Hubungi Kami
+                        </h1>
 
-                            <p class="text-normal  text-lg sm:text-2xl font-medium text-gray-600 dark:text-gray-400 mt-2 ">
-                                Untuk Pertanyaan lebih lanjut
-                            </p>
+                        <p class="text-normal  text-lg sm:text-2xl font-medium text-gray-600 dark:text-gray-400 mt-2 ">
+                            Untuk Pertanyaan lebih lanjut
+                        </p>
 
-                            <div class="flex justify-center items-center flex-direction-row">
-                                <div class="flex justify-center items-center  text-gray-600 dark:text-gray-400">
-                                    <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" class="w-8 h-8 text-gray-500">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                                    </svg>
-                                    <div class="ml-4 text-md tracking-wide font-semibold w-40">
-                                        Griya Selabumi Indah Blok H-18, SKIP, 14345
-                                    </div>
-
-                                    <!-- TELEPON -->
-                                    <div class="flex justify-end items-center text-center">
-                                        <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" class="w-8 h-8 text-gray-500">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-                                        </svg>
-                                        <div class="ml-4 text-md tracking-wide font-semibold w-40">
-                                            +62 81563636166
-                                        </div>
-                                    </div>
-
-                                    <div class="flex justify-center items-center text-gray-600 dark:text-gray-400">
-                                        <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" class="w-8 h-8 text-gray-500">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                                        </svg>
-                                        <div class="ml-4 text-md tracking-wide font-semibold w-40">
-                                            DJVR@gmail.com
-                                        </div>
-                                    </div>
-
-                                </div> 
-
-                                <!-- PETA -->
-                                <div class="max-w-10xl mx-auto sm:px-4 lg:px-l" data-aos="zoom-out">
-                                    <a href="https://www.google.com/maps/@-6.913957,106.9243981,3a,75y,115.66h,90.31t/data=!3m6!1e1!3m4!1sZys4ZloIa56ly31-KLWGXQ!2e0!7i16384!8i8192?entry=ttu" target="_blank">
-                                        <img src="image/PetaDJVR.png" alt="Peta DJVR" width="2000" />
-                                    </a>
+                        <div class="flex justify-center items-center flex-direction-row">
+                            <div class="flex justify-center items-center  text-gray-600 dark:text-gray-400">
+                                <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" class="w-8 h-8 text-gray-500">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                                </svg>
+                                <div class="ml-4 text-md tracking-wide font-semibold w-40">
+                                    Griya Selabumi Indah Blok H-18, SKIP, 14345
                                 </div>
                             </div>
+
+                            <!-- TELEPON -->
+                            <div class="flex justify-end items-center text-center">
+                                <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" class="w-8 h-8 text-gray-500">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                                </svg>
+                                <div class="ml-4 text-md tracking-wide font-semibold w-40">
+                                    +62 81563636166
+                                </div>
+                            </div>
+
+                            <div class="flex justify-center items-center text-gray-600 dark:text-gray-400">
+                                <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" class="w-8 h-8 text-gray-500">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                                </svg>
+                                <div class="ml-4 text-md tracking-wide font-semibold w-40">
+                                    DJVR@gmail.com
+                                </div>
+                            </div>
+                            <!-- PETA -->
+                            <div class="max-w-3xl mx-auto sm:px-4 lg:px-l" data-aos="zoom-out">
+                                <a href="https://www.google.com/maps/@-6.913957,106.9243981,3a,75y,115.66h,90.31t/data=!3m6!1e1!3m4!1sZys4ZloIa56ly31-KLWGXQ!2e0!7i16384!8i8192?entry=ttu" target="_blank">
+                                    <img src="image/PetaDJVR.png" alt="Peta DJVR" style="width: 1000%; height: auto;" />
+                                </a>
+                            </div>
+
                         </div>
+
+
                     </div>
                 </div>
-    </section>
+            </div>
+        </div>
+</section>
 
+<script>
+    // Fungsi untuk menangani pengguliran ke bagian yang sesuai
+    function scrollToSection(sectionId) {
+        const section = document.getElementById(sectionId);
+        if (section) {
+            section.scrollIntoView({
+                behavior: 'smooth'
+            });
+        }
+    }
 
+    // Tambahkan event listener untuk tautan "home"
+    document.querySelector('a[href="#home"]').addEventListener('click', function(event) {
+        event.preventDefault();
+        scrollToSection('home');
+    });
 
+    // Tambahkan event listener untuk tautan "About"
+    document.querySelector('a[href="#about-section"]').addEventListener('click', function(event) {
+        event.preventDefault();
+        scrollToSection('about-section');
+    });
 
-
-            <script>
-                // Fungsi untuk menangani pengguliran ke bagian yang sesuai
-                function scrollToSection(sectionId) {
-                    const section = document.getElementById(sectionId);
-                    if (section) {
-                        section.scrollIntoView({
-                            behavior: 'smooth'
-                        });
-                    }
-                }
-
-                // Tambahkan event listener untuk tautan "home"
-                document.querySelector('a[href="#home"]').addEventListener('click', function(event) {
-                    event.preventDefault();
-                    scrollToSection('home');
-                });
-
-                // Tambahkan event listener untuk tautan "About"
-                document.querySelector('a[href="#about-section"]').addEventListener('click', function(event) {
-                    event.preventDefault();
-                    scrollToSection('about-section');
-                });
-
-                // Tambahkan event listener untuk tautan "Contact"
-                document.querySelector('a[href="#contact-section"]').addEventListener('click', function(event) {
-                    event.preventDefault();
-                    scrollToSection('contact-section');
-                });
-            </script>
-            @endsection
+    // Tambahkan event listener untuk tautan "Contact"
+    document.querySelector('a[href="#contact-section"]').addEventListener('click', function(event) {
+        event.preventDefault();
+        scrollToSection('contact-section');
+    });
+</script>
+@endsection
