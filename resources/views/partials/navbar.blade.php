@@ -6,45 +6,41 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="favicon.ico" type="image/x-icon">
     <title>Document</title>
-    <style>
-        nav {
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            background-color: black;
-            padding: 10px 0;
-            border-bottom: 2px solid white;
-        }
-    </style>
 </head>
 
 <body>
-    <nav class="top-0 z-100 fixed w-full bg-black py-3 px-5 border-b-2 border-white">
-        <div class="container">
-            <div class="flex items-center justify-center">
-                <div class=" md:flex space-x-1 flex gap-5 items-center">
-                    <div class="text-center"> <!-- Menggunakan 'text-center' untuk tengah-tengah teks "DVJR" -->
-                        <a class="text-yellow-300 text-2xl font-semibold no-underline" href="/home">DVJR</a>
-                    </div>
-                    <a class="text-white no-underline" href="#home">Home</a>
-                    <a class="text-white no-underline" href="/sewa">Sewa</a>
-
-                    <a class="text-white block no-underline" href="#about-section">About</a>
-                    <a class="text-white block no-underline" href="#contact-section">Contact</a>
-                </div>
-                <div class="ml-auto">
-                    <!-- @if(Auth::check())
-                        <a href="{{ route('logout') }}" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
-                            Logout
-                        </a>
-                    @endif -->
-                    <form action="{{ route('logout') }}" method="POST">
-                        @csrf
-                        <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
-                            Logout
-                        </button>
-                    </form>
-                </div>
+    <nav class="bg-black dark:bg-black fixed w-full z-20 top-0 start-0 border-b-2 border-white dark:border-black">
+        <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto">
+            <a href="/home" class="flex items-center space-x-3 rtl:space-x-reverse no-underline">
+                <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-yellow-300">DVJR</span>
+            </a>
+            <div class="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
+                <form action="{{ route('logout') }}" method="POST">
+                    @csrf
+                    <button type="submit" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Logout</button>
+                </form>
+                <button data-collapse-toggle="navbar-sticky" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-sticky" aria-expanded="false">
+                    <span class="sr-only">Open main menu</span>
+                    <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15" />
+                    </svg>
+                </button>
+            </div>
+            <div class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1" id="navbar-sticky">
+                <ul class="flex flex-col p-4 md:p-0 mt-4 font-medium border border-black rounded-lg bg-black md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-black dark:bg-black md:dark:bg-gray-900black dark:border-black">
+                    <li>
+                        <a href="#home" class="block py-2 px-3 text-white no-underline bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 md:dark:text-blue-500" aria-current="page">Home</a>
+                    </li>
+                    <li>
+                        <a href="/sewa" class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white no-underline dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Sewa</a>
+                    </li>
+                    <li>
+                        <a href="#about-section" class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 no-underline dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">About</a>
+                    </li>
+                    <li>
+                        <a href="#contact-section" class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white no-underline dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Contact</a>
+                    </li>
+                </ul>
             </div>
         </div>
     </nav>
