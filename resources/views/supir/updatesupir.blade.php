@@ -12,7 +12,7 @@
             <label for="noktp" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">No.KTP</label>
             <input name="noktp" type="text" id="base-input"
                 class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 @error('noktp') is-invalid @enderror"
-                value="{{ $supir->noktp }}">
+                required value="{{ $supir->noktp }}">
             @error('noktp')
             <div class="invalid-feedback">
                 {{$message}}
@@ -24,7 +24,7 @@
             <label for="nama" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Nama Supir</label>
             <input name="nama" type="text" id="base-input"
                 class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 @error('nama') is-invalid @enderror"
-                value="{{ $supir->nama }}">
+                required value="{{ $supir->nama }}">
             @error('nama')
             <div class="invalid-feedback">
                 {{$message}}
@@ -36,7 +36,7 @@
             <label for="alamat" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Alamat</label>
             <input name="alamat" type="text" id="base-input"
                 class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 @error('alamat') is-invalid @enderror"
-                value="{{ $supir->alamat }}">
+                required value="{{ $supir->alamat }}">
             @error('alamat')
             <div class="invalid-feedback">
                 {{$message}}
@@ -48,7 +48,7 @@
             <label for="nohpsupir" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">No.Hp</label>
             <input name="nohpsupir" type="text" id="base-input"
                 class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 @error('nohpsupir') is-invalid @enderror"
-                value="{{ $supir->nohpsupir }}">
+                required value="{{ $supir->nohpsupir }}">
             @error('nohpsupir')
             <div class="invalid-feedback">
                 {{$message}}

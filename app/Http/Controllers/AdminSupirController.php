@@ -70,10 +70,10 @@ class AdminSupirController extends Controller
     public function update(Request $request, Supir $supir)
     {
         $rules = [
-            'noktp' => 'required',
+            'noktp' => 'required|min:16|max:16',
             'nama' => 'required',
             'alamat' => 'required',
-            'nohpsupir' => 'required',
+            'nohpsupir' => 'required|min:10|max:12',
             'image' => 'image|file|max:50000'
         ];
 
