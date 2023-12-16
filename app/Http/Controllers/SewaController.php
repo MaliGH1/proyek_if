@@ -20,7 +20,7 @@ class SewaController extends Controller
     public function index()
     {
         $mobils = Mobil::where('status','Tersedia')->get();
-        $supirs = Supir::all();
+        $supirs = Supir::where('status','Tersedia')->get();
         $customers = Customer::all();
         return view('customer/sewa', [
             "title" => "Sewa Mobil",
