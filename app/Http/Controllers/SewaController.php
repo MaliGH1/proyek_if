@@ -19,7 +19,7 @@ class SewaController extends Controller
      */
     public function index()
     {
-        $mobils = Mobil::all();
+        $mobils = Mobil::where('status','Tersedia')->get();
         $supirs = Supir::all();
         $customers = Customer::all();
         return view('customer/sewa', [

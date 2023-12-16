@@ -30,7 +30,6 @@
                             <th class="px-4 py-2">Status</th>
                             <th class="px-4 py-2">Terima</th>
                             <th class="px-4 py-2">Tolak</th>
-                            <th class="px-4 py-2">Selesai</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -57,9 +56,6 @@
                             </td>
                             <td>
                                 <a onclick="return confirm('Apakah Anda yakin ingin MENOLAK Transaksi ini ?')" href="{{url('reject_transaksi', $data->id)}}" class="btn btn-danger">Tolak</a>
-                            </td>
-                            <td>
-                                <a onclick="return confirm('Apakah Anda yakin Mobil sudah kembali ?')" href="{{url('pengembalian', $data->id)}}" class="btn btn-warning">Selesai</a>
                             </td>
                         </tr>
                         @endforeach
