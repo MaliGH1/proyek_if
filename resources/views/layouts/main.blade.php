@@ -13,40 +13,42 @@
     <link rel="stylesheet" href="/css/mb.css" class="">
     @vite('resources/css/app.css')
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-
-<!-- Transisi paragraf ABOUT -->
-<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-<style>
-    #about-section {
-        min-height: 50vh;
-        padding-top: 7rem;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        color: white;
-        text-align: justify; /* Menambahkan properti text-align untuk membuat paragraf menjadi rata kiri dan kanan */
-    }
-</style>
-
-    </style>
-    <!-- hubungi kami -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.16/dist/tailwind.min.css" rel="stylesheet">
+    <!-- Transisi paragraf ABOUT -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <style>
+        #about-section {
+            min-height: 50vh;
+            padding-top: 7rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: justify;
+            /* Menambahkan properti text-align untuk membuat paragraf menjadi rata kiri dan kanan */
+        }
+    </style>
+
+    <!-- hubungi kami -->
+    <!-- <style>
         #contact-section {
             display: flex;
             justify-content: flex-start;
             /* Mengatur agar konten berada di sebelah kiri */
         }
+
         /* Jika ingin mengatur lebar maksimum box, tambahkan properti max-width */
         #contact-section .max-w-6xl {
             padding-top: 20rem;
             max-width: 500px;
             /* Sesuaikan lebar maksimum sesuai kebutuhan */
         }
-        #contact-section .max-w-1xl{
+
+        #contact-section .max-w-1xl {
             padding-top: 18rem;
             max-width: 1590px;
         }
-    </style>
+    </style> -->
 
 
 
@@ -78,21 +80,23 @@
                 var typed = new Typed('#insertion-point', options);
             });
         </script>
- <!-- about -->
- <style>
-        h2 {
-            opacity: 0;
-            transform: translateX(50px);
-            transition: opacity 1s ease-in-out, transform 1s ease-in-out;
-        }
-        .h2-entered {
-            opacity: 1;
-            transform: translateX(0);
-        }
-        #image-container img {
-            transition: opacity 1s ease-in-out;
-        }
-    </style>
+        <!-- about -->
+        <style>
+            h2 {
+                opacity: 0;
+                transform: translateX(50px);
+                transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+            }
+
+            .h2-entered {
+                opacity: 1;
+                transform: translateX(0);
+            }
+
+            #image-container img {
+                transition: opacity 1s ease-in-out;
+            }
+        </style>
     </div>
     <!-- Style h2 -->
     <div class="container ">
@@ -100,68 +104,67 @@
         <script>
             AOS.init();
         </script>
-        
+
 
         @yield('container')
 
     </div>
 
-<style>
-/* INI BUAT BIAR RAPIH DI BUKA DI IPONE */
-@media (max-width: 414px) {
-    #home {
-        padding: 1rem;
-    }
+    <style>
+        /* INI BUAT BIAR RAPIH DI BUKA DI IPONE */
+        @media (max-width: 414px) {
+            #home {
+                padding: 1rem;
+            }
 
-    #home h1 {
-        font-size: 2.5rem;
-    }
+            #home h1 {
+                font-size: 2.5rem;
+            }
 
-    #home h2 {
-        font-size: 1.8rem;
-    }
+            #home h2 {
+                font-size: 1.8rem;
+            }
 
-    #home a {
-        font-size: 1rem;
-    }
+            #home a {
+                font-size: 1rem;
+            }
 
-    #about-section-content h1 {
-        font-size: 2.5rem;
-    }
+            #about-section-content h1 {
+                font-size: 2.5rem;
+            }
 
-    #about-section-content p {
-        font-size: 1rem;
-    }
+            #about-section-content p {
+                font-size: 1rem;
+            }
 
-    #contact-section h1 {
-        font-size: 2.5rem;
-    }
+            #contact-section h1 {
+                font-size: 2.5rem;
+            }
 
-    #contact-section p {
-        font-size: 1rem;
-    }
+            #contact-section p {
+                font-size: 1rem;
+            }
 
-    #contact-section .flex {
-        flex-direction: column;
-    }
+            #contact-section .flex {
+                flex-direction: column;
+            }
 
-    #contact-section .flex div {
-        margin-bottom: 1rem;
-    }
+            #contact-section .flex div {
+                margin-bottom: 1rem;
+            }
 
-    #contact-section .map-image {
-        width: 100%;
-    }
+            #contact-section .map-image {
+                width: 100%;
+            }
 
-    .margin_bottom_navbar {
-        margin-bottom: 2rem;
-    }
-}
+            .margin_bottom_navbar {
+                margin-bottom: 2rem;
+            }
+        }
+    </style>
 
-</style>
 
-        
-            
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 </body>
 
