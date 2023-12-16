@@ -52,8 +52,10 @@ Route::get('/daftarmobil', [MobilController::class, 'index']);
 Route::get('/transaksi', [App\Http\Controllers\VerifikasiController::class, 'index'])->name('transaksi');
 Route::get('/approve_transaksi/{id}', [App\Http\Controllers\VerifikasiController::class, 'approve_transaksi']);
 Route::get('/reject_transaksi/{id}', [App\Http\Controllers\VerifikasiController::class, 'reject_transaksi']);
-Route::get('/pengembalian/{id}', [App\Http\Controllers\VerifikasiController::class, 'pengembalian']);
+Route::get('/pengembalian', [App\Http\Controllers\pengembalianController::class, 'index'])->name('pengembalian');
+Route::get('/pengembalian/{id}', [App\Http\Controllers\pengembalianController::class, 'pengembalian_selesai']);
 Route::get('/keuangan', [App\Http\Controllers\KeuanganController::class, 'index'])->name('keuangan');
+// Route::get('/pengembalian', [App\Http\Controllers\PengembalianController::class, 'index'])->name('pengembalian');
 
 //Route::get('verifikasi', \App\Http\Controllers\Admin\VerifikasiController::class);
 
