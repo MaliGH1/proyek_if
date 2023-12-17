@@ -111,57 +111,73 @@
     </div>
 
     <style>
-        /* INI BUAT BIAR RAPIH DI BUKA DI IPONE */
+        /* Bagian Kanan */
+        .flex-1 {
+            background-color: #yourBackgroundColor; /* Ganti dengan warna latar belakang yang diinginkan */
+            padding: 20px; /* Sesuaikan dengan kebutuhan Anda */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    
+        /* Menambahkan efek border-radius */
+        .kanan {
+            border-radius: 10px; /* Sesuaikan dengan kebutuhan Anda */
+        }
+    
+        /* Menambahkan efek bayangan */
+        .kanan:hover {
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Sesuaikan dengan kebutuhan Anda */
+        }
+    
+        /* Mengatur ukuran maksimal gambar */
+        .kanan img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px; /* Sesuaikan dengan kebutuhan Anda */
+        }
+    
+        /* INI BUAT BIAR RAPIH DI BUKA DI IPHONE */
         @media (max-width: 414px) {
-            #home {
+            .flex-1 {
                 padding: 1rem;
             }
-
-            #home h1 {
-                font-size: 2.5rem;
-            }
-
-            #home h2 {
-                font-size: 1.8rem;
-            }
-
-            #home a {
-                font-size: 1rem;
-            }
-
-            #about-section-content h1 {
-                font-size: 2.5rem;
-            }
-
-            #about-section-content p {
-                font-size: 1rem;
-            }
-
-            #contact-section h1 {
-                font-size: 2.5rem;
-            }
-
-            #contact-section p {
-                font-size: 1rem;
-            }
-
-            #contact-section .flex {
-                flex-direction: column;
-            }
-
-            #contact-section .flex div {
-                margin-bottom: 1rem;
-            }
-
-            #contact-section .map-image {
+    
+            .kanan img {
                 width: 100%;
-            }
-
-            .margin_bottom_navbar {
-                margin-bottom: 2rem;
+                height: auto;
             }
         }
     </style>
+    
+    
+<style>
+    /* Bagian Kanan */
+    .flex-1 {
+        background-color: #yourBackgroundColor; /* Ganti dengan warna latar belakang yang diinginkan */
+        padding: 20px; /* Sesuaikan dengan kebutuhan Anda */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    /* Menambahkan efek border-radius */
+    .kanan {
+        border-radius: 10px; /* Sesuaikan dengan kebutuhan Anda */
+    }
+
+    /* Menambahkan efek bayangan */
+    .kanan:hover {
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Sesuaikan dengan kebutuhan Anda */
+    }
+
+    /* Mengatur ukuran maksimal gambar */
+    .kanan img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 8px; /* Sesuaikan dengan kebutuhan Anda */
+    }
+</style>
 
 
 
