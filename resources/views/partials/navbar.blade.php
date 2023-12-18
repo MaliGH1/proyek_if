@@ -27,7 +27,11 @@
             </div>
             <div class="hidden md:flex items-center space-x-10">
                 <a class="text-white no-underline hover:text-yellow-500" href="#home">Home</a>
-                <a class="text-white no-underline hover:text-yellow-500" href="/sewa">Sewa</a>
+                @if(auth()->check())
+                    <a class="text-white no-underline hover:text-yellow-500" href="/sewa">Sewa</a>
+                @else
+                    <a class="text-white no-underline hover:text-yellow-500" href="{{ route('login') }}">Sewa</a>
+                @endif
                 <a class="text-white block no-underline hover:text-yellow-500" href="#about-section">About</a>
                 <a class="text-white block no-underline hover:text-yellow-500" href="#contact-section">Contact</a>
             </div>
@@ -39,12 +43,18 @@
                 </button>
             </div>
             <div class="ml-auto">
-                <form action="{{ route('logout') }}" method="POST">
-                    @csrf
-                    <button type="submit" class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded-sm">
-                        Logout
-                    </button>
-                </form>
+                @if(auth()->user())
+                    <form action="{{ route('logout') }}" method="POST">
+                        @csrf
+                        <button type="submit" class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded-sm">
+                            Logout
+                        </button>
+                    </form>
+                @else
+                    <a href="{{ route('register') }}" class="bg-gray-600 hover:bg-gray-800 text-white font-bold py-2 px-4 rounded-sm">
+                        Register
+                    </a>
+                @endif
             </div>
         </div>
     </div>

@@ -43,9 +43,7 @@ Route::get('/back-to-home', function () {
     return redirect('/home');
 })->name('back.home');
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [\App\Http\Controllers\CustomerLoginController::class, 'index']);
 
 Route::get('/daftarmobil', [MobilController::class, 'index']);
 
