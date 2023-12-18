@@ -46,12 +46,12 @@
                 @if(auth()->user())
                     <form action="{{ route('logout') }}" method="POST">
                         @csrf
-                        <button type="submit" class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded-sm">
+                        <button type="submit" class="bg-red-800 hover:bg-red-700 text-white py-1 px-3 rounded-full">
                             Logout
                         </button>
                     </form>
                 @else
-                    <a href="{{ route('register') }}" class="bg-gray-600 hover:bg-gray-800 text-white font-bold py-2 px-4 rounded-sm">
+                    <a href="{{ route('register') }}" class="bg-gray-800 hover:bg-gray-700 text-white  py-2 px-4 rounded-full">
                         Register
                     </a>
                 @endif
