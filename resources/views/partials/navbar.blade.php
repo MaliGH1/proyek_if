@@ -51,8 +51,8 @@
                         </button>
                     </form>
                 @else
-                    <a href="{{ route('register') }}" class="bg-gray-800 hover:bg-gray-700 text-white  py-2 px-4 rounded-full">
-                        Register
+                    <a href="{{ route('login') }}" class="bg-gray-800 hover:bg-gray-700 text-white  py-2 px-4 rounded-full">
+                        Login
                     </a>
                 @endif
             </div>
