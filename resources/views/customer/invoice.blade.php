@@ -7,21 +7,21 @@
     <title>View Invoice</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <script>
-        function previewImage() {
-            const image = document.querySelector('#bukti');
-            const imgPreview = document.querySelector('.img-preview');
+    function previewImage() {
+        const image = document.querySelector('#bukti');
+        const imgPreview = document.querySelector('.img-preview');
 
-            imgPreview.style.display = 'block';
+        imgPreview.style.display = 'block';
 
-            const oFReader = new FileReader();
+        const oFReader = new FileReader();
 
-            // Change 'imge' to 'image' in the line below
-            oFReader.readAsDataURL(image.files[0]);
+        // Change 'imge' to 'image' in the line below
+        oFReader.readAsDataURL(image.files[0]);
 
-            oFReader.onload = function(oFREvent) {
-                imgPreview.src = oFREvent.target.result;
-            }
+        oFReader.onload = function(oFREvent) {
+            imgPreview.src = oFREvent.target.result;
         }
+    }
     </script>
 </head>
 
@@ -93,6 +93,11 @@
                         <td colspan=2 class="border px-4 py-2 font-bold text-right">Total</td>
                         <td class="border px-4 py-2 font-bold">Rp. {{ $sewa->total_biaya }}</td>
                     </tr>
+                    <tr>
+                        <td colspan=2 class="border px-4 py-2 font-bold text-right">DP</td>
+                        <td class="border px-4 py-2 font-bold">Rp. {{ number_format($sewa->total_biaya * 0.25, 2) }}
+                        </td>
+                    </tr>
                 </tbody>
             </table>
             <div class="flex justify-between p-4">
@@ -100,8 +105,10 @@
                     <h3 class="text-xl text-red-600">Harap Diperhatikan :</h3>
                     <ul class="text-xs list-disc list-inside">
                         <li>Bawa nota ini pada saat pengambilan mobil (Capture Invoice ini).</li>
-                        <li>Riwayat pemesanan anda dapat dibatalkan jika terindikasi melakukan penipuan (Mengirimkan bukti transfer palsu).</li>
-                        <li>Jika anda tidak melakukan pembayaran sampai tanggal pengambilan, maka transaksi dianggap hangus.</li>
+                        <li>Riwayat pemesanan anda dapat dibatalkan jika terindikasi melakukan penipuan (Mengirimkan
+                            bukti transfer palsu).</li>
+                        <li>Jika anda tidak melakukan pembayaran sampai tanggal pengambilan, maka transaksi dianggap
+                            hangus.</li>
                         <li>Pembayaran DP dapat dilakukan dengan transfer ke nomor rekening yang ada.</li>
                         <li>Silakan unggah bukti transfer ke submission dibawah ini.</li>
                     </ul>
@@ -115,10 +122,14 @@
             <div class="p-4">
                 <form action="{{ route('invoice') }}" method="post" enctype="multipart/form-data">
                     @csrf
-                    <label class="block mb-2 text-sm font-medium text-white dark:text-white" for="bukti">Upload bukti</label>
+                    <label class="block mb-2 text-sm font-medium text-white dark:text-white" for="bukti">Upload
+                        bukti</label>
                     <img class="img-preview" style="display: none; max-width: 200px; margin-top: 10px;">
-                    <input id="bukti" name="bukti" onchange="previewImage()" class="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400" aria-describedby="file_input_help" id="file_input" type="file">
-                    <p class="mt-1 text-sm text-gray-500 dark:text-gray-300" id="file_input_help">SVG, PNG, JPG or GIF (MAX. 800x400px).</p>
+                    <input id="bukti" name="bukti" onchange="previewImage()"
+                        class="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
+                        aria-describedby="file_input_help" id="file_input" type="file">
+                    <p class="mt-1 text-sm text-gray-500 dark:text-gray-300" id="file_input_help">SVG, PNG, JPG or GIF
+                        (MAX. 800x400px).</p>
                     <button class="px-4 py-2 text-sm text-white bg-blue-500">Kirim</button>
                 </form>
             </div>
