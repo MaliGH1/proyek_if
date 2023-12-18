@@ -107,18 +107,10 @@
                 <a href="{{ route('keuangan') }}" class="nav-link bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded inline-block transition duration-300 text-xl">
                     <span class="text-[15px] ml-4 text-gray-200 font-bold text-lg">
                         <i class="nav-icon fas fa-calendar"></i>
-                        {{ __('Bulanan') }}
+                        {{ __('Laporan') }}
                     </span>
                 </a>
-            </li>
-            <li class="nav-item list-none">
-                <a href="{{ route('keuangan') }}" class="nav-link bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded inline-block transition duration-300 text-xl">
-                    <span class="text-[15px] ml-4 text-gray-200 font-bold text-lg">
-                        <i class="nav-icon fas fa-calendar"></i>
-                        {{ __('Tahunan') }}
-                    </span>
-                </a>
-            </li>
+            </li>     
         </div>
         <!-- Tombol Logout -->
         <div class="absolute bottom-0 left-0 w-full">
