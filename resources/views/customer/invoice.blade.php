@@ -109,7 +109,7 @@
                 <div class="p-4">
                     <h3>No. Rekening: </h3>
                     <div class="text-4xl italic text-indigo-500">123456789</div>
-                    <h6><i>*rekening atas nama XXXXX</i></h6>
+                    <h6><i>*rekening atas nama AJITAMA JAYA</i></h6>
                 </div>
             </div>
             <div class="p-4">
